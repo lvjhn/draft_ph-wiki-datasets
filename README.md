@@ -579,20 +579,6 @@ article = Article(
     load_from = "./data/articles/uncategorized"
 )
 
-# get all headers 
-article.get_headers()       # gets headers as a nested list 
-                            """
-                                {
-                                    "Heading 1 : sfsdfsldf" : {
-                                        "Heading 2 : sdfsf", 
-                                        ...
-                                    }, 
-                                    "Heading 1 : sfdsf " : {
-                                        ...
-                                    }
-                                }   
-                            """
-
 # get headers by level 
 article.get_headers(1)      # ["Heading 1 : A", "Heading 1 : B",  "Heading 1 : C"]
 article.get_headers(2)      # ...
@@ -609,30 +595,13 @@ article.top_level_sections()
     "Header 2" : "... text ...",
     "Header 3" : "... text ..."
 }
-"""
-
-article.tree()
-"""
-{
-    "Header 1 : Title" : {
-        "_intro_" : "",
-        "_outro_" : "", 
-        "children" : {
-            "Header 2 : Title" : {
-                "_intro_" : "",
-                "_outro_" : "",
-                "children" : {
-
-                }
-            }
-        }
-    }, 
-    ...
-}
 """   
 
 # aggregate content from h3 and deeper as a single text
 article.aggregate(article.tree, 3)  
+
+# get array of references
+article.references() 
 ```
 
 ### `BasisArticle`
@@ -642,6 +611,7 @@ A basis article for "province" has a table that lists down information for lower
 LGUs such as "cities" or "municipalities". 
 
 1. `IslandGroupBasisArticle`
+    - `info()`
     - `extract_island_group_metas()`
         - `island_group_name` (name and code)
         - `population_2020`
@@ -651,6 +621,7 @@ LGUs such as "cities" or "municipalities".
         - `regional_center`
 
 1. `RegionBasisArticle`
+    - `info()`
     - `extract_region_metas()`
         - `region_name`
         - `psgc`
@@ -662,6 +633,7 @@ LGUs such as "cities" or "municipalities".
         - `density`
         
 1. `ProvinceBasisArticle`
+    - `info()`
     - `extract_province_metas()`
         - `iso`
         - `province_name`
@@ -677,6 +649,7 @@ LGUs such as "cities" or "municipalities".
         - `barangays`
     
 1. `DistrictBasisArticle`
+    - `info()`
     - `extract_district_metas()`
         - `district_name`
         - `region`
@@ -687,6 +660,7 @@ LGUs such as "cities" or "municipalities".
         - `party`
 
 1. `CityBasisArticle`
+    - `info()`
     - `extract_city_metas()`
         - `city_name`
         - `population_2020`
@@ -700,6 +674,7 @@ LGUs such as "cities" or "municipalities".
         - `ratification`
 
 1. `MunicityBasisArticle`
+    - `info()`
     - `extract_municities_meta()`
         - `municity_name`
         - `population_2020`
@@ -713,7 +688,46 @@ LGUs such as "cities" or "municipalities".
 Main article are the main source of the text related dimensions of the feature
 space.
 
+1. `NationalArticle`
+    - `info()`
+    - `extract_all()`
+    - `extract_capital()`
+    - `extract_largest_city()`
+    - `extract_official_languages()` 
+    - `extract_regional_languages()`
+    - `extract_other_languages()`
+    - `extract_ethnic_groups()`
+    - `extract_religions()`
+    - `extract_demonyms()`
+    - `extract_government_type()`
+    - `extract_president()`
+    - `extract_vice_president()`
+    - `extract_senate_president()`
+    - `extract_house_speaker()`
+    - `extract_chief_justice()`
+    - `extract_legislature()`
+    - `extract_upper_house()`
+    - `extract_lower_house()`
+    - `extract_independence_declaration()`
+    - `extract_independence_cession()`
+    - `extract_independence_self_government()`
+    - `extract_independence_recognized()`
+    - `extract_independence_constitution`()
+    - `extract_area()`
+    - `extract_population()`
+    - `extract_gdp()`
+    - `extract_gini()`
+    - `extract_hdi()`
+    - `extract_currency()`
+    - `extract_time_zone()` 
+    - `extract_time_format()`
+    - `extract_date_format()`
+    - `extract_driving_side()`
+    - `extract_calling_code()`
+    - `extract_iso_3166_code()`
+
 1. `IslandGroupArticle`
+    - `info()`
     - `extract_all()`
     - `extract_coordinates()`
     - `extract_adjacent_to()`
@@ -728,4 +742,110 @@ space.
     - `extract_largest_settlement()`
     - `extract_demonyms()`
     - `extract_population()`
-    - `extract_ethnic_grouos()`
+    - `extract_ethnic_groups()`
+
+1. `RegionArticle`
+    - `info()`
+    - `extract_all()`
+    - `extract_country()`
+    - `extract_island_group()`
+    - `extract_regional_center()`
+    - `extract_area()`
+    - `extract_highest_elevation()`
+    - `extract_population()`
+    - `extract_time_zone()`
+    - `extract_3166_code()`
+    - `extract_provinces()`
+    - `extract_independent_cities()`
+    - `extract_component_cities()`
+    - `extract_municipalities()`
+    - `extract_barangays()`,
+    - `extract_congressional_districts()`
+    - `extract_languages()`
+    - `extract_gdp()`
+    - `extract_growth_rate()`
+    - `extract_hdi()`
+    - `extract_hdi_rank()`
+    - `extract_website()`
+
+1. `ProvinceArticle`
+    - `info()`
+    - `extract_all()`
+    - `extract_coordinates()`
+    - `extract_region()`
+    - `extract_founded()`
+    - `extract_capital()`
+    - `extract_largest_city()`
+    - `extract_government()`
+    - `extract_area()`
+    - `extract_elevation()`
+    - `extract_population()`
+    - `extract_divisions()`
+    - `extract_time_zone()`
+    - `extract_idd_area_code()`
+    - `extract_spoken_languages()`
+    - `extract_website()`
+
+1. `ProvinceArticle`
+    - `info()`
+    - `extract_all()`
+    - `extract_coordinates()`
+    - `extract_region()`
+    - `extract_founded()`
+    - `extract_capital()`
+    - `extract_largest_city()`
+    - `extract_government()`
+    - `extract_area()`
+    - `extract_elevation()`
+    - `extract_population()`
+    - `extract_divisions()`
+    - `extract_time_zone()`
+    - `extract_idd_area_code()`
+    - `extract_spoken_languages()`
+    - `extract_website()`
+
+1. `DistrictArticle`
+    - `info()`
+    - `extract_all()`
+    - `extract_province()`
+    - `extract_region()`
+    - `extract_population()`
+    - `extract_electorate()`
+    - `extract_major_settlements()`
+    - `extract_area()`
+    - `extract_created()`
+    - `extract_representative()`
+    - `extract_political_party()`
+    - `extract_congressional_bloc()`
+
+1. `MunicityArticle`
+    - `info()`
+    - `extract_all()`
+    - `extract_country()`
+    - `extract_region()`
+    - `extract_district()`
+    - `extract_founded()`
+    - `extract_barangays()`
+    - `extract_government()`
+    - `extract_area()`
+    - `extract_elevation()`
+    - `extract_highest_elevation()`
+    - `extract_lowest_elevation()`
+    - `extract_population()`
+    - `extract_economy()`
+    - `extract_service_provider()`
+    - `extract_time_zone()`
+    - `extract_zip_code()`
+    - `extract_psgc()`
+    - `extract_idd_area_code()`
+    - `extract_native_languages()`
+    - `extract_website()`
+
+### `Map`
+The map class represents a map entity in the project. 
+
+1. `Map`
+    - `union_by_attribute(attribute)`
+    - `polygons()`
+    - `save_map()`
+    - `adjacency_matrix()`
