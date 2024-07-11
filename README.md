@@ -181,6 +181,137 @@ adminisrative levels and apply basic operations such as applying unions on
 components under the same over-arching LGU (e.g. district-municity) to create
 derived maps as well as creating a simple adjacency matrix for each map level. 
 
+## `Locations` 
+The locations class is a static class that can be used to quickly list down
+or access locations and relevant links.
+
+```python
+from ph_wiki_datasets import Locations
+
+# Accessors (Multi-Results)
+Locations.island_groups()           
+[
+    { "id" : 1, "island_group" : "Luzon"    , "article_uri" : "Luzon"    }, 
+    { "id" : 2, "island_group" : "Visayas"  , "article_uri" : "Visayas"  }, 
+    { "id" : 3, "island_group" : "Mindanao" , "article_uri" : "Mindanao" }
+]
+
+Locations.regions()  
+{ 
+    { 
+        "ref_id"        : "[REF-ID]"
+        "id"            : "[PSGC-CODE]", 
+        "island_group"  : "Luzon", 
+        "region_name"   : "Bicol Region" , 
+        "article_uri"   : "Bicol_Region"
+    },
+    ...
+}
+
+Locations.provinces()
+{ 
+    { 
+        "ref_id"        : "[REF-ID]",
+        "id"            : "[PSGC-CODE]", 
+        "island_group"  : "Luzon", 
+        "region_name"   : "Bicol Region" ,
+        "province_name" : "Camarines Sur"
+        "article_uri"   : "Camarines_Sur"
+    },
+    ...
+}
+
+Locations.districts()
+{ 
+    { 
+        "ref_id"        : "[REF-ID]",
+        "id"            : "[PSGC-CODE]", 
+        "island_group"  : "Luzon", 
+        "region_name"   : "Bicol Region" ,
+        "province_name" : "Camarines Sur", 
+        "district_no"   : "3"
+        "article_uri"   : "Camarines_Sur"
+    },
+    ...
+}
+
+Locations.municities()
+{ 
+    { 
+        "ref_id"        : "[REF-ID]",
+        "id"            : "[PSGC-CODE]", 
+        "island_group"  : "Luzon", 
+        "region_name"   : "Bicol Region" ,
+        "province_name" : "Camarines Sur", 
+        "district_no"   : "3"
+        "city_name"     : "Naga City",
+        "article_uri"   : "Naga_City"
+    },
+    ...
+}
+
+### With Filter
+Location.regions(island_group="Luzon")
+Location.regions(island_group="Visayas")
+Location.regions(island_group="Mindanao")
+
+Location.provinces(island_group="Luzon")
+Location.provinces(region_name="Bicol Region")
+Location.provinces(region_code="[REGION-PSGC-CODE]")
+
+Location.districts(island_group="Luzon")
+Location.districts(region_name="Bicol Region")
+Location.districts(region_code="[REGION-PSGC-CODE]")
+Location.districts(province_name="Camarines Sur")
+Location.districts(province_code="[PROVINCE-PSGC-CODE]")
+
+Location.municities(island_group="Luzon")
+Location.municities(region_name="Bicol Region")
+Location.municities(region_code="[REGION-PSGC-CODE]")
+Location.municities(province_name="Camarines Sur")
+Location.municities(province_code="[PROVINCE-PSGC-CODE]")
+Location.municities(district_slug="Camarines_Sur|3")
+Location.municities(district_code_slug="[PROVINCE-PSGC-CODE]|3")
+
+### Single-Item Accessor 
+Locator.island_group(island_group="Luzon")
+
+Locator.region(code="[PSGC-CODE]")
+Locator.region(name="Bicol Region")
+
+Locator.province(code="[PSGC-CODE]")
+Locator.province(name="Camarines Sur")
+
+Locator.district(code_slug="[PSGC-CODE]|3")
+Locator.district(slug="Camarines_Sur|3")
+
+Locator.municity(code="[PSGC-CODE]")
+Locator.municity(slug="Camarines_Sur|Calabanga")
+
+
+### Info Item 
+Locator.general_info(ref_id="REF-REF-ID")
+"""
+{
+    "ref_id" : [REF-REF-ID],
+    "psgc" : [CODE]
+    "coordinates" : "", 
+    ...
+}
+"""
+
+Locator.locate(code="[CODE]") 
+{
+    ... location related data ...
+}
+
+Locator.locate(ref_id="[REF-ID]") 
+{
+    ... location related data ...
+}
+
+```
+
 > **Future Recommendations:** 
 Usage of more complicated `geojson` libraries
 may be useful in the future. At this time, the research first aims and focuses on establish
@@ -511,8 +642,90 @@ A basis article for "province" has a table that lists down information for lower
 LGUs such as "cities" or "municipalities". 
 
 1. `IslandGroupBasisArticle`
+    - `extract_island_group_metas()`
+        - `island_group_name` (name and code)
+        - `population_2020`
+        - `population_2015`
+        - `area`
+        - `density`
+        - `regional_center`
+
 1. `RegionBasisArticle`
+    - `extract_region_metas()`
+        - `region_name`
+        - `psgc`
+        - `island_group`
+        - `regional_center`
+        - `lgus`
+        - `area`
+        - `population`
+        - `density`
+        
 1. `ProvinceBasisArticle`
+    - `extract_province_metas()`
+        - `iso`
+        - `province_name`
+        - `capital`
+        - `population`
+        - `area`
+        - `density`
+        - `founded`
+        - `island_group`
+        - `region`
+        - `municipalities`
+        - `cities`
+        - `barangays`
+    
 1. `DistrictBasisArticle`
+    - `extract_district_metas()`
+        - `district_name`
+        - `region`
+        - `electorate`
+        - `population`
+        - `area`
+        - `representative`
+        - `party`
+
 1. `CityBasisArticle`
+    - `extract_city_metas()`
+        - `city_name`
+        - `population_2020`
+        - `area`
+        - `density_2020`
+        - `province`
+        - `region`
+        - `legal_class`
+        - `charter`
+        - `approval`
+        - `ratification`
+
 1. `MunicityBasisArticle`
+    - `extract_municities_meta()`
+        - `municity_name`
+        - `population_2020`
+        - `area_km2`
+        - `population_density_2020`
+        - `barangays`
+        - `class`
+        - `province`
+
+### `MainArticle`
+Main article are the main source of the text related dimensions of the feature
+space.
+
+1. `IslandGroupArticle`
+    - `extract_all()`
+    - `extract_coordinates()`
+    - `extract_adjacent_to()`
+    - `extract_major_islands()`
+    - `extract_area()`
+    - `extract_area_rank()`
+    - `extract_coastline()`
+    - `extract_highest_elevation()`
+    - `extract_highest_point()`
+    - `extract_regions()`
+    - `extract_provinces()`
+    - `extract_largest_settlement()`
+    - `extract_demonyms()`
+    - `extract_population()`
+    - `extract_ethnic_grouos()`
