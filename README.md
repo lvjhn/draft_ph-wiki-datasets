@@ -145,7 +145,8 @@ from Wikipedia articles involved in this project.
 ### `Article`
 The `Article` class is mapped to an article (`.html` file) via its name and 
 contains an `Extractor` (via class composition). It provides even more abstractions
-to the extractor class for `Article` related queries. 
+to the extractor class for `Article` related queries. Functions for basic partitioning 
+of an article into subsections is provided in this class.
 
 ### `BasisArticle` (extends `Article`)
 The `BasisArticle` is a simple extension of the `Article` class for base articles. 
@@ -164,6 +165,7 @@ of the articles that contain the tabulations as in the **"Basis"** articles.
 
 It has different subclasses (for each administrative-level)
 
+* `NationalArticle` - for national article
 * `IslandGroupArticle` - for island groups
 * `RegionArticle` - for regions 
 * `ProvinceArticle` - for provinces 
@@ -203,6 +205,12 @@ e.g. machine learning, EDA, data visualization, etc. It provides for templates
 functions for extracting information either from `Article` or `Map` objects. 
 
 ## API Design 
+
+### General Helpers
+The general helpers script contains simple and quick functions for commonly
+used functions such as flattening a JSON tree.
+
+* `flatten(tree)` - flattens a JSON tree
 
 ### **`Client`** 
 The client class can be instantiated using the following syntax. 
@@ -409,3 +417,102 @@ Extractor.all_or_null(r"(.*)", "(foo)(bar)(baz)")
 
 ```
 
+### `Article` 
+The `Article` class structures objects associated with articles and uses 
+extractor objects to extract information from the article's source. It abstracts
+basic and obvious information that can be extracted from Wikipedia articles. It
+is a base class for different subclasses such as `BasisArticle` and `MainArticle`. 
+It can used directly as well as it is used to group the `BasisArticle` and `MainArticle` 
+subclasses. 
+
+It has some utility methods for partitioning articles into sections and subsections.
+
+```python
+from ph_wiki_datasets import Article 
+
+article = Article(
+    "hello",
+
+    # optional, downloads article automatically (default, true - uses DefaultWikipediaScraper)
+    download = True     
+
+    # the scraper uses for this article
+    scraper  = DefaultWikipediaScraper(
+        client = DefaultWikipediaClient(), 
+        outdir ="./data/articles/uncategorized/"
+    )
+
+    # where to load the article 
+    load_from = "scraper"
+    # or 
+    load_from = "./data/articles/uncategorized"
+)
+
+# get all headers 
+article.get_headers()       # gets headers as a nested list 
+                            """
+                                {
+                                    "Heading 1 : sfsdfsldf" : {
+                                        "Heading 2 : sdfsf", 
+                                        ...
+                                    }, 
+                                    "Heading 1 : sfdsf " : {
+                                        ...
+                                    }
+                                }   
+                            """
+
+# get headers by level 
+article.get_headers(1)      # ["Heading 1 : A", "Heading 1 : B",  "Heading 1 : C"]
+article.get_headers(2)      # ...
+article.get_headers(3)      # ...
+article.get_headers(4)      # ...
+article.get_headers(5)      # ...
+article.get_headers(6)      # ...
+
+# get articles splitted into sections
+article.top_level_sections()
+""" 
+{
+    "Header 1" : "... text ...", 
+    "Header 2" : "... text ...",
+    "Header 3" : "... text ..."
+}
+"""
+
+article.tree()
+"""
+{
+    "Header 1 : Title" : {
+        "_intro_" : "",
+        "_outro_" : "", 
+        "children" : {
+            "Header 2 : Title" : {
+                "_intro_" : "",
+                "_outro_" : "",
+                "children" : {
+
+                }
+            }
+        }
+    }, 
+    ...
+}
+"""   
+
+# aggregate content from h3 and deeper as a single text
+article.aggregate(article.tree, 3)  
+```
+
+### `BasisArticle`
+"Basis" articles are used in this project as a "catalog", "reference" or "index" of a 
+higher-level LGU or adminisrative level to lower-level administrative level.
+A basis article for "province" has a table that lists down information for lower-level
+LGUs such as "cities" or "municipalities". 
+
+1. `IslandGroupBasisArticle`
+1. `RegionBasisArticle`
+1. `ProvinceBasisArticle`
+1. `DistrictBasisArticle`
+1. `CityBasisArticle`
+1. `MunicityBasisArticle`
