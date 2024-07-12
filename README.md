@@ -49,7 +49,7 @@ of the different counts of LGUs at each administrative level in the Philippines.
                 - **List of Municipalities/Cities in the Philippines** 
                     - https://en.wikipedia.org/wiki/List_of_cities_and_municipalities_in_the_Philippines
 
-1. **`Set B`: SVG Maps**
+1. **`Set B1`: SVG Maps**
     - **Description** 
         - These are raw SVG maps of the Philippines each having borders
           on different administrative levels. 
@@ -85,11 +85,28 @@ of the different counts of LGUs at each administrative level in the Philippines.
         * **Barangay Level** - barangay-level borders
             - **Not Included** - Future Recommendation
 
+1. **`Set B2`: GeoJSON Map Data**
+    - **Description** 
+        - These are GeoJSON map data based on an external source.The
+          2023 version was used. This GeoJSON data goes deep down to 
+          the barangay level shapes/polygons and uses coordinates instead
+          of raw flat plane vertices as in the SVG files in `Set B1`.
+    - **Sources**   
+        * `faeldon/philippines-json-maps`
+            - **Repository**: https://github.com/faeldon/philippines-json-maps/tree/master. 
+            - **License** : MIT
+
 1. **`Set C` : List/Outline of Barangays (2016, 2017, and 2019)** 
-    - **Source**:  https://github.com/flores-jacob/philippine-regions-provinces-cities-municipalities-barangays
-    - **License**: MIT
+    - **Description** 
+        - This is an outline (list of names from regions down to barangay levels)
+          that can be used for outlining the barangays.  
+    - **Sources**: 
+        - `flores-jacob/philippines-regions-provinces-cities-municipalities-barangay`
+            - **Repository**: https://github.com/flores-jacob/philippine-regions-provinces-cities-municipalities-barangay
+            - **License**: MIT
 
 1. **`Set D` : Level-Specific Wikipedia Articles (Corpus)** 
+
     - **Description** 
         - Wikipedia articles are collected at each administrative level 
             - **Island Group** - 3 articles
@@ -273,6 +290,16 @@ Location.municities(province_code="[PROVINCE-PSGC-CODE]")
 Location.municities(district_slug="Camarines_Sur|3")
 Location.municities(district_code_slug="[PROVINCE-PSGC-CODE]|3")
 
+Location.barangays(island_group="Luzon")
+Location.barangays(region_name="Bicol Region")
+Location.barangays(region_code="[REGION-PSGC-CODE]")
+Location.barangays(province_name="Camarines Sur")
+Location.barangays(province_code="[PROVINCE-PSGC-CODE]")
+Location.barangays(district_slug="Camarines_Sur|3") 
+Location.barangays(district_code_slug="[PROVINCE-PSGC-CODE]|3")
+Location.barangays(municity_slug="Camarines_Sur|Naga_City")
+Location.barangays(municity_code="[MUNICITY-PSGC-CODE]")
+
 ### Single-Item Accessor 
 Locator.island_group(island_group="Luzon")
 
@@ -286,8 +313,10 @@ Locator.district(code_slug="[PSGC-CODE]|3")
 Locator.district(slug="Camarines_Sur|3")
 
 Locator.municity(code="[PSGC-CODE]")
-Locator.municity(slug="Camarines_Sur|Calabanga")
+Locator.municity(slug="Camarines_Sur|Naga")
 
+Locator.barangay(code="[PSGC-CODE]")
+Locator.barangay(slug="Camarines_Naga|Naga|Sabang")
 
 ### Info Item 
 Locator.general_info(ref_id="REF-REF-ID")
@@ -310,17 +339,22 @@ Locator.locate(ref_id="[REF-ID]")
     ... location related data ...
 }
 
+Locator.get_slug(code="[PSGC-CODE]")
+Locator.get_code(slug="Camarines_Sur|Naga|Sabang", type="barangay")
+
 ```
 
 > **Future Recommendations:** 
 Usage of more complicated `geojson` libraries
-may be useful in the future. At this time, the research first aims and focuses on establish
-a baseline on simple to derive geographical features that can be retrieved at the `SVG` (vector
-graphics) level, e.g. polygons, centroids, and adjacency matrices of neighboring
-polygons. 
+may be useful in the future.
 
-> **Futher Explorations:** More explorations on different aspects such as paths to other locations,
-road maps, traffic maps, weather maps, contour maps, etc. can be reserved for later.
+At this time, the research first aims and focuses on establish
+a baseline on simple to derive geographical features that can be retrieved 
+at the  `SVG` (vector graphics) level, e.g. polygons, centroids, and 
+adjacency matrices of neighboring polygons. 
+
+An alternative `GeoJSON` map can be used based on the 2023 GeoJSON files
+in `https://github.com/faeldon/philippines-json-maps/tree/master/2023`. 
 
 * `NationalMap` - for **island-group level borders**
 * `IslandGroupMap` - for **region-level borders**
@@ -328,6 +362,8 @@ road maps, traffic maps, weather maps, contour maps, etc. can be reserved for la
 * `RegionMap` - for ***region-level borders**
 * `ProvinceMap` - for **province-level borders**
 * `MunicityMap` - for **municity-level borders**
+* `BarangayMap` - for **barangay-level borders**
+
 
 ### `DatasetGenerator` 
 This is a major class in this dataset that aims to generate datasets 
@@ -844,8 +880,61 @@ space.
 ### `Map`
 The map class represents a map entity in the project. 
 
+It has 6 similar subclasses for different administrative sublevels.
+
+1. `NationalMap`
+2. `RegionMap`
+3. `ProvinceMap`
+4. `DistrictMap`
+5. `MunicityMap`
+6. `BarangayMap`
+
+```python
+from ph_wiki_datasets import NationalMap
+
+svg_map = 
+    RegionMap(driver="svg", name="region-svg-map", cache=True)
+geojson_map = 
+    RegionMap(driver="geojson", name="geojson-svg-map", cache=True)
+
+svg_map.polygons() 
+geojson_map.polygons()
+
+svg_map.polygons()
+svg_map.exterior_polygons() 
+svg_map.interior_polygons()
+
+svg_map.adjacency_matrix()
+geojson_map.adjacency_matrix()
+```
+
 1. `Map`
-    - `union_by_attribute(attribute)`
-    - `polygons()`
-    - `save_map()`
-    - `adjacency_matrix()`
+    - Properties
+        - cache
+    - Methods 
+        - `union_by_attribute(attr_field, attr_value)` 
+            - apply union on SVG features by attribute
+        - `union_by_attributes(attr_field, attr_values)` 
+            - apply union on SVG features by attribute values
+        - `polygons()`
+            - get list of polygons in the map
+        - `exterior_polygons()`
+            - get exterior polygons in the map (polygons that is not inside)
+        - `interior_polygons()`
+            - get interior polygons in the map (polygons that is inside)
+        - `adjacency_matrix()`
+            - get adjacency matrix of the polygons in the map
+        - `uncache()`
+            - uncache the polygon if cached
+        - `cache()` 
+            - cache the polygon 
+        - `polygon_map_psgc()` 
+            - get the mapping of locations indices to polygon indices and vice 
+              versa using PSGC 
+        - `polygon_map_ref_id()`
+            - get the mapping of location ref-ids to polygon indices and vice
+              versa using Reference IDs
+
+### `DatasetGenerator`
+The dataset generator is used to generate datasets from available information. 
+`[TO-DO]`
