@@ -96,16 +96,7 @@ of the different counts of LGUs at each administrative level in the Philippines.
             - **Repository**: https://github.com/faeldon/philippines-json-maps/tree/master. 
             - **License** : MIT
 
-1. **`Set C` : List/Outline of Barangays (2016, 2017, and 2019)** 
-    - **Description** 
-        - This is an outline (list of names from regions down to barangay levels)
-          that can be used for outlining the barangays.  
-    - **Sources**: 
-        - `flores-jacob/philippines-regions-provinces-cities-municipalities-barangay`
-            - **Repository**: https://github.com/flores-jacob/philippine-regions-provinces-cities-municipalities-barangay
-            - **License**: MIT
-
-1. **`Set D` : Level-Specific Wikipedia Articles (Corpus)** 
+1. **`Set C` : Level-Specific Wikipedia Articles (Corpus)** 
 
     - **Description** 
         - Wikipedia articles are collected at each administrative level 
@@ -119,7 +110,7 @@ of the different counts of LGUs at each administrative level in the Philippines.
           about the different LGUs under a certain context (e.g. region, province,
           district, municity)
         
-1. **`Set E` : General Information about Locations**
+1. **`Set D` : General Information about Locations**
     - **Description** 
         - Each island group, region, province, district, and municity collected
           in this dataset has general information collected from their respective
@@ -130,7 +121,7 @@ of the different counts of LGUs at each administrative level in the Philippines.
         - These information are scraped/extracted from each article involved
           in `Set D` as well as some information from the tables in `Set A`.
 
-1. **`Set F` : Articles Divided into Sections and Subsections**
+1. **`Set E` : Articles Divided into Sections and Subsections**
     - **Description** 
         - The articles can be divided into section and subsection. Datasets
           are not made for this, rather, a utility class is used to extract
@@ -341,6 +332,8 @@ Locator.locate(ref_id="[REF-ID]")
 
 Locator.get_slug(code="[PSGC-CODE]")
 Locator.get_code(slug="Camarines_Sur|Naga|Sabang", type="barangay")
+
+# normalize region, province, and barangay names
 
 ```
 
@@ -638,6 +631,8 @@ article.aggregate(article.tree, 3)
 
 # get array of references
 article.references() 
+
+
 ```
 
 ### `BasisArticle`
