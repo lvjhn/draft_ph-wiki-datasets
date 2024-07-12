@@ -1,0 +1,412 @@
+[
+    {
+        "iso_code": "PH-ABR",
+        "province_name": "Abra",
+        "psgc_code": 1400100000
+    },
+    {
+        "iso_code": "PH-AGN",
+        "province_name": "Agusan del Norte",
+        "psgc_code": 1600200000
+    },
+    {
+        "iso_code": "PH-AGS",
+        "province_name": "Agusan del Sur",
+        "psgc_code": 1600300000
+    },
+    {
+        "iso_code": "PH-AKL",
+        "province_name": "Aklan",
+        "psgc_code": 600400000
+    },
+    {
+        "iso_code": "PH-ALB",
+        "province_name": "Albay",
+        "psgc_code": 500500000
+    },
+    {
+        "iso_code": "PH-ANT",
+        "province_name": "Antique",
+        "psgc_code": 600600000
+    },
+    {
+        "iso_code": "PH-APA",
+        "province_name": "Apayao",
+        "psgc_code": 1408100000
+    },
+    {
+        "iso_code": "PH-AUR",
+        "province_name": "Aurora",
+        "psgc_code": 307700000
+    },
+    {
+        "iso_code": "PH-BAN",
+        "province_name": "Bataan",
+        "psgc_code": 1900700000
+    },
+    {
+        "iso_code": "PH-BAS",
+        "province_name": "Basilan",
+        "psgc_code": 300800000
+    },
+    {
+        "iso_code": "PH-BEN",
+        "province_name": "Benguet",
+        "psgc_code": 200900000
+    },
+    {
+        "iso_code": "PH-BIL",
+        "province_name": "Biliran",
+        "psgc_code": 401000000
+    },
+    {
+        "iso_code": "PH-BOH",
+        "province_name": "Bohol",
+        "psgc_code": 1401100000
+    },
+    {
+        "iso_code": "PH-BTG",
+        "province_name": "Batangas",
+        "psgc_code": 807800000
+    },
+    {
+        "iso_code": "PH-BTN",
+        "province_name": "Batanes",
+        "psgc_code": 701200000
+    },
+    {
+        "iso_code": "PH-BUK",
+        "province_name": "Bukidnon",
+        "psgc_code": 1001300000
+    },
+    {
+        "iso_code": "PH-BUL",
+        "province_name": "Bulacan",
+        "psgc_code": 301400000
+    },
+    {
+        "iso_code": "PH-CAG",
+        "province_name": "Cagayan",
+        "psgc_code": 201500000
+    },
+    {
+        "iso_code": "PH-CAM",
+        "province_name": "Camiguin",
+        "psgc_code": 501600000
+    },
+    {
+        "iso_code": "PH-CAN",
+        "province_name": "Camarines Norte",
+        "psgc_code": 501700000
+    },
+    {
+        "iso_code": "PH-CAP",
+        "province_name": "Capiz",
+        "psgc_code": 1001800000
+    },
+    {
+        "iso_code": "PH-CAS",
+        "province_name": "Camarines Sur",
+        "psgc_code": 601900000
+    },
+    {
+        "iso_code": "PH-CAT",
+        "province_name": "Catanduanes",
+        "psgc_code": 502000000
+    },
+    {
+        "iso_code": "PH-CAV",
+        "province_name": "Cavite",
+        "psgc_code": 402100000
+    },
+    {
+        "iso_code": "PH-CEB",
+        "province_name": "Cebu",
+        "psgc_code": 702200000
+    },
+    {
+        "iso_code": "PH-COM",
+        "province_name": "Davao de Oro",
+        "psgc_code": 1204700000
+    },
+    {
+        "iso_code": "PH-DAO",
+        "province_name": "Davao Oriental",
+        "psgc_code": 1108200000
+    },
+    {
+        "iso_code": "PH-DAS",
+        "province_name": "Davao del Sur",
+        "psgc_code": 1102300000
+    },
+    {
+        "iso_code": "PH-DAV",
+        "province_name": "Davao del Norte",
+        "psgc_code": 1102400000
+    },
+    {
+        "iso_code": "PH-DIN",
+        "province_name": "Dinagat Islands",
+        "psgc_code": 1108600000
+    },
+    {
+        "iso_code": "PH-DVO",
+        "province_name": "Davao Occidental",
+        "psgc_code": 1102500000
+    },
+    {
+        "iso_code": "PH-EAS",
+        "province_name": "Eastern Samar",
+        "psgc_code": 1608500000
+    },
+    {
+        "iso_code": "PH-GUI",
+        "province_name": "Guimaras",
+        "psgc_code": 802600000
+    },
+    {
+        "iso_code": "PH-IFU",
+        "province_name": "Ifugao",
+        "psgc_code": 607900000
+    },
+    {
+        "iso_code": "PH-ILI",
+        "province_name": "Iloilo",
+        "psgc_code": 1402700000
+    },
+    {
+        "iso_code": "PH-ILN",
+        "province_name": "Ilocos Norte",
+        "psgc_code": 102800000
+    },
+    {
+        "iso_code": "PH-ILS",
+        "province_name": "Ilocos Sur",
+        "psgc_code": 102900000
+    },
+    {
+        "iso_code": "PH-ISA",
+        "province_name": "Isabela",
+        "psgc_code": 603000000
+    },
+    {
+        "iso_code": "PH-KAL",
+        "province_name": "Kalinga",
+        "psgc_code": 203100000
+    },
+    {
+        "iso_code": "PH-LAG",
+        "province_name": "Laguna",
+        "psgc_code": 1403200000
+    },
+    {
+        "iso_code": "PH-LAN",
+        "province_name": "Lanao del Norte",
+        "psgc_code": 103300000
+    },
+    {
+        "iso_code": "PH-LAS",
+        "province_name": "Lanao del Sur",
+        "psgc_code": 403400000
+    },
+    {
+        "iso_code": "PH-LEY",
+        "province_name": "Leyte",
+        "psgc_code": 1003500000
+    },
+    {
+        "iso_code": "PH-LUN",
+        "province_name": "La Union",
+        "psgc_code": 1903600000
+    },
+    {
+        "iso_code": "PH-MAD",
+        "province_name": "Marinduque",
+        "psgc_code": 803700000
+    },
+    {
+        "iso_code": "PH-MAS",
+        "province_name": "Masbate",
+        "psgc_code": 1908700000
+    },
+    {
+        "iso_code": "PH-MDC",
+        "province_name": "Occidental Mindoro",
+        "psgc_code": 1908800000
+    },
+    {
+        "iso_code": "PH-MDN",
+        "province_name": "Maguindanao del Norte",
+        "psgc_code": 1704000000
+    },
+    {
+        "iso_code": "PH-MDR",
+        "province_name": "Oriental Mindoro",
+        "psgc_code": 504100000
+    },
+    {
+        "iso_code": "PH-MDS",
+        "province_name": "Maguindanao del Sur",
+        "psgc_code": 1004200000
+    },
+    {
+        "iso_code": "PH-MOU",
+        "province_name": "Mountain Province",
+        "psgc_code": 1004300000
+    },
+    {
+        "iso_code": "PH-MSC",
+        "province_name": "Misamis Occidental",
+        "psgc_code": 1404400000
+    },
+    {
+        "iso_code": "PH-MSR",
+        "province_name": "Misamis Oriental",
+        "psgc_code": 604500000
+    },
+    {
+        "iso_code": "PH-NCO",
+        "province_name": "Cotabato",
+        "psgc_code": 704600000
+    },
+    {
+        "iso_code": "PH-NEC",
+        "province_name": "Negros Occidental",
+        "psgc_code": 804800000
+    },
+    {
+        "iso_code": "PH-NER",
+        "province_name": "Negros Oriental",
+        "psgc_code": 304900000
+    },
+    {
+        "iso_code": "PH-NSA",
+        "province_name": "Northern Samar",
+        "psgc_code": 205000000
+    },
+    {
+        "iso_code": "PH-NUE",
+        "province_name": "Nueva Ecija",
+        "psgc_code": 1705100000
+    },
+    {
+        "iso_code": "PH-NUV",
+        "province_name": "Nueva Vizcaya",
+        "psgc_code": 1705200000
+    },
+    {
+        "iso_code": "PH-PAM",
+        "province_name": "Pampanga",
+        "psgc_code": 1705300000
+    },
+    {
+        "iso_code": "PH-PAN",
+        "province_name": "Pangasinan",
+        "psgc_code": 305400000
+    },
+    {
+        "iso_code": "PH-PLW",
+        "province_name": "Palawan",
+        "psgc_code": 105500000
+    },
+    {
+        "iso_code": "PH-QUE",
+        "province_name": "Quezon",
+        "psgc_code": 405600000
+    },
+    {
+        "iso_code": "PH-QUI",
+        "province_name": "Quirino",
+        "psgc_code": 205700000
+    },
+    {
+        "iso_code": "PH-RIZ",
+        "province_name": "Rizal",
+        "psgc_code": 405800000
+    },
+    {
+        "iso_code": "PH-ROM",
+        "province_name": "Romblon",
+        "psgc_code": 1705900000
+    },
+    {
+        "iso_code": "PH-SAR",
+        "province_name": "Sarangani",
+        "psgc_code": 806000000
+    },
+    {
+        "iso_code": "PH-SCO",
+        "province_name": "South Cotabato",
+        "psgc_code": 1208000000
+    },
+    {
+        "iso_code": "PH-SIG",
+        "province_name": "Siquijor",
+        "psgc_code": 706100000
+    },
+    {
+        "iso_code": "PH-SLE",
+        "province_name": "Southern Leyte",
+        "psgc_code": 506200000
+    },
+    {
+        "iso_code": "PH-SLU",
+        "province_name": "Sulu",
+        "psgc_code": 1206300000
+    },
+    {
+        "iso_code": "PH-SOR",
+        "province_name": "Sorsogon",
+        "psgc_code": 806400000
+    },
+    {
+        "iso_code": "PH-SUK",
+        "province_name": "Sultan Kudarat",
+        "psgc_code": 1206500000
+    },
+    {
+        "iso_code": "PH-SUN",
+        "province_name": "Surigao del Norte",
+        "psgc_code": 1906600000
+    },
+    {
+        "iso_code": "PH-SUR",
+        "province_name": "Surigao del Sur",
+        "psgc_code": 1606700000
+    },
+    {
+        "iso_code": "PH-TAR",
+        "province_name": "Tarlac",
+        "psgc_code": 1606800000
+    },
+    {
+        "iso_code": "PH-TAW",
+        "province_name": "Tawi-Tawi",
+        "psgc_code": 306900000
+    },
+    {
+        "iso_code": "PH-WSA",
+        "province_name": "Samar",
+        "psgc_code": 1907000000
+    },
+    {
+        "iso_code": "PH-ZAN",
+        "province_name": "Zamboanga del Norte",
+        "psgc_code": 307100000
+    },
+    {
+        "iso_code": "PH-ZAS",
+        "province_name": "Zamboanga del Sur",
+        "psgc_code": 907200000
+    },
+    {
+        "iso_code": "PH-ZMB",
+        "province_name": "Zambales",
+        "psgc_code": 907300000
+    },
+    {
+        "iso_code": "PH-ZSI",
+        "province_name": "Zamboanga Sibugay",
+        "psgc_code": 908300000
+    }
+]

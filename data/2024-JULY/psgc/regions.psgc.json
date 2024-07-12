@@ -1,0 +1,92 @@
+[
+    {
+        "id": "NCR",
+        "region_name": "National Capital Region",
+        "psgc_code": 13
+    },
+    {
+        "id": "CAR",
+        "region_name": "Cordillera Administrative Region",
+        "psgc_code": "14"
+    }, 
+    {
+        "id": "I", 
+        "region_name": "Ilocos Region",
+        "psgc_code": "01"
+    },
+    {
+        "id": "II", 
+        "region_name": "Cagayan Valley",
+        "psgc_code": "02"
+    },
+    {
+        "id": "III", 
+        "region_name": "Central Luzon",
+        "psgc_code": "03"
+    },
+    {
+        "id": "IV-A", 
+        "region_name": "CALABARZON",
+        "psgc_code": "04"
+    },
+    {
+        "id": "IV-B",
+        "region_name": "MIMAROPA", 
+        "psgc_code": "17" 
+    },
+    {
+        "id": "V",
+        "region_name": "Bicol Region", 
+        "psgc_code": "05" 
+    }, 
+    {
+        "id": "VI",
+        "region_name": "Western Visayas", 
+        "psgc_code": "06" 
+    }, 
+    {
+        "id": "NIR", 
+        "region_name": "Negros Island Region", 
+        "psgc_code": "-"
+    }, 
+    {
+        "id": "VII", 
+        "region_name": "Central Visayas",
+        "psgc_code": "07"
+    }, 
+    {
+        "id": "VIII", 
+        "region_name": "Eastern Visayas",
+        "psgc_code": "08"
+    }, 
+    {
+        "id": "IX", 
+        "region_name": "Zamboanga Peninsula",
+        "psgc_code": "09"
+    }, 
+    {
+        "id": "X", 
+        "region_name": "Northern Mindanao",
+        "psgc_code": "10"
+    }, 
+    {
+        "id": "XI", 
+        "region_name": "Davao Region",
+        "psgc_code": "11"
+    },
+    {
+        "id": "XII", 
+        "region_name": "Soccsksargen",
+        "psgc_code": "12"
+    }, 
+    {
+        "id": "XIII", 
+        "region_name": "Caraga",
+        "psgc_code": "13"
+    }, 
+    {
+        "id": "BARMM", 
+        "region_name": "Bangsamoro",
+        "psgc_code": "19"
+    }
+]
