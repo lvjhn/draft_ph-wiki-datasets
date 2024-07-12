@@ -79,6 +79,8 @@ class Article:
                 contents[current_section] = \
                     BeautifulSoup(html, "html.parser")
 
+        return contents
+
     def content_tree(self): 
         root = self.extractor._.select(".vector-toc-contents")[0]
 
@@ -99,7 +101,6 @@ class Article:
                 if len(sublist) == 0:
                     continue
                 visit_list(base[label], sublist[0])
-
 
         visit_list(tree, root)
         
