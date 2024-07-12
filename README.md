@@ -199,10 +199,6 @@ derived maps as well as creating a simple adjacency matrix for each map level.
 The locations class is a static class that can be used to quickly list down
 or access locations and relevant links.
 
-## `DatasetGenerator` 
-This is a helper class for generating common datasets quickly (conveniently)
-from data involved in the project.
-
 ```python
 from ph_wiki_datasets import Locations
 
@@ -422,8 +418,6 @@ functions for extracting information either from `Article` or `Map` objects.
 ### General Helpers
 The general helpers script contains simple and quick functions for commonly
 used functions such as flattening a JSON tree.
-
-* `flatten(tree)` - flattens a JSON tree
 
 ### **`Client`** 
 The client class can be instantiated using the following syntax. 
