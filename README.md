@@ -26,6 +26,15 @@ of the different counts of LGUs at each administrative level in the Philippines.
 * **No. of Municipalities** - 1,494 
 * **No. of Barangays** - 42,029 
 
+### Dependencies 
+1. Python3 (with `virtualenv`) and Node.js
+1. Major Dependencis 
+    - `requests`
+    - `BeautifulSoup` (`bs4`)
+    - `Shapely`
+    - `SVGWrite`
+1. See `requirements.txt` for a more complete list of dependencies.
+
 ## Raw Datasets Included 
 1. **`Set A` : 'Basis" Wikipedia Articles**
     - **Source**: `https://wikipedia.org`
@@ -630,14 +639,14 @@ article.get_headers(6)      # ...
 article.top_level_sections()
 """ 
 {
-    "Header 1" : "... text ...", 
-    "Header 2" : "... text ...",
-    "Header 3" : "... text ..."
+    "Header 1" : HtmlElement (BeautifulSoup), 
+    "Header 2" : HtmlElement (BeautifulSoup),
+    "Header 3" : HtmlElement (BeautifulSoup)
 }
 """   
 
-# aggregate content from h3 and deeper as a single text
-article.aggregate(article.tree, 3)  
+# get content tree 
+article.content_tree()
 
 # get array of references
 article.references() 
