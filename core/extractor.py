@@ -229,7 +229,7 @@ class Extractor:
     #
     # LIST
     # 
-    def extract_simple_list(
+    def extract_list(
         self, 
         sel, 
         filter_=None,

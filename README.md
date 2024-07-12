@@ -559,8 +559,8 @@ extractor.extract_pair(field, each=lambda x_: x)
 extractor.extract_pairs_from_partition(start_field, select=lambda x, y: (x, y))
 
 # == LIST ===
-# extract list following a simple nested format 
-extractor.extract_simple_list(table_sel, filter_=None, select=lambda x, i: x.get_text().strip()) 
+# extract list following a simple one level format 
+extractor.extract_list(table_sel, filter_=None, select=lambda x, i: x.get_text().strip()) 
 """
 1. Hello
 2. Hi

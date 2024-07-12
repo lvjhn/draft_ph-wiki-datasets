@@ -5,7 +5,7 @@ content = open(article, "r").read()
 
 extractor = Extractor(content)
 
-row = extractor.extract_simple_list(
+row = extractor.extract_list(
     "#mw-content-text > div.mw-content-ltr.mw-parser-output > ul:nth-child(195)",
     filter_=None
 )
