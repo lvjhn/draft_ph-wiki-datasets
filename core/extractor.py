@@ -7,7 +7,7 @@ class Extractor:
 
     DIGITS      = set("0123456789")
     LETTERS     = set("abcdefghijklmnopqrstuvwxyz")
-    SYMBOLS     = set("!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~")
+    SYMBOLS     = set("!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~")
     HYPHEN      = set("-")
     DASH        = set("-")
     APOSTROPHE  = set("'")
@@ -34,27 +34,27 @@ class Extractor:
     # 
 
     def normalize(text, **kwargs): 
-        if kwargs.get("remove_brackets", True):
+        if kwargs.get("remove_brackets", False):
             text = re.sub(r"\[.*\]", "", text)
-        if kwargs.get("remove_parentheses", True):
+        
+        if kwargs.get("remove_parentheses", False):
             text = re.sub(r"\(.*\)", "", text)
-        if kwargs.get("remove_braces", True):
+        
+        if kwargs.get("remove_braces", False):
             text = re.sub(r"\{.*\}", "", text)
-        if kwargs.get("remove_digits", True):
+        
+        if kwargs.get("remove_digits", False):
             text = re.sub(r"[0-9]", "", text)
-        if kwargs.get("remove_symbols", True):
-            text = re.sub(
-                r"\!\"\#\$\%\&\'\(\)\*\+\,\-" +
-                r"\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~\"\, \"", 
-                "",
-                text
-            )
-
+        
+        if kwargs.get("remove_symbols", False):
+            for c in list("!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"):
+                text = text.replace(c, "")
+        
         if kwargs.get("title_case", False):
             text = " ".join([x[0].upper() + x[1:] for x in text.split(" ")])
         
         if kwargs.get("kebab_case", False):
-            text = "-".join([x[0].upper() + x[1:] for x in text.split(" ")])
+            text = "-".join([x for x in text.split(" ")])
         
         if kwargs.get("pascal_case", False):
             text = "".join([x[0].upper() + x[1:] for x in text.split(" ")])
@@ -63,7 +63,7 @@ class Extractor:
             text = "".join([x[0].upper() + x[1:] for x in text.split(" ")])
             text = text[0].lower() + text[1:]
 
-        if kwargs.get("snake_case", True):
+        if kwargs.get("snake_case", False):
             text = "_".join([x for x in text.split(" ")])
 
         if kwargs.get("lower_case", False):
@@ -72,31 +72,30 @@ class Extractor:
         if kwargs.get("upper_case", False):
             text = text.upper()
 
-
-        return text
-
-    def filter(text, filter_="", trim=False, **kwargs): 
-        # remove leading and trailing whitespace
-        if trim: 
+        if kwargs.get("trim", False): 
             text = text.strip()
 
-        text = [x for x in text if x in filter_]    
 
         return text
 
-    def first_or_null(self, pattern, text):
-        res = re.findall(pattern, text).group(1)
-        if len(res) < 1: 
-            return None 
-        return res[1]
+    def filter(text, filter_="", **kwargs): 
+        text = [x for x in list(text) if x in filter_]    
+        text = "".join(text)
+        return text
 
-    def all_or_null(self, pattern, text):
+    def first_or_null(pattern, text):
+        res = re.findall(pattern, text)
+        if len(res) < 2: 
+            return None 
+        return res[0]
+
+    def all_or_null(pattern, text):
         res = re.findall(pattern, text) 
         if len(res) < 1: 
             return None 
         return res
 
-    def select_filtered(self, sel, filter_):
+    def select_filtered(self, sel, filter_ = None):
         el = None
         if filter_ == None:
             el = self._.select(sel)[0]
@@ -104,7 +103,7 @@ class Extractor:
             el = self._.select(sel)
             el = [x for x in el if filter_(x, str(x), x.get_text())]
             if len(el) == 0:
-                raise Exception("At least one element must match.")
+                return None
             el = el[0]
         return el
 
@@ -184,7 +183,6 @@ class Extractor:
     def extract_pair(
         self, 
         field, 
-        filter_=None, 
         select=lambda x: x.get_text().strip()
     ): 
         field  = self.select_filtered("th", lambda x, h, t: field in t)
@@ -193,10 +191,9 @@ class Extractor:
         value  = select(value)  
         return value
 
-    def select_pairs_from_partition(
+    def extract_pairs_from_partition(
         self, 
         start_field, 
-        filter_=None, 
         select=lambda x, y, i: (x.get_text().strip(), y.get_text().strip())
     ): 
         start_field_  = \

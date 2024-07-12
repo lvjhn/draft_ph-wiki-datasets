@@ -556,7 +556,7 @@ extractor.extract_table_body(table_sel, direction="H", filter_=None, each=lambda
 extractor.extract_pair(field, each=lambda x_: x)
 
 # extract consecutive items in some table separated by "mergedtoprows"
-extractor.extract_pairs_from_partition(start_field, select=lambda x, y: (x, y))
+extractor.extract_pairs_from_partition(start_field, select=lambda x, y, i: (x, y))
 
 # == LIST ===
 # extract list following a simple one level format 
@@ -616,23 +616,7 @@ It has some utility methods for partitioning articles into sections and subsecti
 ```python
 from ph_wiki_datasets import Article 
 
-article = Article(
-    "hello",
-
-    # optional, downloads article automatically (default, true - uses DefaultWikipediaScraper)
-    download = True     
-
-    # the scraper uses for this article
-    scraper  = DefaultWikipediaScraper(
-        client = DefaultWikipediaClient(), 
-        outdir ="./data/articles/uncategorized/"
-    )
-
-    # where to load the article 
-    load_from = "scraper"
-    # or 
-    load_from = "./data/articles/uncategorized"
-)
+article = Article("hello", folder= "./data/articles/uncategorized")
 
 # get headers by level 
 article.get_headers(1)      # ["Heading 1 : A", "Heading 1 : B",  "Heading 1 : C"]
