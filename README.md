@@ -421,7 +421,7 @@ used functions throughout the project.
 ### **`Client`** 
 The client class can be instantiated using the following syntax. 
 ```python
-from ph_wiki_datasets import Client
+from ph_wiki_datasets.core import Client
 
 # for downloading files
 svg_host = Client(
@@ -470,7 +470,7 @@ download of articles and consistent presentation of the download progress. It
 also shows a summary
 
 ```python
-from ph_wiki_datasets import Scraper
+from ph_wiki_datasets.core import Scraper
  
 client = Client(
     base_url="https://en.wikipedia.org", 
@@ -525,7 +525,7 @@ Wikipedia pages as well as converting tables to CSV structure and extracting
 lists to JSON trees.
 
 ```python
-from ph_wiki_tables import Extractor 
+from ph_wiki_tables.core import Extractor 
 
 article = "./data/articles/some-article.html"
 content = open(article, "r").read()
