@@ -5,12 +5,9 @@ content = open(article, "r").read()
 
 extractor = Extractor(content)
 
-row = extractor.extract_table_body(
-    "table",
-    filter_=lambda table, html, text: (
-        "Barangay" in html and
-        "Class" in html
-    )
+row = extractor.extract_simple_list(
+    "#mw-content-text > div.mw-content-ltr.mw-parser-output > ul:nth-child(195)",
+    filter_=None
 )
 
 print(row)

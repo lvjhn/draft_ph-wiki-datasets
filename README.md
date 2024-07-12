@@ -535,29 +535,32 @@ extractor = Extractor(content)
 # the Extractor class can be extended, but here is the general 
 # functions that it is shipped with
 
+# find element that contains a certain text "word"
+el = extractor.select_filtered("div", lambda el, html, text: "word" in text)
+
 # == TABLE INFORMATION ===
 
 # extract row : [1, 2, 3, 4, ...]
-extractor.extract_row(table_sel, row_index, filter_=None, each=lambda x, i: x) 
+extractor.extract_row(table_sel, row_index, filter_=None, each=lambda x, i: x.get_text().strip()) 
 
 # extract column (no headers) : [1, 2, 3, 4, ...]
-extractor.extract_column(table_sel, col_index, filter_=None, each=lambda x, i: x)   
+extractor.extract_column(table_sel, col_index, filter_=None, each=lambda x, i: x.get_text().strip())   
 
 # simple table header extraction (horizontally/vertically): [...headers...]
-extractor.extract_table_headers(table_sel, direction="H", filter_=None, each=lambda x, i: x)     
+extractor.extract_table_headers(table_sel, direction="H", filter_=None, each=lambda x, i: x.get_text().strip())     
 
 # simple table body extraction (horizontally/vertically): [[...row 1...], ...]
-extractor.extract_table_body(table_sel, direction="H", filter_=None, each=lambda x, i, j: x)          
+extractor.extract_table_body(table_sel, direction="H", filter_=None, each=lambda x, i, j: x.get_text().strip())          
 
 # data item: "foo" => "bar" from <tr><td>foo</td><td>bar</td></tr>
 extractor.extract_pair(field, each=lambda x_: x)
 
 # extract consecutive items in some table separated by "mergedtoprows"
-extractor.extract_pairs_from_partition(start_field, each=lambda x, y: (x, y))
+extractor.extract_pairs_from_partition(start_field, select=lambda x, y: (x, y))
 
 # == LIST ===
 # extract list following a simple nested format 
-extractor.extract_simple_list(table_sel, each=lambda x_: x) 
+extractor.extract_simple_list(table_sel, filter_=None, select=lambda x, i: x.get_text().strip()) 
 """
 1. Hello
 2. Hi
@@ -568,33 +571,6 @@ extractor.extract_simple_list(table_sel, each=lambda x_: x)
     "Hi",
     "RoyGBiv"
 ]
-"""
-
-# extract list following a simple nested format 
-extractor.extract_nested_list(table_sel, each=lambda x_, parent, level: x) 
-"""
-1. Hello
-    1. Hi
-    2. Foo
-2. Hi
-    1. BivGRoy
-3. RoyGBiv
-    1. Foo
-    2. Bar
-
-{
-    "Hello" : {
-        "Hi"  : None, 
-        "Foo" : None
-    }, 
-    "Hi" : {
-        "BivGRoy" : None
-    }, 
-    "RoyGBiv" : {
-        "Foo" : None, 
-        "Bar" : None
-    }
-}
 """
 
 # === NORMALIZATION === # 

@@ -29,6 +29,10 @@ class Extractor:
         self.content = content 
         self._       = BeautifulSoup(self.content, "html.parser")
 
+    #
+    # NORMALIZATION
+    # 
+
     def normalize(text, **kwargs): 
         if kwargs.get("remove_brackets", True):
             text = re.sub(r"\[.*\]", "", text)
@@ -95,14 +99,18 @@ class Extractor:
     def select_filtered(self, sel, filter_):
         el = None
         if filter_ == None:
-            el = self._.select(sel) 
+            el = self._.select(sel)[0]
         else: 
             el = self._.select(sel)
             el = [x for x in el if filter_(x, str(x), x.get_text())]
-            if len(el) > 1 or len(el) == 0:
-                raise Exception("Exactly one element must match.")
+            if len(el) == 0:
+                raise Exception("At least one element must match.")
             el = el[0]
         return el
+
+    #
+    # TABLE
+    # 
 
     def extract_row(
         self, 
@@ -173,4 +181,64 @@ class Extractor:
 
         return res
 
+    def extract_pair(
+        self, 
+        field, 
+        filter_=None, 
+        select=lambda x: x.get_text().strip()
+    ): 
+        field  = self.select_filtered("th", lambda x, h, t: field in t)
+        parent = field.parent
+        value  = parent.select("td")[0]
+        value  = select(value)  
+        return value
+
+    def select_pairs_from_partition(
+        self, 
+        start_field, 
+        filter_=None, 
+        select=lambda x, y, i: (x.get_text().strip(), y.get_text().strip())
+    ): 
+        start_field_  = \
+            self.select_filtered("th", lambda x, h, t: start_field in t)
+
+        current = start_field_.parent.findNextSibling() 
+        
+        pairs = []
+
+        i = 0
+        while True:
+            x = current.select("th")
+            y = current.select("td")
+
+            x = x[0]
+            y = y[0]
+
+            item = select(x, y, i)
+            pairs.append(item)
+            
+            current = current.findNextSibling()
+
+            if "mergedtoprow" in current["class"]:
+                break
+
+            i += 1
+
+        return pairs
+
+    #
+    # LIST
+    # 
+    def extract_simple_list(
+        self, 
+        sel, 
+        filter_=None,
+        each=lambda x, i: x.get_text().strip()
+    ): 
+        list_ = self.select_filtered(sel, filter_)
+        items = list_.select("li", recursive=False) 
+        res = []
+        for i in range(len(items)): 
+            item = each(items[i], i)
+            res.append(item) 
         return res
