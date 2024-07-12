@@ -528,12 +528,9 @@ lists to JSON trees.
 from ph_wiki_tables import Extractor 
 
 article = "./data/articles/some-article.html"
+content = open(article, "r").read()
 
-extractor = Extractor(
-    article, 
-    load = True   # load is whether `article` parameter is a filepath or not.
-                  # if load is false, the `article` argument is an HTML string.
-)  
+extractor = Extractor(content)  
 
 # the Extractor class can be extended, but here is the general 
 # functions that it is shipped with
@@ -541,16 +538,16 @@ extractor = Extractor(
 # == TABLE INFORMATION ===
 
 # extract row : [1, 2, 3, 4, ...]
-extractor.extract_row(table_sel, row_index, each=lambda x, i: x) 
+extractor.extract_row(table_sel, row_index, filter_=None, each=lambda x, i: x) 
 
 # extract column (no headers) : [1, 2, 3, 4, ...]
-extractor.extract_column(table_sel, col_index, each=lambda x, i: x)   
+extractor.extract_column(table_sel, col_index, filter_=None, each=lambda x, i: x)   
 
 # simple table header extraction (horizontally/vertically): [...headers...]
-extractor.extract_table_headers(table_sel, direction="H", each=lambda x, i: x)     
+extractor.extract_table_headers(table_sel, direction="H", filter_=None, each=lambda x, i: x)     
 
 # simple table body extraction (horizontally/vertically): [[...row 1...], ...]
-extractor.extract_table_body(table_sel, direction="H", each=lambda x, i, j: x)          
+extractor.extract_table_body(table_sel, direction="H", filter_=None, each=lambda x, i, j: x)          
 
 # data item: "foo" => "bar" from <tr><td>foo</td><td>bar</td></tr>
 extractor.extract_pair(field, each=lambda x_: x)
@@ -603,12 +600,18 @@ extractor.extract_nested_list(table_sel, each=lambda x_, parent, level: x)
 # === NORMALIZATION === # 
 Extractor.normalize(
     "text[4]{4}1234.*(8sf0809sf)",
-    remove_brackets=True         # remove bracket [.*] from citations 
-    remove_parentheses=True,     # remove parentheses (.*) 
-    remove_braces=True           # remove braces {} 
-    remove_digits=True           # remove digits
-    remove_symbols=True          # remove symbols
-    trim=True                    # trim?
+    remove_brackets=True          # remove bracket [.*] from citations 
+    remove_parentheses=True,      # remove parentheses (.*) 
+    remove_braces=True,           # remove braces {} 
+    remove_digits=True,           # remove digits
+    remove_symbols=True,          # remove symbols
+    title_case=True,              # title case
+    snake_case=False,             # snake case 
+    pascal_case=False,            # pascal case 
+    kebab_case=False,             # kebab case
+    lower_case=False,             # lower case
+    upper_case=False,             # upper case
+    trim=True                     # trim?
 )
 
 # filter: digits | letters | symbols | hyphens | dashes | apostrophes

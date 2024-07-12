@@ -24,7 +24,11 @@ class Scraper:
 
     def scrape(self, verbose=False):
         client = self.client
+        i = 0 
+        n = len(self.items)
         for item in self.items: 
+            verbose and print(f"@ Downloading [{item}] ({i + 1} of {n})")
             prefix = client.prefix 
             filename = self.output_filename(prefix, item)
             client.download(item, filename)
+            i += 1
