@@ -417,7 +417,7 @@ functions for extracting information either from `Article` or `Map` objects.
 
 ### General Helpers
 The general helpers script contains simple and quick functions for commonly
-used functions such as flattening a JSON tree.
+used functions throughout the project.
 
 ### **`Client`** 
 The client class can be instantiated using the following syntax. 
