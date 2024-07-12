@@ -149,3 +149,28 @@ class Extractor:
             ]
 
         return res
+
+    def extract_table_body(
+        self, 
+        sel, 
+        filter_=None, 
+        each=lambda x, i, j: x.get_text().strip()
+    ): 
+        table  = self.select_filtered(sel, filter_) 
+        rows   = table.select("tbody > tr")
+        res    = [] 
+
+        for i in range(len(rows)): 
+            row = rows[i] 
+            row_new = [] 
+            fields = row.select("td", recursive=False) 
+            for j in range(len(fields)):
+                field = fields[j]
+                item = each(field, i, j) 
+                row_new.append(item)
+            
+            res.append(row_new)
+
+        return res
+
+        return res
