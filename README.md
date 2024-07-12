@@ -140,6 +140,10 @@ It is not intended for production. The APIs may change due to changes along
 the way or due to changes in the APIs of external libraries used. Please
 use at *your own risk* (at your own discretion). 
 
+### `Helpers`
+This is a single file module that contains function for common operations 
+throughout the project.
+
 ### `Client` 
 The `Client` class is used to download Wikipedia articles and other necessary files
 for the project. It utilizes the `requests` library.
