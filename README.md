@@ -195,6 +195,10 @@ derived maps as well as creating a simple adjacency matrix for each map level.
 The locations class is a static class that can be used to quickly list down
 or access locations and relevant links.
 
+## `DatasetGenerator` 
+This is a helper class for generating common datasets quickly (conveniently)
+from data involved in the project.
+
 ```python
 from ph_wiki_datasets import Locations
 
@@ -372,12 +376,13 @@ Locator.tree()
 """
 
 # normalize names of islands, region, province, district, and municity name
-# into PSGC codes (manually done)
+# into ref-id codes (manually done)
 Locator.normalize_island_group_name(name)
 Locator.normalize_region_name(region)
 Locator.normalize_province_name(province)
+Locator.normalize_district(province, district_no)
 Locator.normalize_municity(province, municity) 
-Locator.normalize_barangay_name(province, name)  
+Locator.normalize_barangay_name(province, municity, barangay)  
 
 ```
 
