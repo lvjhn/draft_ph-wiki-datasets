@@ -1,10 +1,15 @@
 from unittest.mock import Mock 
 
-# Mock Open Function
-class OpenMock: 
-    def __init__(self, *args):
-        self.write = Mock()
+def mock_built_in_fn(methods):
+    class FunctionMock: 
+        def __init__(self, *args):
+            for method in methods: 
+                setattr(self, method, Mock())
 
-open_mock = Mock(
-    return_value=OpenMock()
-)
+    fields = FunctionMock()
+    call   = Mock(return_value=fields)
+
+    return call, fields
+
+# Mock Open Function
+open_mock, open_mock_ = mock_built_in_fn(["write"])

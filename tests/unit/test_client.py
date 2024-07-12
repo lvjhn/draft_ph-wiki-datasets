@@ -65,5 +65,12 @@ class TestClient:
 
     def test_save_to_file(self):
         client = Client(inject_open=open_mock) 
+        
+        client.download_outdir = "[DOWNLOAD_DIR]"
+
         client.save_to_file("[FILEPATH]", "[TEXT]")
-        open_mock.assert_called_with("[FILEPATH]", "[TEXT]")
+
+        open_mock.assert_called_with("[DOWNLOAD_DIR]/[FILEPATH]", "w")  
+        open_mock_.write.assert_called_with("[TEXT]")
+
+        

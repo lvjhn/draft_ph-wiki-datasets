@@ -37,5 +37,6 @@ class Client:
         self.save_to_file(outfile, text)
 
     def save_to_file(self, outfile, text): 
-        file = self.open(outfile, text) 
+        file = self.open(self.download_outdir + "/" + outfile, "w") 
         file.write(text)
+    

@@ -505,6 +505,8 @@ scraper.scrape(verbose=True)
         - a function that returns the name of the output file
     - `download_outdir`
         - download directory for the target files 
+    - `items`
+        - items (URIs) to download
 * The client class is very minimal and straightforward and only has
     the following "public" methods. Its primarily goal is abstraction.
     - `.add(tail)` 
