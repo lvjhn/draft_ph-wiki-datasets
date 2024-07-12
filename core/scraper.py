@@ -1,4 +1,4 @@
-import helpers 
+import core.helpers as helpers
 
 class Scraper:
     def __init__(self):

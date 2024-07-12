@@ -1,4 +1,4 @@
-import helpers 
+import core.helpers as helpers
 from core.main_article import MainArticle
 
 class MunicipalityArticle(MainArticle): 

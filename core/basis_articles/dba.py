@@ -1,4 +1,4 @@
-import helpers 
+import core.helpers as helpers
 from core.basis_article import BasisArticle
 
 class DistrictBasisArticle(BasisArticle): 

@@ -345,7 +345,6 @@ Locator.tree()
     [   
         // island groups //
         { 
-            "ref_id" : "1", 
             "island_group" : "Luzon", 
             "article_uri" : "Luzon", 
 
@@ -456,15 +455,12 @@ text = html_host.data("roygbiv")
         - download directory for the target files 
 * The client class is very minimal and straightforward and only has
     the following "public" methods. Its primarily goal is abstraction.
-    - `download(url, outfile=None, format="html")` 
+    - `get_output_filename(uri, outfile=None, extension=".html")`
+        - get output file name for the current uri
+    - `download(uri, outfile=None, extension=".html")` 
         - download from `url` and save to `outfile` (same filename if outfile is ommited)
-    - `data(url)`
-        - create a `BeautifulSoup` object from the html directly
-    - `fetch_with_summary(url)` 
-        - fetch with selected summary statistic such as content size and download duration 
-    - `set_prefix(prefix)` 
-        - sets the URI prefix of the client 
-
+    - `data(uri)`
+        - get response data from the specified URI
 
 ### **`Scraper`** 
 This is a basic scraping utility class that makes uses of the `Client` object
