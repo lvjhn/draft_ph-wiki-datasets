@@ -38,6 +38,8 @@ of the different counts of LGUs at each administrative level in the Philippines.
                 of them. 
                 - They serve as the basis (foundation) for collecting other information.
             - **Articles Included**
+                - **Island Groups of the Philippines** 
+                    - https://en.wikipedia.org/wiki/Island_groups_of_the_Philippines
                 - **Regions of the Philippines** 
                     - https://en.wikipedia.org/wiki/Regions_of_the_Philippines
                 - **Provinces of the Philippines**
@@ -199,9 +201,9 @@ from ph_wiki_datasets import Locations
 # Accessors (Multi-Results)
 Locations.island_groups()           
 [
-    { "id" : 1, "island_group" : "Luzon"    , "article_uri" : "Luzon"    }, 
-    { "id" : 2, "island_group" : "Visayas"  , "article_uri" : "Visayas"  }, 
-    { "id" : 3, "island_group" : "Mindanao" , "article_uri" : "Mindanao" }
+    { "ref_id" : 1, "island_group" : "Luzon"    , "article_uri" : "Luzon"    }, 
+    { "ref_id" : 2, "island_group" : "Visayas"  , "article_uri" : "Visayas"  }, 
+    { "ref_id" : 3, "island_group" : "Mindanao" , "article_uri" : "Mindanao" }
 ]
 
 Locations.regions()  
@@ -333,7 +335,49 @@ Locator.locate(ref_id="[REF-ID]")
 Locator.get_slug(code="[PSGC-CODE]")
 Locator.get_code(slug="Camarines_Sur|Naga|Sabang", type="barangay")
 
-# normalize region, province, and barangay names
+# get tree of map data 
+Locator.tree() 
+"""
+    [   
+        // island groups //
+        { 
+            "ref_id" : "1", 
+            "island_group" : "Luzon", 
+            "article_uri" : "Luzon", 
+
+            // regions //
+            "children" : [
+                {
+                    "ref_id" : "1.1", 
+                    "region_name" : "Ilocos Region", 
+                    "article_uri" : "Ilocos_Region", 
+
+                    // provinces // 
+                    children : [
+                        ...
+                    ] 
+                }
+            ] 
+        }, 
+        {
+            "ref_id" : "2",
+            "island_group" : "Visayas",
+            "article_uri" : "Visayas",
+            "children" : [
+                ...
+            ]
+        },
+        ...
+    ]
+"""
+
+# normalize names of islands, region, province, district, and municity name
+# into PSGC codes (manually done)
+Locator.normalize_island_group_name(name)
+Locator.normalize_region_name(region)
+Locator.normalize_province_name(province)
+Locator.normalize_municity(province, municity) 
+Locator.normalize_barangay_name(province, name)  
 
 ```
 
@@ -644,12 +688,16 @@ LGUs such as "cities" or "municipalities".
 1. `IslandGroupBasisArticle`
     - `info()`
     - `extract_island_group_metas()`
-        - `island_group_name` (name and code)
+        - `island_group` 
+        - `largest_city`
         - `population_2020`
-        - `population_2015`
-        - `area`
-        - `density`
-        - `regional_center`
+        - `population_2010`
+        - `pa`
+        - `area_km2`
+        - `area_mi2`
+        - `density_km2`
+        - `density_mi2`
+        - `major_islands`
 
 1. `RegionBasisArticle`
     - `info()`
