@@ -20,5 +20,11 @@ class Scraper:
         self.items.append(tail)
 
     def add_multi(self, tails): 
-        self.items += tail
-    
+        self.items += tails
+
+    def scrape(self, verbose=False):
+        client = self.client
+        for item in self.items: 
+            prefix = client.prefix 
+            filename = self.output_filename(prefix, item)
+            client.download(item, filename)

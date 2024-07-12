@@ -1,14 +1,8 @@
-from unittest.mock import Mock 
+from unittest.mock import Mock, MagicMock
 
 def mock_built_in_fn(methods):
-    class FunctionMock: 
-        def __init__(self, *args):
-            for method in methods: 
-                setattr(self, method, Mock())
-
-    fields = FunctionMock()
+    fields = MagicMock()
     call   = Mock(return_value=fields)
-
     return call, fields
 
 # Mock Open Function

@@ -513,6 +513,8 @@ scraper.scrape(verbose=True)
         - adds a single item to scrape 
     - `.add_multi(tails)` 
         - adds multiple items to scrape
+    - `.scrape(verbose=True)`
+        - perform scraping
 
 
 ### **`Extractor`** 
