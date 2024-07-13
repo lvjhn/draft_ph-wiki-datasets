@@ -78,8 +78,5 @@ class MunicityBasisArticle(BasisArticle):
             df["barangays"].apply(
                 lambda x: self.Extractor.to_int(x)
             )   
-
-        print(df.head()) 
-        quit()
         
         return df

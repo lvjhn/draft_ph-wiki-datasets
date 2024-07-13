@@ -127,7 +127,6 @@ class Extractor:
             return None 
         return res
 
-    # TO-TEST
     def area_split(df, field):
         df[f"{field}_km2"] = \
             df[field].apply(
@@ -147,7 +146,6 @@ class Extractor:
 
         return df
 
-    # TO-TEST
     def density_split(df, field):
         df[f"{field}_km2"] = \
             df[field].apply(
@@ -159,7 +157,7 @@ class Extractor:
             df[field].apply(
                 lambda x: 
                     Extractor.to_float(
-                        Extractor.first_or_null(r"\((.*)/sq\smi\)", x)
+                        Extractor.first_or_null(r"\((.*)\ssq\smi\)", x)
                     )
             )
 
@@ -167,15 +165,13 @@ class Extractor:
 
         return df 
 
-    # TO-TEST
     def date_split_item(item): 
         tokens = item.split(" ") 
         if len(tokens) == 1: 
             return (None, None, item)
         else: 
-            return tokens
+            return tuple(tokens)
 
-    # TO-TEST
     def date_split(df, field):
         df[f"{field}_date"] = \
             df[field].apply(
@@ -196,7 +192,6 @@ class Extractor:
 
         return df 
 
-    # TO-TEST
     def extract_table_links(self, filters, row_index):
         cols = self.extract_column(
             "table", 

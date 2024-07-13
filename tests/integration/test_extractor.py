@@ -1,6 +1,7 @@
 from unittest.mock import Mock 
 from core.extractor import Extractor 
 import os
+import pandas as pd
 
 from .base_test import BaseTest
 
@@ -173,4 +174,82 @@ class TestExtractor(BaseTest):
 
         assert type(list_) is list 
         assert len(list_) == 12 
-        assert list_[0] == "Bacolod, Negros Occidental"
+        assert list_[0] == "Bacolod, Negros Occidental" 
+
+    def test_area_split(self): 
+        df = pd.DataFrame({
+            "area" : [
+                "1 km2 (20 sq mi)",
+                "5 km2 (30 sq mi)",
+                "10 km2 (40 sq mi)",
+            ]
+        })
+
+        df = Extractor.area_split(df, "area")
+
+        assert tuple(df["area_km2"]) == (1, 5, 10)
+        assert tuple(df["area_mi2"]) == (20, 30, 40)
+
+    def test_density_split(self): 
+        df = pd.DataFrame({
+            "density_2020" : [
+                "1/km2 (20 sq mi)",
+                "5/km2 (30 sq mi)",
+                "10/km2 (40 sq mi)",
+            ]
+        })
+
+        df = Extractor.density_split(df, "density_2020")
+
+        assert tuple(df["density_2020_km2"]) == (1, 5, 10)
+        assert tuple(df["density_2020_mi2"]) == (20, 30, 40)
+
+    def test_date_split_item(self): 
+        assert Extractor.date_split_item("2024") == (None, None, "2024")
+        assert Extractor.date_split_item("4 Apr 2024") == ("4", "Apr", "2024")
+
+    def test_date_split(self): 
+        df = pd.DataFrame({
+            "birthdate" : [
+                "2024",
+                "4 Apr 2024"
+            ]
+        })
+
+        df = Extractor.date_split(df, "birthdate")
+
+        assert "birthdate_date" in df 
+        assert "birthdate_month" in df 
+        assert "birthdate_year" in df 
+        assert "birthdate_day" in df 
+
+        assert tuple(df["birthdate_month"]) == (None, "Apr")
+        assert tuple(df["birthdate_day"]) == (None, "4")
+        assert tuple(df["birthdate_year"]) == ("2024", "2024")
+
+
+    def test_extract_table_links(self): 
+        content = \
+            open(
+                "./tests/data/basis-articles/"
+                "Philippines (Island Groups).html"
+            ).read()
+
+        extractor = Extractor(content)
+
+        links = \
+            extractor.extract_table_links(
+                extractor.from_headers([
+                    "Group",
+                    "Largest city",
+                    "Population",
+                    "p.a.",
+                    "Area",
+                    "Density"
+                ]),
+                0
+            )
+        
+        assert len(links) == 3
+
+        
