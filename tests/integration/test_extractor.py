@@ -121,7 +121,7 @@ class TestExtractor(BaseTest):
 
         assert type(column) is list
         assert len(column) == 27
-        assert column[0] == "Abella"
+        assert column[0] == "Urban"
 
     def test_extract_table_headers(self): 
         extractor = self.create_extractor()

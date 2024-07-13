@@ -48,7 +48,7 @@ class Extractor:
     # 
 
     def normalize(text, **kwargs): 
-        if kwargs.get("remove_brackets", False):
+        if kwargs.get("remove_brackets", True):
             text = re.sub(r"\[.*\]", "", text)
         
         if kwargs.get("remove_parentheses", False):
@@ -109,6 +109,7 @@ class Extractor:
             return None
         return int(Extractor.filter(text, filter_="1234567890"))
 
+    
     def deperc(text, filter_="", **kwargs): 
         if text is None:
             return None

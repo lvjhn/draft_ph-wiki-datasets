@@ -130,6 +130,5 @@ class ProvinceBasisArticle(BasisArticle):
         #
         links = self.extractor.extract_table_links(table_filters, 1)
         df["province_links"] = links     
-           
 
         return df 
