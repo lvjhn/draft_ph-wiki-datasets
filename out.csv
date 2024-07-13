@@ -1,0 +1,55 @@
+,psgc,island_group,regional_center,component_lgus,area,population,density,region_abbr,region_name,n_lgus,lgus
+0,13,Luzon,['Manila'],"show
+17
+Caloocan|Las Piñas|Makati|Malabon|Mandaluyong|Manila|Marikina|Muntinlupa|Navotas|Parañaque|Pasay|Pasig|Pateros|Quezon City|San Juan|Taguig|Valenzuela|",619.57 km2 (239.22 sq mi),"13,484,462 (12.41%)","20,784/km2 (53,831/sq mi)",NCR,National Capital Region ,17,"['Caloocan', 'Las Piñas', 'Makati', 'Malabon', 'Mandaluyong', 'Manila', 'Marikina', 'Muntinlupa', 'Navotas', 'Parañaque', 'Pasay', 'Pasig', 'Pateros', 'Quezon City', 'San Juan', 'Taguig', 'Valenzuela', '']"
+1,14,Luzon,['Baguio'],"show
+7
+Abra|Apayao|Baguio[b]|Benguet|Ifugao|Kalinga|Mountain Province|","19,422.03 km2 (7,498.89 sq mi)","1,791,121 (1.65%)",89/km2 (230/sq mi),CAR,Cordillera Administrative Region ,7,"['Abra', 'Apayao', 'Baguio', 'Benguet', 'Ifugao', 'Kalinga', 'Mountain Province', '']"
+2,01,Luzon,['San Fernando'],"show
+5
+Dagupan[c]|Ilocos Norte|Ilocos Sur|La Union|Pangasinan|","13,012.60 km2 (5,024.19 sq mi)","5,292,297 (4.87%)","386/km2 (1,000/sq mi)",Region I,Ilocos Region ,5,"['Dagupan', 'Ilocos Norte', 'Ilocos Sur', 'La Union', 'Pangasinan', '']"
+3,02,Luzon,['Tuguegarao'],"show
+6
+Batanes|Cagayan|Isabela|Nueva Vizcaya|Quirino|Santiago[c]|","28,228.83 km2 (10,899.21 sq mi)","3,679,748 (3.39%)",122/km2 (317/sq mi),Region II,Cagayan Valley ,6,"['Batanes', 'Cagayan', 'Isabela', 'Nueva Vizcaya', 'Quirino', 'Santiago', '']"
+4,03,Luzon,['San Fernando'],"show
+9
+Angeles City[b]|Aurora|Bataan|Bulacan|Nueva Ecija|Olongapo[b]|Pampanga|Tarlac|Zambales|","22,014.63 km2 (8,499.90 sq mi)","12,387,811 (11.40%)","510/km2 (1,320/sq mi)",Region III,Central Luzon ,9,"['Angeles City', 'Aurora', 'Bataan', 'Bulacan', 'Nueva Ecija', 'Olongapo', 'Pampanga', 'Tarlac', 'Zambales', '']"
+5,04,Luzon,['Calamba'],"show
+6
+Batangas|Cavite|Laguna|Lucena[b]|Quezon|Rizal|","16,873.31 km2 (6,514.82 sq mi)","16,139,770 (14.85%)","854/km2 (2,213/sq mi)",Region IV-A,Calabarzon ,6,"['Batangas', 'Cavite', 'Laguna', 'Lucena', 'Quezon', 'Rizal', '']"
+6,17,Luzon,['Calapan'],"show
+6
+Marinduque|Occidental Mindoro|Oriental Mindoro|Palawan|Puerto Princesa[b]|Romblon|","29,620.90 km2 (11,436.69 sq mi)","3,212,287 (2.96%)",100/km2 (259/sq mi),Mimaropa,Southwestern Tagalog Region ,6,"['Marinduque', 'Occidental Mindoro', 'Oriental Mindoro', 'Palawan', 'Puerto Princesa', 'Romblon', '']"
+7,05,Luzon,['Legazpi'],"show
+7
+Albay|Camarines Norte|Camarines Sur|Catanduanes|Masbate|Naga[c]|Sorsogon|","18,155.82 km2 (7,010.00 sq mi)","6,067,290 (5.58%)",319/km2 (827/sq mi),Region V,Bicol Region ,7,"['Albay', 'Camarines Norte', 'Camarines Sur', 'Catanduanes', 'Masbate', 'Naga', 'Sorsogon', '']"
+8,06,Visayas,['Iloilo City'],"show
+6
+Aklan|Antique|Capiz|Guimaras|Iloilo|Iloilo City[b]|","12,750.63 km2 (4,923.05 sq mi)","4,730,771 (4.35%)",371/km2 (961/sq mi),Region VI,Western Visayas ,6,"['Aklan', 'Antique', 'Capiz', 'Guimaras', 'Iloilo', 'Iloilo City', '']"
+9,18,Visayas,"['Bacolod', 'Dumaguete ']","show
+4
+Bacolod[b]|Negros Occidental|Negros Oriental|Siquijor|","13,646.5 km2 (5,268.9 sq mi)","4,104,000 (3.78%)",301/km2 (779/sq mi),NIR,Negros Island Region ,4,"['Bacolod', 'Negros Occidental', 'Negros Oriental', 'Siquijor', '']"
+10,07,Visayas,['Cebu City'],"show
+7
+Bohol|Cebu|Cebu City[b]|Lapu-Lapu[b]|Mandaue[b]|","15,487.69 km2 (5,979.83 sq mi)","8,046,285 (7.40%)","478/km2 (1,237/sq mi)",Region VII,Central Visayas ,7,"['Bohol', 'Cebu', 'Cebu City', 'Lapu-Lapu', 'Mandaue', '']"
+11,08,Visayas,['Tacloban'],"show
+8
+Biliran|Eastern Samar|Leyte|Northern Samar|Ormoc[c]|Samar|Southern Leyte|Tacloban[b]|","23,251.10 km2 (8,977.30 sq mi)","4,531,512 (4.17%)",191/km2 (495/sq mi),Region VIII,Eastern Visayas ,8,"['Biliran', 'Eastern Samar', 'Leyte', 'Northern Samar', 'Ormoc', 'Samar', 'Southern Leyte', 'Tacloban', '']"
+12,09,Mindanao,['Pagadian'],"show
+5
+Isabela City[e]|Zamboanga City[b]|Zamboanga del Norte|Zamboanga del Sur|Zamboanga Sibugay|","17,056.73 km2 (6,585.64 sq mi)","3,862,588 (3.55%)",213/km2 (551/sq mi),Region IX,Zamboanga Peninsula ,5,"['Isabela City', 'Zamboanga City', 'Zamboanga del Norte', 'Zamboanga del Sur', 'Zamboanga Sibugay', '']"
+13,10,Mindanao,['Cagayan de Oro'],"show
+7
+Bukidnon|Cagayan de Oro[b]|Camiguin|Iligan[b]|Lanao del Norte|Misamis Occidental|Misamis Oriental|","20,496.02 km2 (7,913.56 sq mi)","5,007,798 (4.61%)",229/km2 (593/sq mi),Region X,Northern Mindanao ,7,"['Bukidnon', 'Cagayan de Oro', 'Camiguin', 'Iligan', 'Lanao del Norte', 'Misamis Occidental', 'Misamis Oriental', '']"
+14,11,Mindanao,['Davao City'],"show
+6
+Davao City[b]|Davao de Oro|Davao del Norte|Davao del Sur|Davao Occidental|Davao Oriental|","20,357.42 km2 (7,860.04 sq mi)","5,223,802 (4.81%)",245/km2 (634/sq mi),Region XI,Davao Region ,6,"['Davao City', 'Davao de Oro', 'Davao del Norte', 'Davao del Sur', 'Davao Occidental', 'Davao Oriental', '']"
+15,12,Mindanao,['Koronadal'],"show
+5
+Cotabato[f]|General Santos[b]|Sarangani|South Cotabato|Sultan Kudarat|","22,513.30 km2 (8,692.43 sq mi)","4,351,773 (4.0%)",202/km2 (523/sq mi),Region XII,Soccsksargen ,5,"['Cotabato', 'General Santos', 'Sarangani', 'South Cotabato', 'Sultan Kudarat', '']"
+16,16,Mindanao,['Butuan'],"show
+6
+Agusan del Norte|Agusan del Sur|Butuan[b]|Dinagat Islands|Surigao del Norte|Surigao del Sur|","21,478.35 km2 (8,292.84 sq mi)","2,795,340 (2.57%)",121/km2 (313/sq mi),Region XIII,Caraga ,6,"['Agusan del Norte', 'Agusan del Sur', 'Butuan', 'Dinagat Islands', 'Surigao del Norte', 'Surigao del Sur', '']"
+17,19,Mindanao,['Cotabato City'],"show
+7
+Basilan (excluding Isabela City)|Cotabato City[c]|Lanao del Sur|Maguindanao del Norte|Maguindanao del Sur|Sulu|Tawi-Tawi|63 barangays in Cotabato[f]|","12,535.79 km2 (4,840.10 sq mi)","4,938,539 (4.54%)",302/km2 (781/sq mi),BARMM,Bangsamoro ,7,"['Basilan (excluding Isabela City)', 'Cotabato City', 'Lanao del Sur', 'Maguindanao del Norte', 'Maguindanao del Sur', 'Sulu', 'Tawi-Tawi', '63 barangays in Cotabato', '']"

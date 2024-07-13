@@ -85,10 +85,15 @@ class Extractor:
         text = "".join(text)
         return text
 
-    def numberize(text, filter_="", **kwargs): 
+    def to_float(text, filter_="", **kwargs): 
         if text is None:
             return None
         return float(Extractor.filter(text, filter_="1234567890."))
+
+    def to_int(text, filter_="", **kwargs): 
+        if text is None:
+            return None
+        return int(Extractor.filter(text, filter_="1234567890"))
 
     def deperc(text, filter_="", **kwargs): 
         if text is None:
@@ -97,19 +102,22 @@ class Extractor:
 
     def first_or_null(pattern, text):
         res = re.findall(pattern, text)
-        if len(res) < 2: 
+        if len(res) == 0: 
             return None 
         return res[0]
 
     def all_or_null(pattern, text):
         res = re.findall(pattern, text) 
-        if len(res) < 1: 
+        if len(res) == 0: 
             return None 
         return res
 
     def select_filtered(self, sel, filter_ = None, base = None):
         el = None
         root = self._
+
+        if type(sel) is not str: 
+            return sel
 
         if base == None:
             base = self._ 
@@ -123,6 +131,34 @@ class Extractor:
                 return None
             el = el[0]
         return el
+
+    def from_headers(self, headers, dis="~!@#$%^&*()"): 
+        def inner(x, h, t):
+            dis_    = dis not in t 
+
+            headers_ = self.extract_table_headers(x)
+            if headers_ == None: 
+                return False
+
+            results = [] 
+            for header_a in headers: 
+                result = False
+                header_a = header_a.replace("\n", " ")
+                for header_b in headers_:
+                    header_b = header_b.replace("\n", " ")
+                    if header_a in header_b: 
+                        result = True 
+                        break
+                results.append(result)
+
+            if dis_ and len(set(results)) == 1 and results[0] == True:
+                return True
+            else: 
+                return False
+            
+
+        return inner
+
 
     #
     # TABLE
@@ -160,14 +196,25 @@ class Extractor:
         self, 
         sel, 
         filter_=None, 
-        each=lambda x, i: x.get_text().strip(),
+        each=lambda x, i: x,
         normalize=False,
         base=None
     ): 
         table  = self.select_filtered(sel, filter_, base) 
-        hrow   = table.select("thead > tr")[0]
+        table_header =  table.select("thead > tr")
+        if len(table_header) == 0: 
+            return None
+        hrow   = table_header[0]
         fields = hrow.select("th")
-        res    = [each(fields[i], i) for i in range(len(fields))] 
+        
+        def prenorm(x):
+            return (
+                BeautifulSoup(str(x).replace("<br/>", " "), "html.parser")
+                    .get_text()
+                    .strip()
+            )
+
+        res    = [each(prenorm(fields[i]), i) for i in range(len(fields))] 
 
         if normalize:
             res    = [
@@ -181,20 +228,33 @@ class Extractor:
         self, 
         sel, 
         filter_=None, 
-        each=lambda x, i, j: x.get_text().strip(),
+        each=lambda x, i, j: x.strip(),
         base=None
     ): 
         table  = self.select_filtered(sel, filter_, base) 
         rows   = table.select("tbody > tr")
         res    = [] 
 
+        def prenorm(x):
+            norm = (
+                BeautifulSoup(
+                    str(x)
+                        .replace("<br/>", " ")
+                        .replace("</li>", "|</li>"), 
+                    "html.parser"
+                )
+                .get_text()
+            )
+            return norm
+                 
+
         for i in range(len(rows)): 
             row = rows[i] 
             row_new = [] 
-            fields = row.select("td", recursive=False) 
+            fields = row.select("th, td", recursive=False) 
             for j in range(len(fields)):
                 field = fields[j]
-                item = each(field, i, j) 
+                item = each(prenorm(field), i, j) 
                 row_new.append(item)
             
             res.append(row_new)
