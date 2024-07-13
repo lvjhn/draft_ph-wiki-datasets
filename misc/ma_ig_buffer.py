@@ -2,11 +2,11 @@ import core.helpers as helpers
 
 helpers.DEBUG = True
 
-from core.main_articles.na import NationalArticle
+from core.main_articles.iga import IslandGroupArticle
 
-ma = NationalArticle(
-    "Philippines", 
-    folder="./misc/data/main-articles/national/"
+ma = IslandGroupArticle(
+    "Luzon", 
+    folder="./misc/data/main-articles/island-groups/"
 ) 
 
 fields = ma.extract_all()
