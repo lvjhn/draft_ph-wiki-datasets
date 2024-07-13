@@ -32,7 +32,7 @@ class Article:
         return self.Extractor(self.content)
 
     def get_headers(self, level): 
-        headers = self.extractor._.select(f"h{level}")
+        headers = self.extractor._.select(f"#content h{level}")
         headers = [
             header.get_text() 
             for header in headers
