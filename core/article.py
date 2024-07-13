@@ -88,11 +88,14 @@ class Article:
 
         def visit_list(base, ul): 
             items = ul.findChildren("li")
+
             for item in items: 
                 # extract label
                 label = item.select("a > div > span")
+                
                 if len(label) < 2: 
                     continue
+
                 label = label[1].get_text() 
                 base[label] = {}
 
@@ -106,3 +109,31 @@ class Article:
         
         return tree
         
+    def subsection(self, accessor): 
+        start_level = 1
+        n_levels = len(accessor)
+        subcontext = None
+        base_level = 0
+
+        # find base element
+        for i in range(n_levels): 
+            level = start_level + i + 1
+            access_item = accessor[i] 
+            subcontext = \
+                self.extractor\
+                    .select_filtered(
+                        f"h{level}", 
+                        lambda x, h, t : access_item in t
+                    )
+            base_level = level
+            
+        # get content starting from base element
+        current = subcontext.findNextSibling()
+        html = "<div class='subcontent'>"
+        while current.name != f"h{base_level}": 
+            html += str(current)
+            current = current.findNextSibling()
+        html += "</div>"
+        element = BeautifulSoup(html, "html.parser")
+
+        return element
