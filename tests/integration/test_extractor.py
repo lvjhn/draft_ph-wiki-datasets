@@ -220,13 +220,13 @@ class TestExtractor(BaseTest):
         df = Extractor.date_split(df, "birthdate")
 
         assert "birthdate_date" in df 
-        assert "birthdate_month" in df 
-        assert "birthdate_year" in df 
-        assert "birthdate_day" in df 
+        assert "birthdate_a" in df 
+        assert "birthdate_b" in df 
+        assert "birthdate_c" in df 
 
-        assert tuple(df["birthdate_month"]) == (None, "Apr")
-        assert tuple(df["birthdate_day"]) == (None, "4")
-        assert tuple(df["birthdate_year"]) == ("2024", "2024")
+        assert tuple(df["birthdate_a"]) == (None, "Apr")
+        assert tuple(df["birthdate_b"]) == (None, "4")
+        assert tuple(df["birthdate_c"]) == ("2024", "2024")
 
 
     def test_extract_table_links(self): 

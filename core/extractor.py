@@ -161,7 +161,7 @@ class Extractor:
             df[field].apply(
                 lambda x: 
                     Extractor.to_float(
-                        Extractor.first_or_null(r"\((.*)\ssq\smi\)", x)
+                        Extractor.first_or_null(r"\((.*)\/?\s?sq\smi\)", x)
                     )
             )
 
@@ -169,12 +169,13 @@ class Extractor:
 
         return df 
 
-    def date_split_item(item): 
-        tokens = item.split(" ") 
+    def date_split_item(item, version="v1"): 
+        tokens = item.replace(",", "")
+        tokens = tokens.split(" ") 
         if len(tokens) == 1: 
-            return (None, None, item)
+            return (None, None, item.strip())
         else: 
-            return tuple(tokens)
+            return tuple([x.strip() for x in tokens])
 
     def date_split(df, field):
         df[f"{field}_date"] = \
@@ -183,13 +184,13 @@ class Extractor:
                     Extractor.date_split_item(x)
             )
             
-        df[f"{field}_day"] = \
+        df[f"{field}_a"] = \
             df[f"{field}_date"].apply(lambda x: x[0])
 
-        df[f"{field}_month"] = \
+        df[f"{field}_b"] = \
             df[f"{field}_date"].apply(lambda x: x[1])
 
-        df[f"{field}_year"] = \
+        df[f"{field}_c"] = \
             df[f"{field}_date"].apply(lambda x: x[2])
 
         df = df.drop(field, axis=1)
@@ -220,6 +221,7 @@ class Extractor:
     def select_filtered(self, sel, filter_ = None, base = None):
         root = self._
 
+
         if type(sel) is not str: 
             return sel
 
@@ -231,18 +233,24 @@ class Extractor:
             return el
         else: 
             el = base.select(sel)
-            for x in el: 
-                if filter_(x, str(x), x.get_text()):
+            for x in el:
+                is_ok = filter_(x, str(x), x.get_text())
+                if is_ok:
                     return x
             return None
         
 
-    def from_headers(self, headers, dis="~!@#$%^&*()"): 
+    def from_headers(self, headers, dis="~!@#$%^&*()", header_index=0): 
         def inner(x, h, t):
             dis_    = dis not in t 
 
-            headers_ = self.extract_table_headers(x)
-            if headers_ == None: 
+            headers_ = \
+                self.extract_table_headers(
+                    x, 
+                    header_index=header_index
+                )
+
+            if headers_ is None: 
                 return False
 
             results = [] 
@@ -255,6 +263,7 @@ class Extractor:
                         result = True 
                         break
                 results.append(result)
+
 
             if dis_ and len(set(results)) == 1 and results[0] == True:
                 return True
@@ -311,13 +320,19 @@ class Extractor:
         each=lambda x, i: x.get_text().strip(),
         normalize=False,
         base=None,
-        prenorm=False
+        prenorm=False,
+        header_index=0
     ): 
         table  = self.select_filtered(sel, filter_, base) 
-        table_header =  table.select("thead > tr")
+
+        table_header = table.select("thead > tr")
         if len(table_header) == 0: 
-            return None
-        hrow   = table_header[0]
+            table_header = table.select("tbody > tr")
+           
+            if len(table_header) == 0:
+                return None
+
+        hrow   = table_header[header_index]
         fields = hrow.select("th")
 
         def prenorm(x):
