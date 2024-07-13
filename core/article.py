@@ -2,7 +2,6 @@ import re
 
 import core.helpers as helpers
 
-from core.basis_article import BasisArticle
 from core.extractor import Extractor
 
 from bs4 import BeautifulSoup
@@ -130,10 +129,9 @@ class Article:
         # get content starting from base element
         current = subcontext.findNextSibling()
         html = "<div class='subcontent'>"
-        while current.name != f"h{base_level}": 
+        while current is not None and current.name != f"h{base_level}":
             html += str(current)
             current = current.findNextSibling()
         html += "</div>"
         element = BeautifulSoup(html, "html.parser")
-
         return element

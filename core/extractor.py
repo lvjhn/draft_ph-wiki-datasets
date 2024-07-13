@@ -79,9 +79,21 @@ class Extractor:
         return text
 
     def filter(text, filter_="", **kwargs): 
+        if text is None:
+            return None
         text = [x for x in list(text) if x in filter_]    
         text = "".join(text)
         return text
+
+    def numberize(text, filter_="", **kwargs): 
+        if text is None:
+            return None
+        return float(Extractor.filter(text, filter_="1234567890."))
+
+    def deperc(text, filter_="", **kwargs): 
+        if text is None:
+            return None
+        return float(Extractor.filter(text, filter_="1234567890."))
 
     def first_or_null(pattern, text):
         res = re.findall(pattern, text)
@@ -95,8 +107,13 @@ class Extractor:
             return None 
         return res
 
-    def select_filtered(self, sel, filter_ = None):
+    def select_filtered(self, sel, filter_ = None, base = None):
         el = None
+        root = self._
+
+        if base == None:
+            base = self._ 
+    
         if filter_ == None:
             el = self._.select(sel)[0]
         else: 
@@ -116,9 +133,10 @@ class Extractor:
         sel, 
         row_index, 
         filter_=None, 
-        each=lambda x, i: x.get_text().strip()
+        each=lambda x, i: x.get_text().strip(),
+        base=None
     ): 
-        table  = self.select_filtered(sel, filter_) 
+        table  = self.select_filtered(sel, filter_, base) 
         rows   = table.select("tbody > tr")
         row    = rows[row_index] 
         fields = row.select("td")
@@ -130,7 +148,8 @@ class Extractor:
         sel, 
         row_index, 
         filter_=None, 
-        each=lambda x, i: x.get_text().strip()
+        each=lambda x, i: x.get_text().strip(),
+        base=None
     ): 
         table  = self.select_filtered(sel, filter_) 
         fields = table.select(f"tbody > tr > td:nth-child({row_index})")
@@ -142,16 +161,17 @@ class Extractor:
         sel, 
         filter_=None, 
         each=lambda x, i: x.get_text().strip(),
-        normalize=False
+        normalize=False,
+        base=None
     ): 
-        table  = self.select_filtered(sel, filter_) 
+        table  = self.select_filtered(sel, filter_, base) 
         hrow   = table.select("thead > tr")[0]
         fields = hrow.select("th")
         res    = [each(fields[i], i) for i in range(len(fields))] 
 
         if normalize:
             res    = [
-                Extractor.normalize(x, lower_case=True, snake_case=True) 
+                self.normalize(x, lower_case=True, snake_case=True) 
                 for x in res
             ]
 
@@ -161,9 +181,10 @@ class Extractor:
         self, 
         sel, 
         filter_=None, 
-        each=lambda x, i, j: x.get_text().strip()
+        each=lambda x, i, j: x.get_text().strip(),
+        base=None
     ): 
-        table  = self.select_filtered(sel, filter_) 
+        table  = self.select_filtered(sel, filter_, base) 
         rows   = table.select("tbody > tr")
         res    = [] 
 
@@ -183,9 +204,14 @@ class Extractor:
     def extract_pair(
         self, 
         field, 
-        select=lambda x: x.get_text().strip()
+        select=lambda x: x.get_text().strip(),
+        base=None
     ): 
-        field  = self.select_filtered("th", lambda x, h, t: field in t)
+        field  = self.select_filtered(
+            "th", 
+            lambda x, h, t: field in t,
+            base
+        )
         parent = field.parent
         value  = parent.select("td")[0]
         value  = select(value)  
@@ -194,10 +220,15 @@ class Extractor:
     def extract_pairs_from_partition(
         self, 
         start_field, 
-        select=lambda x, y, i: (x.get_text().strip(), y.get_text().strip())
+        select=lambda x, y, i: (x.get_text().strip(), y.get_text().strip()),
+        base=None
     ): 
         start_field_  = \
-            self.select_filtered("th", lambda x, h, t: start_field in t)
+            self.select_filtered(
+                "th", 
+                lambda x, h, t: start_field in t,
+                base
+            )
 
         current = start_field_.parent.findNextSibling() 
         
@@ -230,9 +261,13 @@ class Extractor:
         self, 
         sel, 
         filter_=None,
-        each=lambda x, i: x.get_text().strip()
+        each=lambda x, i: x.get_text().strip(),
+        base=None
     ): 
-        list_ = self.select_filtered(sel, filter_)
+        if base == None:
+            base = self._
+
+        list_ = self.select_filtered(sel, filter_, base)
         items = list_.select("li", recursive=False) 
         res = []
         for i in range(len(items)): 

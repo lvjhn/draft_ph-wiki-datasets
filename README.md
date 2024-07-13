@@ -33,6 +33,9 @@ of the different counts of LGUs at each administrative level in the Philippines.
     - `BeautifulSoup` (`bs4`)
     - `Shapely`
     - `SVGWrite`
+    - `Pandas`
+    - `Numpy`
+    - `Matplotlib`
 1. See `requirements.txt` for a more complete list of dependencies.
 
 ## Raw Datasets Included 
@@ -661,8 +664,7 @@ A basis article for "province" has a table that lists down information for lower
 LGUs such as "cities" or "municipalities". 
 
 1. `IslandGroupBasisArticle`
-    - `info()`
-    - `extract_island_group_metas()`
+    - `extract_metas()`
         - `island_group` 
         - `largest_city`
         - `population_2020`
@@ -675,8 +677,7 @@ LGUs such as "cities" or "municipalities".
         - `major_islands`
 
 1. `RegionBasisArticle`
-    - `info()`
-    - `extract_region_metas()`
+    - `extract_metas()`
         - `region_name`
         - `psgc`
         - `island_group`
@@ -687,8 +688,7 @@ LGUs such as "cities" or "municipalities".
         - `density`
         
 1. `ProvinceBasisArticle`
-    - `info()`
-    - `extract_province_metas()`
+    - `extract_metas()`
         - `iso`
         - `province_name`
         - `capital`
@@ -703,8 +703,7 @@ LGUs such as "cities" or "municipalities".
         - `barangays`
     
 1. `DistrictBasisArticle`
-    - `info()`
-    - `extract_district_metas()`
+    - `extract_metas()`
         - `district_name`
         - `region`
         - `electorate`
@@ -714,8 +713,7 @@ LGUs such as "cities" or "municipalities".
         - `party`
 
 1. `CityBasisArticle`
-    - `info()`
-    - `extract_city_metas()`
+    - `extract_metas()`
         - `city_name`
         - `population_2020`
         - `area`
@@ -728,8 +726,7 @@ LGUs such as "cities" or "municipalities".
         - `ratification`
 
 1. `MunicityBasisArticle`
-    - `info()`
-    - `extract_municities_meta()`
+    - `extract_metas()`
         - `municity_name`
         - `population_2020`
         - `area_km2`
@@ -743,7 +740,6 @@ Main article are the main source of the text related dimensions of the feature
 space.
 
 1. `NationalArticle`
-    - `info()`
     - `extract_all()`
     - `extract_capital()`
     - `extract_largest_city()`
@@ -781,7 +777,6 @@ space.
     - `extract_iso_3166_code()`
 
 1. `IslandGroupArticle`
-    - `info()`
     - `extract_all()`
     - `extract_coordinates()`
     - `extract_adjacent_to()`
@@ -799,7 +794,6 @@ space.
     - `extract_ethnic_groups()`
 
 1. `RegionArticle`
-    - `info()`
     - `extract_all()`
     - `extract_country()`
     - `extract_island_group()`
@@ -823,7 +817,6 @@ space.
     - `extract_website()`
 
 1. `ProvinceArticle`
-    - `info()`
     - `extract_all()`
     - `extract_coordinates()`
     - `extract_region()`
@@ -841,7 +834,6 @@ space.
     - `extract_website()`
 
 1. `ProvinceArticle`
-    - `info()`
     - `extract_all()`
     - `extract_coordinates()`
     - `extract_region()`
@@ -859,7 +851,6 @@ space.
     - `extract_website()`
 
 1. `DistrictArticle`
-    - `info()`
     - `extract_all()`
     - `extract_province()`
     - `extract_region()`
@@ -873,7 +864,6 @@ space.
     - `extract_congressional_bloc()`
 
 1. `MunicityArticle`
-    - `info()`
     - `extract_all()`
     - `extract_country()`
     - `extract_region()`
