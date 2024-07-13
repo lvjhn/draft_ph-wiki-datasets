@@ -47,7 +47,6 @@ class RegionBasisArticle(BasisArticle):
         # Region Data
         # 
 
-        # extract location names
         df["region_abbr"] = \
             df["region"].apply(
                 lambda x: self.Extractor.first_or_null(r"\((.*)\)", x)
@@ -58,7 +57,6 @@ class RegionBasisArticle(BasisArticle):
                 lambda x: self.Extractor.first_or_null(r"(.*)\(.*\)", x)
             )
 
-        # drop full region name 
         df = df.drop("region", axis=1)
         
         #
@@ -100,19 +98,7 @@ class RegionBasisArticle(BasisArticle):
         #
         # Area
         # 
-        df["area_km2"] = \
-            df["area"].apply(
-                lambda x: 
-                    self.Extractor.to_float(x.split("km2")[0].strip())
-            )
-
-        df["area_mi2"] = \
-            df["area"].apply(
-                lambda x: 
-                    self.Extractor.to_float(
-                        self.Extractor.first_or_null(r"\((.*)\ssq\smi\)", x)
-                    )
-            )
+        df = self.Extractor.area_split(df, "area")
 
         #
         # Population
@@ -131,21 +117,11 @@ class RegionBasisArticle(BasisArticle):
                     )
             )
 
+        df = df.drop("population_2020", axis=1)
+
         #
         # Density
         # 
-        df["density_km2_2020"] = \
-            df["density_2020"].apply(
-                lambda x: 
-                    self.Extractor.to_float(x.split("/km2")[0].strip())
-            )
-
-        df["density_mi2_2020"] = \
-            df["density_2020"].apply(
-                lambda x: 
-                    self.Extractor.to_float(
-                        self.Extractor.first_or_null(r"\((.*)/sq\smi\)", x)
-                    )
-            )
+        df = self.Extractor.density_split(df, "area")
 
         return df

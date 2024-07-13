@@ -12,6 +12,20 @@ class Extractor:
     DASH        = set("-")
     APOSTROPHE  = set("'")
     PERIOD      = set(".")
+    MONTHS      = {
+        "Jan" : 1, 
+        "Feb" : 2, 
+        "Mar" : 3, 
+        "Apr" : 4, 
+        "May" : 5, 
+        "Jul" : 6, 
+        "Jun" : 7, 
+        "Aug" : 8, 
+        "Sep" : 9, 
+        "Oct" : 10, 
+        "Nov" : 11, 
+        "Dec" : 12
+    }
 
 
     FILTERS = {
@@ -86,12 +100,12 @@ class Extractor:
         return text
 
     def to_float(text, filter_="", **kwargs): 
-        if text is None:
+        if text is None or text == "—":
             return None
         return float(Extractor.filter(text, filter_="1234567890."))
 
     def to_int(text, filter_="", **kwargs): 
-        if text is None:
+        if text is None or text == "—":
             return None
         return int(Extractor.filter(text, filter_="1234567890"))
 
@@ -111,6 +125,72 @@ class Extractor:
         if len(res) == 0: 
             return None 
         return res
+
+    def area_split(df, field):
+        df[f"{field}_km2"] = \
+            df[field].apply(
+                lambda x: 
+                    Extractor.to_float(x.split("km2")[0].strip())
+            )
+        
+        df[f"{field}_mi2"] = \
+            df[field].apply(
+                lambda x: 
+                    Extractor.to_float(
+                        Extractor.first_or_null(r"\((.*)\ssq\smi\)", x)
+                    )
+            )
+
+        df = df.drop(field, axis=1)
+
+        return df
+
+    def density_split(df, field):
+        df[f"{field}_km2"] = \
+            df[field].apply(
+                lambda x: 
+                    Extractor.to_float(x.split("/km2")[0].strip())
+            )
+
+        df[f"{field}_mi2"] = \
+            df[field].apply(
+                lambda x: 
+                    Extractor.to_float(
+                        Extractor.first_or_null(r"\((.*)/sq\smi\)", x)
+                    )
+            )
+
+        df = df.drop(field, axis=1)
+
+        return df 
+
+    
+    def date_split_item(item): 
+        tokens = item.split(" ") 
+        if len(tokens) == 1: 
+            return (None, None, item)
+        else: 
+            return tokens
+
+    def date_split(df, field):
+        df[f"{field}_date"] = \
+            df[field].apply(
+                lambda x: 
+                    Extractor.date_split_item(x)
+            )
+            
+        df[f"{field}_day"] = \
+            df[f"{field}_date"].apply(lambda x: x[0])
+
+        df[f"{field}_month"] = \
+            df[f"{field}_date"].apply(lambda x: x[1])
+
+        df[f"{field}_year"] = \
+            df[f"{field}_date"].apply(lambda x: x[2])
+
+        df = df.drop(field, axis=1)
+
+        return df 
 
     def select_filtered(self, sel, filter_ = None, base = None):
         el = None

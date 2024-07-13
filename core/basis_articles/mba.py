@@ -2,5 +2,5 @@ import core.helpers as helpers
 from core.basis_article import BasisArticle
 
 class MunicipalityBasisArticle(BasisArticle): 
-    def __init__(self, article, *args, **kwargs): 
+    def __init__(self, *args, **kwargs): 
         BasisArticle.__init__(self, *args, **kwargs)
