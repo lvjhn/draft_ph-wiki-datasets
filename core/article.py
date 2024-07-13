@@ -135,3 +135,17 @@ class Article:
         html += "</div>"
         element = BeautifulSoup(html, "html.parser")
         return element
+
+    def notes(self):
+        references = self.extractor._.select(
+            '.reflist.reflist-lower-alpha ' +
+            '[id^="cite_note"]'
+        ) 
+        return [x for x in references]
+
+    def references(self):
+        references = self.extractor._.select(
+            '.mw-references-wrap.mw-references-columns ' +
+            '[id^="cite_note"]'
+        ) 
+        return [x for x in references]

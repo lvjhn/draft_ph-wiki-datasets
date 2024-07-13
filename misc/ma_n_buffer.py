@@ -10,3 +10,5 @@ fields = ma.extract_all()
 for field in fields:
     print(f"{field} = {fields[field]}")
     print()
+
+print(ma.notes()[0])
