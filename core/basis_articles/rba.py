@@ -21,20 +21,22 @@ class RegionBasisArticle(BasisArticle):
             "population_2020",
             "density_2020" 
         ]
+
+        table_filters = self.extractor.from_headers([
+            "Location", 
+            "Region", 
+            "PSGC",
+            "Island group",
+            "Regional center",
+            "Component local government units",
+            "Area", 
+            "Population",
+            "Density"
+        ])
         
         data = self.extractor.extract_table_body(
             "table", 
-            filter_=self.extractor.from_headers([
-                "Location", 
-                "Region", 
-                "PSGC",
-                "Island group",
-                "Regional center",
-                "Component local government units",
-                "Area", 
-                "Population",
-                "Density"
-            ])
+            filter_=table_filters
         )[:-1]
 
         # create dataframe 
@@ -122,6 +124,12 @@ class RegionBasisArticle(BasisArticle):
         #
         # Density
         # 
-        df = self.Extractor.density_split(df, "area")
+        df = self.Extractor.density_split(df, "density_2020")
+
+        #
+        # Region Links
+        #
+        links = self.extractor.extract_table_links(table_filters, 1)
+        df["region_links"] = links
 
         return df

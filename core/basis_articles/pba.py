@@ -14,36 +14,34 @@ class ProvinceBasisArticle(BasisArticle):
         # extract main table data
         headers = [
             "iso",
-            
             "province", 
             "capital", 
             "population_pa_2020",
-            
             "population_count_2020",
             "area",
             "density_2020", 
-            
             "founded",
             "island_group",
             "region",
-
             "municipalities",
             "cities",
             "barangays"     
         ]
+
+        table_filters = self.extractor.from_headers([
+            "ISO", 
+            "Province", 
+            "Capital",
+            "Population",
+            "Density",
+            "Island group",
+            "Region", 
+            "Total"
+        ])
         
         data = self.extractor.extract_table_body(
             "table", 
-            filter_=self.extractor.from_headers([
-                "ISO", 
-                "Province", 
-                "Capital",
-                "Population",
-                "Density",
-                "Island group",
-                "Region", 
-                "Total"
-            ])
+            filter_=table_filters
         )[:-2]
 
 
@@ -125,7 +123,13 @@ class ProvinceBasisArticle(BasisArticle):
         df["barangays"] = \
             df["barangays"].apply(
                 lambda x: self.Extractor.to_int(x)
-            )         
+            )       
+
+        #
+        # Region Links
+        #
+        links = self.extractor.extract_table_links(table_filters, 1)
+        df["province_links"] = links     
            
 
-        print(df)
+        return df 

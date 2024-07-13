@@ -126,6 +126,7 @@ class Extractor:
             return None 
         return res
 
+    # TO-TEST
     def area_split(df, field):
         df[f"{field}_km2"] = \
             df[field].apply(
@@ -145,6 +146,7 @@ class Extractor:
 
         return df
 
+    # TO-TEST
     def density_split(df, field):
         df[f"{field}_km2"] = \
             df[field].apply(
@@ -164,7 +166,7 @@ class Extractor:
 
         return df 
 
-    
+    # TO-TEST
     def date_split_item(item): 
         tokens = item.split(" ") 
         if len(tokens) == 1: 
@@ -172,6 +174,7 @@ class Extractor:
         else: 
             return tokens
 
+    # TO-TEST
     def date_split(df, field):
         df[f"{field}_date"] = \
             df[field].apply(
@@ -192,6 +195,20 @@ class Extractor:
 
         return df 
 
+    # TO-TEST
+    def extract_table_links(self, filters, row_index):
+        cols = self.extract_column(
+            "table", 
+            row_index,
+            filter_=filters,
+            each=lambda x, i: x
+        )
+        links = [
+            col.select("a")[0]["href"] for col in cols 
+            if len(col.select("a")) > 0
+        ]
+        return links
+
     def select_filtered(self, sel, filter_ = None, base = None):
         el = None
         root = self._
@@ -211,6 +228,7 @@ class Extractor:
                 return None
             el = el[0]
         return el
+        
 
     def from_headers(self, headers, dis="~!@#$%^&*()"): 
         def inner(x, h, t):
@@ -262,13 +280,20 @@ class Extractor:
     def extract_column(
         self, 
         sel, 
-        row_index, 
+        col_index, 
         filter_=None, 
         each=lambda x, i: x.get_text().strip(),
         base=None
     ): 
-        table  = self.select_filtered(sel, filter_) 
-        fields = table.select(f"tbody > tr > td:nth-child({row_index})")
+        rows   = self.extract_table_body(
+            sel, 
+            filter_=filter_, 
+            each=lambda x, i, j: x
+        ) 
+        fields = []
+        for row in rows: 
+            if len(row) > col_index:
+                fields.append(row[col_index])
         res    = [each(fields[i], i) for i in range(len(fields))] 
         return res
 
@@ -276,9 +301,10 @@ class Extractor:
         self, 
         sel, 
         filter_=None, 
-        each=lambda x, i: x,
+        each=lambda x, i: x.get_text().strip(),
         normalize=False,
-        base=None
+        base=None,
+        prenorm=False
     ): 
         table  = self.select_filtered(sel, filter_, base) 
         table_header =  table.select("thead > tr")
@@ -286,12 +312,10 @@ class Extractor:
             return None
         hrow   = table_header[0]
         fields = hrow.select("th")
-        
+
         def prenorm(x):
             return (
                 BeautifulSoup(str(x).replace("<br/>", " "), "html.parser")
-                    .get_text()
-                    .strip()
             )
 
         res    = [each(prenorm(fields[i]), i) for i in range(len(fields))] 
@@ -308,7 +332,7 @@ class Extractor:
         self, 
         sel, 
         filter_=None, 
-        each=lambda x, i, j: x.strip(),
+        each=lambda x, i, j: x.get_text().strip(),
         base=None
     ): 
         table  = self.select_filtered(sel, filter_, base) 
@@ -323,7 +347,6 @@ class Extractor:
                         .replace("</li>", "|</li>"), 
                     "html.parser"
                 )
-                .get_text()
             )
             return norm
                  

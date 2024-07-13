@@ -23,17 +23,19 @@ class IslandGroupBasisArticle(BasisArticle):
             "major_islands"
         ]
 
+        table_filters = self.extractor.from_headers([
+            "Group", 
+            "Largest city", 
+            "Population", 
+            "p.a.",
+            "Area",
+            "Density"
+        ]) 
+
         data = self.extractor.extract_table_body(
             "table", 
-            filter_=self.extractor.from_headers([
-                "Group", 
-                "Largest city", 
-                "Population", 
-                "p.a.",
-                "Area",
-                "Density"
-            ]) 
-        )   
+            filter_=table_filters
+        )[:-1]
 
         # extract major islands 
         mi_section = self.subsection(("Islands",)) 
@@ -94,6 +96,11 @@ class IslandGroupBasisArticle(BasisArticle):
             df["density_mi2"].apply(
                 lambda x: self.Extractor.to_float(x)
             )
-        
+
+        #
+        # Island Group Links
+        #
+        links = self.extractor.extract_table_links(table_filters, 0)
+        df["island_group_links"] = links  
     
         return df
