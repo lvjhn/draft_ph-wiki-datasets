@@ -1,5 +1,7 @@
 import core.helpers as helpers
 
-class BasisArticle:
-    def __init__(self):
-        pass 
+from core.article import Article
+
+class BasisArticle(Article):
+    def __init__(self, *args, **kwargs):
+        Article.__init__(self, *args, **kwargs)
