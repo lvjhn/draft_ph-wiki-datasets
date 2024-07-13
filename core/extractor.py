@@ -40,12 +40,13 @@ class Extractor:
 
     def __init__(self, content, *args, **kwargs):
         # extract arguments 
-        self.content = content 
+        self.content = content
         self._       = BeautifulSoup(self.content, "html.parser")
 
     #
     # NORMALIZATION
     # 
+
 
     def normalize(text, **kwargs): 
         if kwargs.get("remove_brackets", True):
@@ -65,7 +66,10 @@ class Extractor:
                 text = text.replace(c, "")
         
         if kwargs.get("title_case", False):
-            text = " ".join([x[0].upper() + x[1:] for x in text.split(" ")])
+            text = " ".join([
+                x[0].upper() + x[1:] 
+                for x in text.split(" ") if len(x) > 0
+            ])
         
         if kwargs.get("kebab_case", False):
             text = "-".join([x for x in text.split(" ")])
@@ -100,7 +104,7 @@ class Extractor:
         return text
 
     def to_float(text, filter_="", **kwargs): 
-        if text is None or text == "—":
+        if text is None or text == "—" or text == "":
             return None
         return float(Extractor.filter(text, filter_="1234567890."))
 
@@ -205,8 +209,15 @@ class Extractor:
         ]
         return links
 
+    def scale_words(y):
+        y = y.replace("trillion", "T")
+        y = y.replace("billion", "B")
+        y = y.replace("million", "M")
+        y = y.replace("million", "K")
+        y = y.replace("hundred", "H")
+        return y
+
     def select_filtered(self, sel, filter_ = None, base = None):
-        el = None
         root = self._
 
         if type(sel) is not str: 
@@ -216,14 +227,14 @@ class Extractor:
             base = self._ 
     
         if filter_ == None:
-            el = self._.select(sel)[0]
+            el = base.select(sel)[0]
+            return el
         else: 
-            el = self._.select(sel)
-            el = [x for x in el if filter_(x, str(x), x.get_text())]
-            if len(el) == 0:
-                return None
-            el = el[0]
-        return el
+            el = base.select(sel)
+            for x in el: 
+                if filter_(x, str(x), x.get_text()):
+                    return x
+            return None
         
 
     def from_headers(self, headers, dis="~!@#$%^&*()"): 
@@ -363,7 +374,10 @@ class Extractor:
     def extract_pair(
         self, 
         field, 
-        select=lambda x: x.get_text().strip(),
+        select=lambda x: Extractor.normalize(
+            x.get_text(), 
+            remove_brackets=True
+        ),
         base=None
     ): 
         field  = self.select_filtered(
@@ -375,11 +389,15 @@ class Extractor:
         value  = parent.select("td")[0]
         value  = select(value)  
         return value
+        
 
     def extract_pairs_from_partition(
         self, 
         start_field, 
-        select=lambda x, y, i: (x.get_text().strip(), y.get_text().strip()),
+        select=lambda x, y, i: (
+            x.get_text().strip().replace("•\xa0", ""),
+            y.get_text().strip()
+        ),
         base=None
     ): 
         start_field_  = \
@@ -398,15 +416,30 @@ class Extractor:
             x = current.select("th")
             y = current.select("td")
 
+            if len(x) == 0 or len(y) == 0:
+                current = current.findNextSibling()
+                continue 
+
             x = x[0]
             y = y[0]
 
             item = select(x, y, i)
             pairs.append(item)
+
             
+            if current.has_attr("class") and \
+               "mergedbottomrow" in current["class"]:
+                break
+
             current = current.findNextSibling()
 
-            if "mergedtoprow" in current["class"]:
+            if current is None: 
+                break 
+            
+            if len(current.select("td")) == 0 or \
+                len(current.select("th")) == 0 or \
+                (current.has_attr("class") and \
+                "mergedtoprow" in current["class"]):
                 break
 
             i += 1
@@ -425,7 +458,6 @@ class Extractor:
     ): 
         if base == None:
             base = self._
-
         list_ = self.select_filtered(sel, filter_, base)
         items = list_.select("li", recursive=False) 
         res = []

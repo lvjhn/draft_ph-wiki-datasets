@@ -2,6 +2,7 @@ from collections import deque
 import pandas as pd 
 
 pd.set_option('display.max_columns', None)
+DEBUG = True
 
 def flatten(tree, mode="bfs", as_tuple=False): 
     queue = deque()

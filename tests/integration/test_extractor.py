@@ -168,8 +168,9 @@ class TestExtractor(BaseTest):
         extractor = self.create_extractor()
 
         list_ = extractor.extract_list(
-            "#mw-content-text > div.mw-content-ltr.mw-parser-output > ul:nth-child(195)",
-            filter_=None
+            "#mw-content-text > " 
+            "div.mw-content-ltr.mw-parser-output > "
+            "ul:nth-child(195)"
         )
 
         assert type(list_) is list 

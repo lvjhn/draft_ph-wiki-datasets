@@ -745,6 +745,7 @@ space.
     - `extract_largest_city()`
     - `extract_official_languages()` 
     - `extract_regional_languages()`
+    - `extract_sign_language()`
     - `extract_other_languages()`
     - `extract_ethnic_groups()`
     - `extract_religions()`
@@ -758,11 +759,7 @@ space.
     - `extract_legislature()`
     - `extract_upper_house()`
     - `extract_lower_house()`
-    - `extract_independence_declaration()`
-    - `extract_independence_cession()`
-    - `extract_independence_self_government()`
-    - `extract_independence_recognized()`
-    - `extract_independence_constitution`()
+    - `extract_independence()`
     - `extract_area()`
     - `extract_population()`
     - `extract_gdp()`
