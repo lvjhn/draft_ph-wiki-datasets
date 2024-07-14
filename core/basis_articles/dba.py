@@ -97,6 +97,4 @@ class DistrictBasisArticle(BasisArticle):
         links = self.extractor.extract_table_links(table_filters, 0)
         df["district_link"] = links     
 
-
-
         return df 

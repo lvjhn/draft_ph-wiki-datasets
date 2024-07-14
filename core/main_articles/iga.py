@@ -6,24 +6,23 @@ DEBUG = helpers.DEBUG
 class IslandGroupArticle(MainArticle): 
     def __init__(self, article, *args, **kwargs): 
         MainArticle.__init__(self, article, *args, **kwargs)
-        self.infobox = self.extractor._.select(".infobox")[0]
 
     def extract_all(self):
         return {
-            "coordinats" : self.extract_coordinates(),
-            "adjacent_to" : self.extract_adjacent_to(),
-            "major_islands" : self.extract_major_islands(),
-            "area" : self.extract_area(),
-            "rank" : self.extract_area_rank(),
-            "coastline" : self.extract_coastline(),
-            "highest_elevation" : self.extract_highest_elevation(),
-            "highest_point" : self.extract_highest_point(),
-            "regions" : self.extract_regions(),
-            "provinces" : self.extract_provinces(),
-            "largest_settlement" : self.extract_largest_settlement(),
-            "demonyms" : self.extract_demonyms(),
-            "population" : self.extract_population(),
-            "ethnic_groups" : self.extract_ethnic_groups(),
+            "Coordinates" : self.extract_coordinates(),
+            "Adjacent To" : self.extract_adjacent_to(),
+            "Major Islands" : self.extract_major_islands(),
+            "Area" : self.extract_area(),
+            "Rank" : self.extract_area_rank(),
+            "Coastline" : self.extract_coastline(),
+            "Highest Elevation" : self.extract_highest_elevation(),
+            "Highest Point" : self.extract_highest_point(),
+            "Regions" : self.extract_regions(),
+            "Provinces" : self.extract_provinces(),
+            "Largest Settlement" : self.extract_largest_settlement(),
+            "Demonyms" : self.extract_demonyms(),
+            "Population" : self.extract_population(),
+            "Ethnic Groups" : self.extract_ethnic_groups(),
         }
 
     def extract_coordinates(self):

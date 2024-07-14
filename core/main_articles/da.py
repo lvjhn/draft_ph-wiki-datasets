@@ -1,96 +1,73 @@
 import core.helpers as helpers
 from core.main_article import MainArticle
 
+DEBUG = helpers.DEBUG
+
 class DistrictArticle(MainArticle): 
     def __init__(self, article, *args, **kwargs): 
         MainArticle.__init__(article, *args, **kwargs)
 
-    def extract_metas(self): 
-        # extract main table data
-        headers = [
-            "island_group", 
-            "largest_city", 
-            "population_2020", 
-            "population_2010", 
-            "pa", 
-            "area_km2",
-            "area_mi2", 
-            "density_km2",
-            "density_mi2",
-            "major_islands"
-        ]
+    def extract_all(self): 
+        return {
+            "Coordinates" : self.extract_coordinates(),
+            "Province" : self.extract_province(),
+            "Region" : self.extract_region(),
+            "Population" : self.extract_population(),
+            "Electorate" : self.extract_electorate(),
+            "Major Settlements" : self.extract_major_settlements(),
+            "Area" : self.extract_area(),
+            "Created" : self.extract_created(),
+            "Extract Representative" : self.extract_representative(),
+            "Political Party" : self.extract_political_party(),
+            "Congressional Bloc" : self.extract_congressional_bloc(),
+            "Constituent LGUs History" : self.extract_clgus_history()
+        }
 
-        data = self.extractor.extract_table_body(
-            "table", 
-            filter_=lambda x, h, t: (
-                "Group" in t and
-                "Largest city" in t and 
-                "Population" in t and 
-                "p.a." in t and
-                "Area" in t and 
-                "Density" in t
-            ) 
-        )   
+    def extract_coordinates(self):
+        DEBUG and print("@ Extracting coordinates.")
+        pass
 
-        # extract major islands 
-        mi_table = self.subsection(("Islands",)) 
-        
-        mi_table = self.Extractor(str(mi_table)).select_filtered(
-            "table", 
-            lambda x, h, t: (
-                "Luzon" in t and 
-                "Visayas" in t and 
-                "Mindanao" in t
-            )
-        )
+    def extract_province(self):
+        DEBUG and print("@ Extracting province.")
+        pass
 
-        rows = mi_table.select("tbody > tr", recursive=False)
-        third_row = rows[2]
-        cols = third_row.select("td", recursive=False)
+    def extract_region(self):
+        DEBUG and print("@ Extracting region.")
+        pass
 
-        for i in range(len(cols)): 
-            col = cols[i]
-            items = self.extract_list("ol", base=col)[1:]
-            data[i].append(items)
+    def extract_population(self):
+        DEBUG and print("@ Extracting population.")
+        pass
 
-        # normalize data
-        df = pd.DataFrame(data, columns=headers)
+    def extract_electorate(self):
+        DEBUG and print("@ Extracting electorate.")
+        pass
     
-        df["population_2020"] = \
-            df["population_2020"].apply(
-                lambda x: self.Extractor.numberize(x)
-            )
+    def extract_major_settlements(self):
+        DEBUG and print("@ Extracting major settlements.")
+        pass
+    
+    def extract_area(self):
+        DEBUG and print("@ Extracting area.")
+        pass
+    
+    def extract_created(self):
+        DEBUG and print("@ Extracting created.")
+        pass
+    
+    def extract_representative(self):
+        DEBUG and print("@ Extracting representative.")
+        pass
+    
+    def extract_political_party(self):
+        DEBUG and print("@ Extracting political party.")
+        pass
+    
+    def extract_congressional_bloc(self):
+        DEBUG and print("@ Extracting congressional block.")
+        pass
 
-        df["population_2010"] = \
-            df["population_2010"].apply(
-                lambda x: self.Extractor.numberize(x)
-            )
-
-        df["pa"] = \
-            df["pa"].apply(
-                lambda x: self.Extractor.deperc(x)
-            )
-        pd.set_option('display.max_columns', None)
-
-        df["area_km2"] = \
-            df["area_km2"].apply(
-                lambda x: self.Extractor.numberize(x)
-            )
-
-        df["area_mi2"] = \
-            df["area_mi2"].apply(
-                lambda x: self.Extractor.numberize(x)
-            )
-
-        df["density_km2"] = \
-            df["density_km2"].apply(
-                lambda x: self.Extractor.numberize(x)
-            )
-
-        df["density_mi2"] = \
-            df["density_mi2"].apply(
-                lambda x: self.Extractor.numberize(x)
-            )
-        
-        df.to_csv()
-        
+    def extract_clgus_history(self):
+        DEBUG and print("@ Extracting CLGUs history.")
+        pass
+    

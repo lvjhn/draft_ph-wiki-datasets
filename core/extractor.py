@@ -64,6 +64,10 @@ class Extractor:
         if kwargs.get("remove_symbols", False):
             for c in list("!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"):
                 text = text.replace(c, "")
+
+        # TO-TEST
+        if kwargs.get("remove_hyphens", False):
+           text = text.replace("-", " ")
         
         if kwargs.get("title_case", False):
             text = " ".join([

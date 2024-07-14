@@ -7,39 +7,38 @@ DEBUG = helpers.DEBUG
 class NationalArticle(MainArticle): 
     def __init__(self, article, *args, **kwargs): 
         MainArticle.__init__(self, article, *args, **kwargs)
-        self.infobox = self.extractor._.select(".infobox")[0]
 
     def extract_all(self):
         return {
-            "capital" : self.extract_capital(), 
-            "regional_languages" : self.extract_regional_languages(), 
-            "sign_languages" : self.extract_sign_languages(), 
-            "other_languages" : self.extract_other_languages(), 
-            "ethnic_groups" : self.extract_ethnic_groups(), 
-            "religions" : self.extract_religions(), 
-            "demonyms" : self.extract_demonyms(), 
-            "government" : self.extract_government(),
-            "president" : self.extract_president(), 
-            "vice_president" : self.extract_vice_president(),
-            "senate_president" : self.extract_senate_president(),
-            "house_speaker" : self.extract_house_speaker(),
-            "chief_justice" : self.extract_chief_justice(),
-            "legislature" : self.extract_legislature(), 
-            "lower_house" : self.extract_lower_house(), 
-            "upper_house" : self.extract_upper_house(), 
-            "independence" : self.extract_independence(),
-            "area" : self.extract_area(),
-            "population" : self.extract_population(),
-            "gdp_ppp" : self.extract_gdp_ppp(),
-            "gdp_nominal" : self.extract_gdp_nominal(),
-            "gini" : self.extract_gini(),
-            "hdi" : self.extract_hdi(),
-            "currency" : self.extract_currency(),
-            "time_zone" : self.extract_time_zone(),
-            "date_format" : self.extract_date_format(),
-            "driving_side" : self.extract_driving_side(),
-            "calling_code" : self.extract_calling_code(),
-            "iso_3166_code" : self.extract_iso_3166_code()
+            "Capital" : self.extract_capital(), 
+            "Regional Languages" : self.extract_regional_languages(), 
+            "Sign Languages" : self.extract_sign_languages(), 
+            "Other Languages" : self.extract_other_languages(), 
+            "Ethnic Groups" : self.extract_ethnic_groups(), 
+            "Religions" : self.extract_religions(), 
+            "Demonyms" : self.extract_demonyms(), 
+            "Government" : self.extract_government(),
+            "President" : self.extract_president(), 
+            "Vice President" : self.extract_vice_president(),
+            "Senate President" : self.extract_senate_president(),
+            "House Speaker" : self.extract_house_speaker(),
+            "Chief Justice" : self.extract_chief_justice(),
+            "Legislature" : self.extract_legislature(), 
+            "Lower House" : self.extract_lower_house(), 
+            "Upper House" : self.extract_upper_house(), 
+            "Independence" : self.extract_independence(),
+            "Area" : self.extract_area(),
+            "Population" : self.extract_population(),
+            "GDP PPP" : self.extract_gdp_ppp(),
+            "GDP Nominal" : self.extract_gdp_nominal(),
+            "Gini" : self.extract_gini(),
+            "HDI" : self.extract_hdi(),
+            "Currency" : self.extract_currency(),
+            "Time Zone" : self.extract_time_zone(),
+            "Date Format" : self.extract_date_format(),
+            "Driving Side" : self.extract_driving_side(),
+            "Calling Code" : self.extract_calling_code(),
+            "ISO 3166 Code" : self.extract_iso_3166_code()
         }
 
     def extracct_capital(self):
@@ -242,9 +241,9 @@ class NationalArticle(MainArticle):
         DEBUG and print("@ Extracting independence declaration.")
         return dict(
             self.extractor.extract_pairs_from_partition(
-                "Independence"
-            ),
-            base=self.infobox
+                "Independence",
+                base=self.infobox
+            )
         )
 
     def extract_area(self):
@@ -256,9 +255,7 @@ class NationalArticle(MainArticle):
                     (
                         x.get_text()\
                             .replace("•\xa0", "")\
-                            .replace("\xa0", "")\
-                            .replace("(%)", "_perc")\
-                            .lower(), 
+                            .replace("\xa0", ""),
                         self.Extractor.to_float(
                             re.split("\[.*\]", y.get_text())[0]
                         )
@@ -370,7 +367,7 @@ class NationalArticle(MainArticle):
 
     def extract_gini(self):
         DEBUG and print("@ Extracting Gini.")
-        return self.extractor.extract_pair(
+        pair = self.extractor.extract_pair(
             "Gini",
             select=lambda y: 
                 ( 
@@ -382,12 +379,17 @@ class NationalArticle(MainArticle):
                         r"medium|low|high",
                         str(y),
                     )
-                )
+                ),
+            base=self.infobox
         ) 
+        return { 
+            "Value" : pair[0],
+            "Level" : pair[1]
+        }
 
     def extract_hdi(self):
         DEBUG and print("@ Extracting HDI.")
-        return self.extractor.extract_pair(
+        pair = self.extractor.extract_pair(
             "HDI",
             select=lambda y: 
                 ( 
@@ -401,8 +403,11 @@ class NationalArticle(MainArticle):
                     )
                 ),
             base=self.infobox
-
         ) 
+        return {
+            "Value" : pair[0], 
+            "Level" : pair[1]
+        }
 
     def extract_currency(self):
         DEBUG and print("@ Extracting currency.")
@@ -421,7 +426,8 @@ class NationalArticle(MainArticle):
     def extract_time_zone(self):
         DEBUG and print("@ Extracting time zone.")
         return self.extractor.extract_pair(
-            "Time zone"
+            "Time zone",
+            base=self.infobox
         )  
 
     def extract_date_format(self):
