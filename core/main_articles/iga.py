@@ -113,7 +113,8 @@ class IslandGroupArticle(MainArticle):
 
         return self.extractor.extract_pair(
             "Regions",
-            select=extract
+            select=extract,
+            base=self.infobox
         )
 
     def extract_provinces(self):
@@ -130,13 +131,15 @@ class IslandGroupArticle(MainArticle):
 
         return self.extractor.extract_pair(
             "Provinces",
-            select=extract
+            select=extract,
+            base=self.infobox
         )
 
     def extract_largest_settlement(self):
         DEBUG and print("@ Extracting largest settlement.")
         return self.extractor.extract_pair(
-            "Largest settlement"
+            "Largest settlement",
+            base=self.infobox
         )
 
     def extract_demonyms(self):
@@ -164,7 +167,8 @@ class IslandGroupArticle(MainArticle):
 
         return self.extractor.extract_pair(
             "Population", 
-            select=extractor
+            select=extractor,
+            base=self.infobox
         )
 
     def extract_ethnic_groups(self):
@@ -180,5 +184,6 @@ class IslandGroupArticle(MainArticle):
 
         return self.extractor.extract_pair(
             "Ethnic groups", 
-            select=extractor
+            select=extractor,
+            base=self.infobox
         )

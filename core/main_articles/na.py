@@ -115,6 +115,7 @@ class NationalArticle(MainArticle):
 
     def extract_ethnic_groups(self):
         DEBUG and print("@ Extracting ethnic groups.")
+
         def extract(x): 
             items = x.select("li")
             items = [
@@ -135,6 +136,7 @@ class NationalArticle(MainArticle):
 
     def extract_religions(self):
         DEBUG and print("@ Extracting religions.")
+
         def extract(x): 
             items = x.select("ul")[0]\
                      .findChildren("li", recursive=False)
@@ -159,6 +161,7 @@ class NationalArticle(MainArticle):
 
     def extract_demonyms(self):
         DEBUG and print("@ Extracting demonyms.")
+
         def extract(x): 
             items = x.get_text()
             items = [x.strip() for x in items.split(")")]
@@ -240,7 +243,8 @@ class NationalArticle(MainArticle):
         return dict(
             self.extractor.extract_pairs_from_partition(
                 "Independence"
-            ) 
+            ),
+            base=self.infobox
         )
 
     def extract_area(self):
@@ -259,7 +263,8 @@ class NationalArticle(MainArticle):
                             re.split("\[.*\]", y.get_text())[0]
                         )
                     )
-                )
+                ),
+                base=self.infobox
             ) 
         )
 
@@ -296,7 +301,8 @@ class NationalArticle(MainArticle):
         return dict(
             self.extractor.extract_pairs_from_partition(
                 "Population",
-                select=extract
+                select=extract,
+                base=self.infobox
             )
         ) 
 
@@ -326,7 +332,8 @@ class NationalArticle(MainArticle):
         return dict(
             self.extractor.extract_pairs_from_partition(
                 "GDP\xa0(PPP)",
-                select=extract
+                select=extract,
+                base=self.infobox
             )
         )  
 
@@ -356,7 +363,8 @@ class NationalArticle(MainArticle):
         return dict(
             self.extractor.extract_pairs_from_partition(
                 "GDP\xa0(nominal)",
-                select=extract
+                select=extract,
+                base=self.infobox
             )
         )  
 
@@ -391,7 +399,9 @@ class NationalArticle(MainArticle):
                         r"medium|low|high",
                         str(y),
                     )
-                )
+                ),
+            base=self.infobox
+
         ) 
 
     def extract_currency(self):
@@ -404,7 +414,8 @@ class NationalArticle(MainArticle):
                     remove_brackets=True,
                     remove_parentheses=True,
                     title_case=True
-                )
+                ),
+            base=self.infobox
         )  
 
     def extract_time_zone(self):
@@ -422,25 +433,29 @@ class NationalArticle(MainArticle):
 
         return self.extractor.extract_pair(
             "Date format",
-            select=extract
+            select=extract,
+            base=self.infobox
         )  
 
     def extract_driving_side(self):
         DEBUG and print("@ Extracting driving side.")
         return self.extractor.extract_pair(
-            "Driving side"
+            "Driving side",
+            base=self.infobox
         )   
 
     def extract_calling_code(self):
         DEBUG and print("@ Extracting calling code.")
         return self.extractor.extract_pair(
-            "Calling code"
+            "Calling code",
+            base=self.infobox
         )    
 
     def extract_iso_3166_code(self):
         DEBUG and print("@ Extracting ISO 3166 code.")
         return self.extractor.extract_pair(
-            "ISO 3166 code"
+            "ISO 3166 code",
+            base=self.infobox
         )    
  
 
