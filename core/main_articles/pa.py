@@ -5,7 +5,7 @@ DEBUG = helpers.DEBUG
 
 class ProvinceArticle(MainArticle): 
     def __init__(self, article, *args, **kwargs): 
-        MainArticle.__init__(article, *args, **kwargs)  
+        MainArticle.__init__(self, article, *args, **kwargs)  
 
     def extract_all(self): 
         return {
@@ -69,15 +69,15 @@ class ProvinceArticle(MainArticle):
         DEBUG and print("@ Extracting time zone.")
         pass
     
-    def extract_idd_area_code():
+    def extract_idd_area_code(self):
         DEBUG and print("@ Extracting IDD area code.")
         pass
     
-    def extract_spoken_languages():
+    def extract_spoken_languages(self):
         DEBUG and print("@ Extracting spoken languages.")
         pass
     
-    def extract_website():
+    def extract_website(self):
         DEBUG and print("@ Extracting website.")
         pass
     

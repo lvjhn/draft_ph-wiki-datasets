@@ -52,6 +52,9 @@ class TestExtractor(BaseTest):
         text = Extractor.normalize("  TEXT  ", trim=True)
         assert text == "TEXT"
 
+        text = Extractor.normalize("foo-bar-baz", remove_hyphens=True)
+        assert text == "foo bar baz"
+
     def test_filter(self): 
         text = Extractor.filter("a1ab2bc3c", filter_=set("abc")) 
         assert text == "aabbcc"
@@ -224,8 +227,8 @@ class TestExtractor(BaseTest):
         assert "birthdate_b" in df 
         assert "birthdate_c" in df 
 
-        assert tuple(df["birthdate_a"]) == (None, "Apr")
-        assert tuple(df["birthdate_b"]) == (None, "4")
+        assert tuple(df["birthdate_a"]) == (None, "4")
+        assert tuple(df["birthdate_b"]) == (None, "Apr")
         assert tuple(df["birthdate_c"]) == ("2024", "2024")
 
 

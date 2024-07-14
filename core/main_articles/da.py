@@ -5,7 +5,7 @@ DEBUG = helpers.DEBUG
 
 class DistrictArticle(MainArticle): 
     def __init__(self, article, *args, **kwargs): 
-        MainArticle.__init__(article, *args, **kwargs)
+        MainArticle.__init__(self, article, *args, **kwargs)
 
     def extract_all(self): 
         return {
