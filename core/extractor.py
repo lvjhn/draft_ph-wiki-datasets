@@ -5,6 +5,8 @@ import re
 
 class Extractor:
 
+    SkipItem    = dict()
+
     DIGITS      = set("0123456789")
     LETTERS     = set("abcdefghijklmnopqrstuvwxyz")
     SYMBOLS     = set("!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~")
@@ -134,6 +136,11 @@ class Extractor:
         if len(res) == 0: 
             return None 
         return res
+
+    def remove_dot(x):
+        x = re.sub("\xa0•", "", x)
+        x = re.sub("\xa0", "", x)
+        return x
 
     def area_split(df, field):
         df[f"{field}_km2"] = \
@@ -460,8 +467,8 @@ class Extractor:
             y = y[0]
 
             item = select(x, y, i)
+            
             pairs.append(item)
-
             
             if current.has_attr("class") and \
                "mergedbottomrow" in current["class"]:
@@ -471,7 +478,7 @@ class Extractor:
 
             if current is None: 
                 break 
-            
+
             if len(current.select("td")) == 0 or \
                 len(current.select("th")) == 0 or \
                 (current.has_attr("class") and \
