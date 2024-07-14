@@ -118,6 +118,7 @@ class IslandGroupArticle(MainArticle):
 
     def extract_provinces(self):
         DEBUG and print("@ Extracting provinces.")
+        
         def extract(y): 
             y = y.select("li")
             for i in range(len(y)): 
@@ -143,6 +144,7 @@ class IslandGroupArticle(MainArticle):
 
     def extract_demonyms(self):
         DEBUG and print("@ Extracting demonyms.")
+        
         def extract(x): 
             items = x.get_text()
             items = [x.strip() for x in items.split(")")]
@@ -159,21 +161,21 @@ class IslandGroupArticle(MainArticle):
     def extract_population(self):
         DEBUG and print("@ Extracting population.")
 
-        def extractor(y):
+        def extract(y):
             y = y.get_text().split(" ")[0]
             y = self.Extractor.to_int(y)
             return y 
 
         return self.extractor.extract_pair(
             "Population", 
-            select=extractor,
+            select=extract,
             base=self.infobox
         )
 
     def extract_ethnic_groups(self):
         DEBUG and print("@ Extracting ethnic groups.")
 
-        def extractor(y):
+        def extract(y):
             for div in y.find_all("div", {'class' : 'hlist'}): 
                 div.decompose()
 
@@ -183,6 +185,6 @@ class IslandGroupArticle(MainArticle):
 
         return self.extractor.extract_pair(
             "Ethnic groups", 
-            select=extractor,
+            select=extract,
             base=self.infobox
         )

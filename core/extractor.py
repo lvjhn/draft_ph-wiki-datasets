@@ -222,9 +222,26 @@ class Extractor:
         y = y.replace("hundred", "H")
         return y
 
+    def scale_item(y):
+        scale = 0
+        
+        if "trillion" in y: 
+            scale = 1e12
+        elif "billion" in y:
+            scale = 1e9 
+        elif "million" in y: 
+            scale = 1e6 
+        elif "thousand" in y: 
+            scale = 1e3 
+        
+        y = re.sub(" (trillion|billion|million|thousand)", "", y)
+        y = float(y)
+        y = y * scale
+
+        return y
+
     def select_filtered(self, sel, filter_ = None, base = None):
         root = self._
-
 
         if type(sel) is not str: 
             return sel
