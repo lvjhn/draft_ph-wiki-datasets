@@ -13,19 +13,19 @@ class ProvinceBasisArticle(BasisArticle):
     def extract_metas(self): 
         # extract main table data
         headers = [
-            "iso",
-            "province", 
-            "capital", 
-            "population_pa_2020",
-            "population_count_2020",
-            "area",
-            "density_2020", 
-            "founded",
-            "island_group",
-            "region",
-            "municipalities",
-            "cities",
-            "barangays"     
+            "ISO",
+            "Province", 
+            "Capital", 
+            "Population p.a. (2020)",
+            "Population Count (2020)",
+            "Area",
+            "Density (2020)", 
+            "Founded",
+            "Island Group",
+            "Region",
+            "Municipalities",
+            "Cities",
+            "Barangays"     
         ]
 
         table_filters = self.extractor.from_headers([
@@ -52,8 +52,8 @@ class ProvinceBasisArticle(BasisArticle):
         #
         # Province
         # 
-        df["province"] = \
-            df["province"].apply(
+        df["Province"] = \
+            df["Province"].apply(
                 lambda x: 
                     self.Extractor.normalize(x, remove_brackets=True)
             )
@@ -61,8 +61,8 @@ class ProvinceBasisArticle(BasisArticle):
         #
         # Capital
         # 
-        df["capital"] = \
-            df["capital"].apply(
+        df["Capital"] = \
+            df["Capital"].apply(
                 lambda x: 
                     self.Extractor.normalize(x, remove_brackets=True)
                         .replace("†", "")
@@ -72,14 +72,14 @@ class ProvinceBasisArticle(BasisArticle):
         #
         # Population 
         # 
-        df["population_pa_2020"] = \
-            df["population_pa_2020"].apply(
+        df["Population p.a. (2020)"] = \
+            df["Population p.a. (2020)"].apply(
                 lambda x: 
                     self.Extractor.deperc(x)
             )
         
-        df["population_count_2020"] = \
-            df["population_count_2020"].apply(
+        df["Population Count (2020)"] = \
+            df["Population Count (2020)"].apply(
                 lambda x: 
                     self.Extractor.to_int(x)
             )
@@ -87,18 +87,18 @@ class ProvinceBasisArticle(BasisArticle):
         #
         # Area 
         # 
-        df = self.Extractor.area_split(df, "area")
+        df = self.Extractor.area_split(df, "Area")
 
         #
         # Density 
         # 
-        df = self.Extractor.density_split(df, "density_2020")
+        df = self.Extractor.density_split(df, "Density (2020)")
 
 
         #
         # Founded 
         # 
-        df["founded"] = df["founded"].apply(
+        df["Founded"] = df["Founded"].apply(
             lambda x:   
                 self.Extractor.normalize(
                     x, 
@@ -106,23 +106,23 @@ class ProvinceBasisArticle(BasisArticle):
                     trim=True
                 )
         )
-        df = self.Extractor.date_split(df, "founded")
+        df = self.Extractor.date_split(df, "Founded")
 
         #
         # LGUs 
         # 
-        df["municipalities"] = \
-            df["municipalities"].apply(
+        df["Municipalities"] = \
+            df["Municipalities"].apply(
                 lambda x: self.Extractor.to_int(x)
             ) 
 
-        df["cities"] = \
-            df["cities"].apply(
+        df["Cities"] = \
+            df["Cities"].apply(
                 lambda x: self.Extractor.to_int(x)
             )    
 
-        df["barangays"] = \
-            df["barangays"].apply(
+        df["Barangays"] = \
+            df["Barangays"].apply(
                 lambda x: self.Extractor.to_int(x)
             )       
 
@@ -130,6 +130,6 @@ class ProvinceBasisArticle(BasisArticle):
         # Region Links
         #
         links = self.extractor.extract_table_links(table_filters, 1)
-        df["article_link"] = links     
+        df["Article Link"] = links     
 
         return df 

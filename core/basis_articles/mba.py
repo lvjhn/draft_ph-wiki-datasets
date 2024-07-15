@@ -11,13 +11,13 @@ class MunicityBasisArticle(BasisArticle):
     def extract_metas(self): 
         # extract main table data
         headers = [
-            "municity", 
-            "population_2020",
-            "area_km2",
-            "density_2020", 
-            "barangays", 
-            "class", 
-            "province",
+            "Municity", 
+            "Population (2020)",
+            "Area (km2)",
+            "Density (2020)", 
+            "Barangays", 
+            "Class", 
+            "Province",
         ]
 
         table_filters = self.extractor.from_headers([
@@ -41,8 +41,8 @@ class MunicityBasisArticle(BasisArticle):
         #
         # Name 
         # 
-        df["municity"] = \
-            df["municity"].apply(
+        df["Municity"] = \
+            df["Municity"].apply(
                 lambda x: 
                     x.replace("*", "")
             )
@@ -50,32 +50,32 @@ class MunicityBasisArticle(BasisArticle):
         #
         # Population
         # 
-        df["population_2020"] = \
-            df["population_2020"].apply(
+        df["Population (2020)"] = \
+            df["Population (2020)"].apply(
                 lambda x: self.Extractor.to_int(x)
             )
 
         #
         # Area
         # 
-        df["area_km2"] = \
-            df["area_km2"].apply(
+        df["Area (km2)"] = \
+            df["Area (km2)"].apply(
                 lambda x: self.Extractor.to_float(x)
             )
 
         #
         # Population Density
         # 
-        df["density_2020"] = \
-            df["density_2020"].apply(
+        df["Density (2020)"] = \
+            df["Density (2020)"].apply(
                 lambda x: self.Extractor.to_float(x)
             )   
 
         #
         # Barangays
         # 
-        df["barangays"] = \
-            df["barangays"].apply(
+        df["Barangays"] = \
+            df["Barangays"].apply(
                 lambda x: self.Extractor.to_int(x)
             )   
 
@@ -83,13 +83,13 @@ class MunicityBasisArticle(BasisArticle):
         # Island Group Links
         #
         links = self.extractor.extract_table_links(table_filters, 0)
-        df["article_link"] = links[:-1]
+        df["Article Link"] = links[:-1]
       
         #
         # Create key
         # 
-        df["district_key"] = [ 
-            df["province"][i] + "|" + df["municity"][i]
+        df["Distry Key"] = [ 
+            df["Province"][i] + "|" + df["Municity"][i]
             for i in range(len(df))
         ]
                   

@@ -12,14 +12,14 @@ class DistrictBasisArticle(BasisArticle):
     def extract_metas(self): 
         # extract main table data
         headers = [
-            "district", 
-            "region",
-            "electorate_2019",
-            "population_2020", 
-            "area_km2", 
-            "representative", 
+            "District", 
+            "Region",
+            "Electorate (2019)",
+            "Population (2020)", 
+            "Area (km2)", 
+            "Representative", 
             "",
-            "party"
+            "Party"
         ]
 
         table_filters = self.extractor.from_headers([
@@ -56,19 +56,19 @@ class DistrictBasisArticle(BasisArticle):
             x = self.Extractor.to_int(x)
             return x 
 
-        df["province"] = \
-            df["district"].apply(get_province_name)
+        df["Province"] = \
+            df["District"].apply(get_province_name)
 
-        df["district_no"] = \
-            df["district"].apply(get_district_no)
+        df["District No."] = \
+            df["District"].apply(get_district_no)
 
-        df = df.drop("district", axis=1) 
+        df = df.drop("District", axis=1) 
 
         #
         # Electorate 
         # 
-        df["electorate_2019"] = \
-            df["electorate_2019"].apply(
+        df["Electorate (2019)"] = \
+            df["Electorate (2019)"].apply(
                 lambda x: 
                     self.Extractor.to_int(x)
             )
@@ -76,8 +76,8 @@ class DistrictBasisArticle(BasisArticle):
         #
         # Population
         # 
-        df["population_2020"] = \
-            df["population_2020"].apply(
+        df["Population (2020)"] = \
+            df["Population (2020)"].apply(
                 lambda x: 
                     self.Extractor.to_int(x)
             )
@@ -85,8 +85,8 @@ class DistrictBasisArticle(BasisArticle):
         #
         # Area
         # 
-        df["area_km2"] = \
-            df["area_km2"].apply(
+        df["Area (km2)"] = \
+            df["Area (km2)"].apply(
                 lambda x: 
                     self.Extractor.to_float(x)
             )
@@ -95,14 +95,14 @@ class DistrictBasisArticle(BasisArticle):
         # District Links
         #
         links = self.extractor.extract_table_links(table_filters, 0)
-        df["article_link"] = links
+        df["Article Link"] = links
 
         
         #
         # Create key
         # 
-        df["district_key"] = [ 
-            df["province"][i] + "|" + str(df["district_no"][i])
+        df["District Key"] = [ 
+            df["Province"][i] + "|" + str(df["District No."][i])
             for i in range(len(df))
         ]
                   

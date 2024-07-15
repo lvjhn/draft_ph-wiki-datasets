@@ -1,150 +1,150 @@
-,city,population_2020,province,region,legal_class,charter,area_km2,area_mi2,density_km2,density_mi2,approval_date,approval_a,approval_b,approval_c,ratification_date,ratification_a,ratification_b,ratification_c,article_link
-0,Alaminos,99397,Pangasinan,I,CC,RA 09025 ,164.26,63.42,605.0,1567.0,"('March', '5', '2001')",March,5,2001,"('March', '28', '2001')",March,28,2001,"/wiki/Alaminos,_Pangasinan"
-1,Angeles City,462928,Pampanga,III,HUC,RA 03700 ,60.27,23.27,6985.0,18092.0,"('June', '22', '1963')",June,22,1963,"('January', '1', '1964')",January,1,1964,/wiki/Angeles_City
-2,Antipolo,887399,Rizal,IV-A,CC,RA 08508 ,306.1,118.19,2899.0,7509.0,"('February', '13', '1998')",February,13,1998,"('April', '4', '1998')",April,4,1998,/wiki/Antipolo
-3,Bacolod,600783,Negros Occidental,VI,HUC,CA 326 ,162.67,62.81,3693.0,9566.0,"('June', '18', '1938')",June,18,1938,"('October', '19', '1938')",October,19,1938,/wiki/Bacolod
-4,Bacoor,664625,Cavite,IV-A,CC,RA 10160 ,46.17,17.83,14395.0,37283.0,"('April', '10', '2012')",April,10,2012,"('June', '23', '2012')",June,23,2012,/wiki/Bacoor
-5,Bago,191210,Negros Occidental,VI,CC,RA 04382 ,401.2,154.9,477.0,1234.0,"('June', '19', '1965')",June,19,1965,"('February', '19', '1966')",February,19,1966,"/wiki/Bago,_Negros_Occidental"
-6,Baguio,366358,Benguet,CAR,HUC,Act 1963,57.51,22.2,6370.0,16499.0,"('September', '1', '1909')",September,1,1909,"('September', '1', '1909')",September,1,1909,/wiki/Baguio
-7,Bais,84317,Negros Oriental,VII,CC,RA 05444 ,319.64,123.41,264.0,683.0,"('September', '9', '1968')",September,9,1968,"('September', '9', '1968')",September,9,1968,"/wiki/Bais,_Negros_Oriental"
-8,Balanga,104173,Bataan,III,CC,RA 08984 ,111.63,43.1,933.0,2417.0,"('December', '5', '2000')",December,5,2000,"('December', '30', '2000')",December,30,2000,"/wiki/Balanga,_Bataan"
-9,Baliwag,168470,Bulacan,III,CC,RA 11929 ,45.05,17.39,3740.0,9686.0,"('July', '30', '2022')",July,30,2022,"('December', '17', '2022')",December,17,2022,/wiki/Baliwag
-10,Batac,55484,Ilocos Norte,I,CC,RA 09407 ,161.06,62.19,344.0,892.0,"('March', '24', '2007')",March,24,2007,"('June', '23', '2007')",June,23,2007,/wiki/Batac
-11,Batangas City,351437,Batangas,IV-A,CC,RA 05495 ,282.96,109.25,1242.0,3217.0,"('June', '21', '1969')",June,21,1969,"('June', '21', '1969')",June,21,1969,/wiki/Batangas_City
-12,Bayawan,122747,Negros Oriental,VII,CC,RA 08983 ,699.08,269.92,176.0,455.0,"('December', '5', '2000')",December,5,2000,"('December', '23', '2000')",December,23,2000,/wiki/Bayawan
-13,Baybay,111848,Leyte,VIII,CC,RA 09389 ,459.3,177.34,244.0,631.0,"('March', '15', '2007')",March,15,2007,"('June', '16', '2007')",June,16,2007,/wiki/Baybay
-14,Bayugan,109499,Agusan del Sur,XIII,CC,RA 09405 ,688.77,265.94,159.0,412.0,"('March', '23', '2007')",March,23,2007,"('June', '20', '2007')",June,20,2007,/wiki/Bayugan
-15,Biñan,407437,Laguna,IV-A,CC,RA 09740 ,43.5,16.8,9366.0,24259.0,"('October', '30', '2009')",October,30,2009,"('February', '2', '2010')",February,2,2010,/wiki/Bi%C3%B1an
-16,Bislig,99290,Surigao del Sur,XIII,CC,RA 08804 ,331.8,128.11,299.0,775.0,"('August', '16', '2000')",August,16,2000,"('September', '18', '2000')",September,18,2000,/wiki/Bislig
-17,Bogo,88867,Cebu,VII,CC,RA 09390 ,103.52,39.97,858.0,2223.0,"('March', '15', '2007')",March,15,2007,"('June', '16', '2007')",June,16,2007,"/wiki/Bogo,_Cebu"
-18,Borongan,71961,Eastern Samar,VIII,CC,RA 09394 ,475.0,183.4,151.0,392.0,"('March', '16', '2007')",March,16,2007,"('June', '20', '2007')",June,20,2007,/wiki/Borongan
-19,Butuan,372910,Agusan del Norte,XIII,HUC,RA 00523 ,816.62,315.3,457.0,1183.0,"('June', '15', '1950')",June,15,1950,"('August', '2', '1950')",August,2,1950,/wiki/Butuan
-20,Cabadbaran,80354,Agusan del Norte,XIII,CC,RA 09434 ,214.44,82.8,375.0,971.0,"('April', '12', '2007')",April,12,2007,"('July', '28', '2007')",July,28,2007,/wiki/Cabadbaran
-21,Cabanatuan,327325,Nueva Ecija,III,CC,RA 00526 ,192.29,74.24,1702.0,4409.0,"('June', '16', '1950')",June,16,1950,"('July', '24', '1950')",July,24,1950,/wiki/Cabanatuan
-22,Cabuyao,355330,Laguna,IV-A,CC,RA 10163 ,43.4,16.76,8187.0,21205.0,"('May', '16', '2012')",May,16,2012,"('August', '4', '2012')",August,4,2012,/wiki/Cabuyao
-23,Cadiz,158544,Negros Occidental,VI,CC,RA 04894 ,524.57,202.54,302.0,783.0,"('June', '17', '1967')",June,17,1967,"('July', '4', '1967')",July,4,1967,"/wiki/Cadiz,_Negros_Occidental"
-24,Cagayan de Oro,728402,Misamis Oriental,X,HUC,RA 00521 ,412.8,159.38,1765.0,4570.0,"('June', '15', '1950')",June,15,1950,"('June', '15', '1950')",June,15,1950,/wiki/Cagayan_de_Oro
-25,Calaca,87361,Batangas,IV-A,CC,RA 11544 ,114.58,44.24,762.0,1975.0,"('May', '26', '2021')",May,26,2021,"('September', '3', '2022')",September,3,2022,"/wiki/Calaca,_Batangas"
-26,Calamba,539671,Laguna,IV-A,CC,RA 09024 ,149.5,57.72,3610.0,9349.0,"('March', '5', '2001')",March,5,2001,"('April', '21', '2001')",April,21,2001,"/wiki/Calamba,_Laguna"
-27,Calapan,145786,Oriental Mindoro,Mimaropa,CC,RA 08475 ,250.06,96.55,583.0,1510.0,"('February', '2', '1998')",February,2,1998,"('March', '21', '1998')",March,21,1998,/wiki/Calapan
-28,Calbayog,186960,Samar,VIII,CC,RA 00328 ,880.74,340.06,212.0,550.0,"('July', '15', '1948')",July,15,1948,"('October', '16', '1948')",October,16,1948,/wiki/Calbayog
-29,Caloocan,1661584,none ,NCR,HUC,RA 03278 ,55.8,21.54,29777.0,77123.0,"('June', '17', '1961')",June,17,1961,"('February', '16', '1962')",February,16,1962,/wiki/Caloocan
-30,Candon,61432,Ilocos Sur,I,CC,RA 09018 ,103.28,39.88,595.0,1541.0,"('March', '5', '2001')",March,5,2001,"('March', '28', '2001')",March,28,2001,/wiki/Candon
-31,Canlaon,58822,Negros Oriental,VII,CC,RA 03445 ,170.93,66.0,344.0,891.0,"('June', '18', '1961')",June,18,1961,"('June', '18', '1961')",June,18,1961,/wiki/Canlaon
-32,Carcar,136453,Cebu,VII,CC,RA 09436 ,116.78,45.09,1168.0,3026.0,"('April', '15', '2007')",April,15,2007,"('July', '1', '2007')",July,1,2007,/wiki/Carcar
-33,Carmona,106256,Cavite,IV-A,CC,RA 11938 ,29.68,11.46,3580.0,9272.0,"('February', '23', '2023')",February,23,2023,"('July', '8', '2023')",July,8,2023,"/wiki/Carmona,_Cavite"
-34,Catbalogan,106440,Samar,VIII,CC,RA 09391 ,274.22,105.88,388.0,1005.0,"('March', '15', '2007')",March,15,2007,"('June', '16', '2007')",June,16,2007,/wiki/Catbalogan
-35,Cauayan,143403,Isabela,II,CC,RA 09017 ,336.4,129.88,426.0,1104.0,"('February', '28', '2001')",February,28,2001,"('March', '28', '2001')",March,28,2001,"/wiki/Cauayan,_Isabela"
-36,Cavite City,100674,Cavite,IV-A,CC,CA 547 ,10.89,4.2,9245.0,23943.0,"('May', '26', '1940')",May,26,1940,"('May', '26', '1940')",May,26,1940,/wiki/Cavite_City
-37,Cebu City,964169,Cebu,VII,HUC,CA 058 ,315.0,121.62,3061.0,7928.0,"('October', '20', '1936')",October,20,1936,"('February', '4', '1937')",February,4,1937,/wiki/Cebu_City
-38,Cotabato City,325079,Maguindanao del Norte,XII,ICC,RA 02364 ,176.0,67.95,1847.0,4784.0,"('June', '20', '1959')",June,20,1959,"('June', '20', '1959')",June,20,1959,/wiki/Cotabato_City
-39,Dagupan,174302,Pangasinan,I,ICC,RA 00170 ,37.23,14.37,4682.0,12126.0,"('June', '20', '1947')",June,20,1947,"('June', '20', '1947')",June,20,1947,/wiki/Dagupan
-40,Danao,156321,Cebu,VII,CC,RA 03028 ,107.3,41.43,1457.0,3773.0,"('June', '7', '1961')",June,7,1961,"('June', '7', '1961')",June,7,1961,"/wiki/Danao,_Cebu"
-41,Dapitan,85202,Zamboanga del Norte,IX,CC,RA 03811 ,390.53,150.78,218.0,565.0,"('June', '22', '1963')",June,22,1963,"('June', '22', '1963')",June,22,1963,/wiki/Dapitan
-42,Dasmariñas,703141,Cavite,IV-A,CC,RA 09723 ,90.13,34.8,7801.0,20206.0,"('October', '15', '2009')",October,15,2009,"('November', '25', '2009')",November,25,2009,/wiki/Dasmari%C3%B1as
-43,Davao City,1776949,Davao del Sur,XI,HUC,CA 051 ,2443.61,943.48,727.0,1883.0,"('October', '16', '1936')",October,16,1936,"('March', '1', '1937')",March,1,1937,/wiki/Davao_City
-44,Digos,188376,Davao del Sur,XI,CC,RA 08798 ,287.1,110.85,656.0,1699.0,"('June', '15', '2000')",June,15,2000,"('September', '8', '2000')",September,8,2000,/wiki/Digos
-45,Dipolog,138141,Zamboanga del Norte,IX,CC,RA 05520 ,241.13,93.1,573.0,1484.0,"('June', '21', '1969')",June,21,1969,"('January', '1', '1970')",January,1,1970,/wiki/Dipolog
-46,Dumaguete,134103,Negros Oriental,VII,CC,RA 00327 ,33.62,12.98,3989.0,10331.0,"('July', '15', '1948')",July,15,1948,"('November', '24', '1948')",November,24,1948,/wiki/Dumaguete
-47,El Salvador,58771,Misamis Oriental,X,CC,RA 09435 ,106.15,40.98,554.0,1434.0,"('April', '12', '2007')",April,12,2007,"('June', '27', '2007')",June,27,2007,"/wiki/El_Salvador,_Misamis_Oriental"
-48,Escalante,96159,Negros Occidental,VI,CC,RA 09014 ,192.76,74.43,499.0,1292.0,"('February', '28', '2001')",February,28,2001,"('March', '31', '2001')",March,31,2001,"/wiki/Escalante,_Negros_Occidental"
-49,Gapan,122968,Nueva Ecija,III,CC,RA 09022 ,164.44,63.49,748.0,1937.0,"('March', '5', '2001')",March,5,2001,"('August', '25', '2001')",August,25,2001,/wiki/Gapan
-50,General Santos,697315,South Cotabato,XII,HUC,RA 05412 ,492.86,190.29,1415.0,3664.0,"('June', '15', '1968')",June,15,1968,"('June', '15', '1968')",June,15,1968,/wiki/General_Santos
-51,General Trias,450583,Cavite,IV-A,CC,RA 10675 ,90.01,34.75,5006.0,12965.0,"('August', '19', '2015')",August,19,2015,"('December', '12', '2015')",December,12,2015,/wiki/General_Trias
-52,Gingoog,136698,Misamis Oriental,X,CC,RA 02668 ,568.44,219.48,240.0,623.0,"('June', '18', '1960')",June,18,1960,"('June', '18', '1960')",June,18,1960,/wiki/Gingoog
-53,Guihulngan,102656,Negros Oriental,VII,CC,RA 09409 ,388.56,150.02,264.0,684.0,"('March', '24', '2007')",March,24,2007,"('July', '14', '2007')",July,14,2007,/wiki/Guihulngan
-54,Himamaylan,116240,Negros Occidental,VI,CC,RA 09028 ,367.04,141.71,317.0,820.0,"('March', '5', '2001')",March,5,2001,"('March', '31', '2001')",March,31,2001,/wiki/Himamaylan
-55,Ilagan,158218,Isabela,II,CC,RA 10169 ,1166.26,450.3,136.0,351.0,"('June', '21', '2012')",June,21,2012,"('August', '11', '2012')",August,11,2012,/wiki/Ilagan
-56,Iligan,363115,Lanao del Norte,X,HUC,RA 00525 ,813.37,314.04,446.0,1156.0,"('June', '16', '1950')",June,16,1950,"('June', '16', '1950')",June,16,1950,/wiki/Iligan
-57,Iloilo City,457626,Iloilo,VI,HUC,CA 057,78.34,30.25,5842.0,15130.0,"('October', '20', '1936')",October,20,1936,"('August', '25', '1937')",August,25,1937,/wiki/Iloilo_City
-58,Imus,496794,Cavite,IV-A,CC,RA 10161 ,53.15,20.52,9347.0,24209.0,"('April', '10', '2012')",April,10,2012,"('June', '30', '2012')",June,30,2012,/wiki/Imus
-59,Iriga,114457,Camarines Sur,V,CC,RA 05261 ,137.35,53.03,833.0,2158.0,"('June', '15', '1968')",June,15,1968,"('September', '3', '1968')",September,3,1968,/wiki/Iriga
-60,Isabela,130379,Basilan,IX,CC,RA 09023 ,223.73,86.38,583.0,1509.0,"('March', '5', '2001')",March,5,2001,"('April', '25', '2001')",April,25,2001,"/wiki/Isabela,_Basilan"
-61,Kabankalan,200198,Negros Occidental,VI,CC,RA 08297 ,697.35,269.25,287.0,744.0,"('June', '6', '1997')",June,6,1997,"('August', '2', '1997')",August,2,1997,/wiki/Kabankalan
-62,Kidapawan,160791,Cotabato,XII,CC,RA 08500 ,358.47,138.41,449.0,1162.0,"('February', '12', '1998')",February,12,1998,"('March', '22', '1998')",March,22,1998,/wiki/Kidapawan
-63,Koronadal,195398,South Cotabato,XII,CC,RA 08803 ,277.0,106.95,705.0,1827.0,"('August', '16', '2000')",August,16,2000,"('October', '8', '2000')",October,8,2000,/wiki/Koronadal
-64,La Carlota,66664,Negros Occidental,VI,CC,RA 04585 ,137.29,53.01,486.0,1258.0,"('June', '19', '1965')",June,19,1965,"('January', '22', '1966')",January,22,1966,"/wiki/La_Carlota,_Negros_Occidental"
-65,Lamitan,100150,Basilan,BARMM,CC,RA 09393 ,354.45,136.85,283.0,732.0,"('March', '15', '2007')",March,15,2007,"('June', '18', '2007')",June,18,2007,/wiki/Lamitan
-66,Laoag,111651,Ilocos Norte,I,CC,RA 04584 ,116.08,44.82,962.0,2491.0,"('June', '19', '1965')",June,19,1965,"('January', '1', '1966')",January,1,1966,/wiki/Laoag
-67,Lapu-Lapu City,497604,Cebu,VII,HUC,RA 03134 ,58.1,22.43,8565.0,22182.0,"('June', '17', '1961')",June,17,1961,"('December', '31', '1961')",December,31,1961,/wiki/Lapu-Lapu_City
-68,Las Piñas,606293,none ,NCR,HUC,RA 08251 ,32.69,12.62,18547.0,48036.0,"('February', '12', '1997')",February,12,1997,"('March', '26', '1997')",March,26,1997,/wiki/Las_Pi%C3%B1as
-69,Legazpi,209533,Albay,V,CC,RA 02234 ,153.7,59.34,1363.0,3531.0,"('June', '12', '1959')",June,12,1959,"('June', '12', '1959')",June,12,1959,"/wiki/Legazpi,_Albay"
-70,Ligao,118096,Albay,V,CC,RA 09008 ,246.75,95.27,479.0,1240.0,"('February', '21', '2001')",February,21,2001,"('March', '24', '2001')",March,24,2001,/wiki/Ligao
-71,Lipa,372931,Batangas,IV-A,CC,RA 00162 ,209.4,80.85,1781.0,4613.0,"('June', '20', '1947')",June,20,1947,"('June', '20', '1947')",June,20,1947,"/wiki/Lipa,_Batangas"
-72,Lucena,278924,Quezon,IV-A,HUC,RA 03271 ,80.21,30.97,3477.0,9006.0,"('June', '17', '1961')",June,17,1961,"('August', '19', '1962')",August,19,1962,/wiki/Lucena
-73,Maasin,87446,Southern Leyte,VIII,CC,RA 08796 ,211.71,81.74,413.0,1070.0,"('July', '11', '2000')",July,11,2000,"('August', '10', '2000')",August,10,2000,/wiki/Maasin
-74,Mabalacat,293244,Pampanga,III,CC,RA 10164 ,83.18,32.12,3525.0,9131.0,"('May', '15', '2012')",May,15,2012,"('July', '21', '2012')",July,21,2012,/wiki/Mabalacat
-75,Makati,629616,none ,NCR,HUC,RA 07854 ,21.57,8.33,29189.0,75600.0,"('January', '2', '1995')",January,2,1995,"('February', '4', '1995')",February,4,1995,/wiki/Makati
-76,Malabon,380522,none ,NCR,HUC,RA 09019 ,15.71,6.07,24222.0,62734.0,"('March', '5', '2001')",March,5,2001,"('April', '21', '2001')",April,21,2001,/wiki/Malabon
-77,Malaybalay,190712,Bukidnon,X,CC,RA 08490 ,969.19,374.21,197.0,510.0,"('February', '11', '1998')",February,11,1998,"('March', '22', '1998')",March,22,1998,/wiki/Malaybalay
-78,Malolos,261189,Bulacan,III,CC,RA 08754 ,67.25,25.97,3884.0,10059.0,"('November', '4', '1999')",November,4,1999,"('December', '18', '1999')",December,18,1999,/wiki/Malolos
-79,Mandaluyong,425758,none ,NCR,HUC,RA 07675 ,11.26,4.35,37812.0,97931.0,"('February', '9', '1994')",February,9,1994,"('April', '10', '1994')",April,10,1994,/wiki/Mandaluyong
-80,Mandaue,364116,Cebu,VII,HUC,RA 05519 ,25.18,9.72,10442.0,27045.0,"('June', '21', '1969')",June,21,1969,"('August', '30', '1969')",August,30,1969,/wiki/Mandaue
-81,Manila,1846513,none,NCR,HUC,Act 0183 ,38.55,14.88,47899.0,124058.0,"('July', '31', '1901')",July,31,1901,"('July', '31', '1901')",July,31,1901,/wiki/Manila
-82,Marawi,207010,Lanao del Sur,BARMM,CC,CA 592 ,87.55,33.8,2364.0,6124.0,"('August', '19', '1940')",August,19,1940,"('September', '30', '1950')",September,30,1950,/wiki/Marawi
-83,Marikina,456159,none ,NCR,HUC,RA 08223 ,21.52,8.31,21197.0,54900.0,"('November', '6', '1996')",November,6,1996,"('December', '7', '1996')",December,7,1996,/wiki/Marikina
-84,Masbate City,104522,Masbate,V,CC,RA 08807 ,188.0,72.59,556.0,1440.0,"('August', '16', '2000')",August,16,2000,"('September', '30', '2000')",September,30,2000,/wiki/Masbate_City
-85,Mati,147547,Davao Oriental,XI,CC,RA 09408 ,588.63,227.27,251.0,649.0,"('March', '24', '2007')",March,24,2007,"('June', '18', '2007')",June,18,2007,"/wiki/Mati,_Davao_Oriental"
-86,Meycauayan,225673,Bulacan,III,CC,RA 09356 ,32.1,12.39,7030.0,18208.0,"('October', '2', '2006')",October,2,2006,"('December', '10', '2006')",December,10,2006,/wiki/Meycauayan
-87,Muñoz,84308,Nueva Ecija,III,CC,RA 08977 ,163.05,62.95,162.0,420.0,"('November', '7', '2000')",November,7,2000,"('December', '9', '2000')",December,9,2000,"/wiki/Mu%C3%B1oz,_Nueva_Ecija"
-88,Muntinlupa,543445,none ,NCR,HUC,RA 07926 ,39.75,15.35,13672.0,35409.0,"('March', '1', '1995')",March,1,1995,"('May', '8', '1995')",May,8,1995,/wiki/Muntinlupa
-89,Naga,209170,Camarines Sur,V,ICC,RA 00305 ,84.48,32.62,2476.0,6413.0,"('June', '18', '1948')",June,18,1948,"('June', '18', '1948')",June,18,1948,"/wiki/Naga,_Camarines_Sur"
-90,Naga,133184,Cebu,VII,CC,RA 09491 ,101.97,39.37,1306.0,3383.0,"('July', '15', '2007')",July,15,2007,"('September', '2', '2007')",September,2,2007,"/wiki/Naga,_Cebu"
-91,Navotas,247543,none ,NCR,HUC,RA 09387 ,8.94,3.45,27689.0,71715.0,"('March', '10', '2007')",March,10,2007,"('June', '24', '2007')",June,24,2007,/wiki/Navotas
-92,Olongapo,260317,Zambales,III,HUC,RA 04645 ,103.3,39.9,1407.0,3644.0,"('June', '1', '1966')",June,1,1966,"('June', '1', '1966')",June,1,1966,/wiki/Olongapo
-93,Ormoc,230998,Leyte,VIII,ICC,RA 00179 ,613.6,236.91,376.0,975.0,"('June', '21', '1947')",June,21,1947,"('October', '20', '1947')",October,20,1947,/wiki/Ormoc
-94,Oroquieta,72301,Misamis Occidental,X,CC,RA 05518 ,237.88,91.85,304.0,787.0,"('June', '21', '1969')",June,21,1969,"('January', '1', '1970')",January,1,1970,/wiki/Oroquieta
-95,Ozamiz,140334,Misamis Occidental,X,CC,RA 00321 ,169.95,65.62,826.0,2139.0,"('June', '19', '1948')",June,19,1948,"('June', '19', '1948')",June,19,1948,/wiki/Ozamiz
-96,Pagadian,210452,Zamboanga del Sur,IX,CC,RA 05478 ,378.8,146.26,556.0,1439.0,"('June', '21', '1969')",June,21,1969,"('June', '21', '1969')",June,21,1969,/wiki/Pagadian
-97,Palayan,45383,Nueva Ecija,III,CC,RA 04475 ,101.4,39.15,448.0,1159.0,"('June', '19', '1965')",June,19,1965,"('June', '19', '1965')",June,19,1965,/wiki/Palayan
-98,Panabo,209230,Davao del Norte,XI,CC,RA 09015 ,251.23,97.0,231.0,597.0,"('February', '28', '2001')",February,28,2001,"('March', '31', '2001')",March,31,2001,/wiki/Panabo
-99,Parañaque,689992,none ,NCR,HUC,RA 08507 ,46.57,17.98,14816.0,38374.0,"('February', '13', '1998')",February,13,1998,"('March', '22', '1998')",March,22,1998,/wiki/Para%C3%B1aque
-100,Pasay,440656,none ,NCR,HUC,RA 00183 ,13.97,5.39,31543.0,81696.0,"('June', '21', '1947')",June,21,1947,"('August', '16', '1947')",August,16,1947,/wiki/Pasay
-101,Pasig,803159,none ,NCR,HUC,RA 07829 ,48.46,18.71,16574.0,42926.0,"('December', '8', '1994')",December,8,1994,"('January', '21', '1995')",January,21,1995,/wiki/Pasig
-102,Passi,88873,Iloilo,VI,CC,RA 08469 ,251.39,97.06,354.0,916.0,"('January', '30', '1998')",January,30,1998,"('March', '14', '1998')",March,14,1998,"/wiki/Passi,_Iloilo"
-103,Puerto Princesa,307079,Palawan,Mimaropa,HUC,RA 05906 ,2381.02,919.32,129.0,334.0,"('June', '21', '1969')",June,21,1969,"('January', '1', '1970')",January,1,1970,/wiki/Puerto_Princesa
-104,Quezon City,2960048,none ,NCR,HUC,CA 502 ,171.71,66.3,17239.0,44648.0,"('October', '12', '1939')",October,12,1939,"('October', '12', '1939')",October,12,1939,/wiki/Quezon_City
-105,Roxas,179292,Capiz,VI,CC,RA 00603 ,95.07,36.71,1886.0,4884.0,"('April', '11', '1951')",April,11,1951,"('May', '12', '1951')",May,12,1951,"/wiki/Roxas,_Capiz"
-106,Sagay,148894,Negros Occidental,VI,CC,RA 08192 ,330.34,127.54,451.0,1167.0,"('June', '11', '1996')",June,11,1996,"('August', '10', '1996')",August,10,1996,"/wiki/Sagay,_Negros_Occidental"
-107,Samal,209230,Davao del Norte,XI,CC,RA 08471 ,301.3,116.33,694.0,1799.0,"('January', '30', '1998')",January,30,1998,"('March', '7', '1998')",March,7,1998,"/wiki/Samal,_Davao_del_Norte"
-108,San Carlos,132650,Negros Occidental,VI,CC,RA 02643 ,451.5,174.33,294.0,761.0,"('June', '18', '1960')",June,18,1960,"('June', '18', '1960')",June,18,1960,"/wiki/San_Carlos,_Negros_Occidental"
-109,San Carlos,205424,Pangasinan,I,CC,RA 04487 ,169.03,65.26,1215.0,3148.0,"('June', '19', '1965')",June,19,1965,"('January', '1', '1966')",January,1,1966,"/wiki/San_Carlos,_Pangasinan"
-110,San Fernando,125640,La Union,I,CC,RA 08509 ,102.72,39.66,1223.0,3168.0,"('February', '13', '1998')",February,13,1998,"('March', '20', '1998')",March,20,1998,"/wiki/San_Fernando,_La_Union"
-111,San Fernando,354666,Pampanga,III,CC,RA 08990 ,67.74,26.15,5236.0,13560.0,"('January', '26', '2001')",January,26,2001,"('February', '3', '2001')",February,3,2001,"/wiki/San_Fernando,_Pampanga"
-112,San Jose,150917,Nueva Ecija,III,CC,RA 06051 ,185.99,71.81,811.0,2102.0,"('August', '4', '1969')",August,4,1969,"('August', '4', '1969')",August,4,1969,"/wiki/San_Jose,_Nueva_Ecija"
-113,San Jose del Monte,651813,Bulacan,III,CC,RA 08797 ,105.53,40.75,6177.0,15997.0,"('July', '15', '2000')",July,15,2000,"('September', '10', '2000')",September,10,2000,/wiki/San_Jose_del_Monte
-114,San Juan,126347,none ,NCR,HUC,RA 09388 ,5.95,2.3,21235.0,54998.0,"('March', '11', '2007')",March,11,2007,"('June', '16', '2007')",June,16,2007,"/wiki/San_Juan,_Metro_Manila"
-115,San Pablo,285348,Laguna,IV-A,CC,CA 520 ,197.56,76.28,1444.0,3741.0,"('May', '7', '1940')",May,7,1940,"('March', '30', '1941')",March,30,1941,"/wiki/San_Pablo,_Laguna"
-116,San Pedro,326001,Laguna,IV-A,CC,RA 10420 ,24.05,9.29,13555.0,35108.0,"('March', '27', '2013')",March,27,2013,"('December', '28', '2013')",December,28,2013,"/wiki/San_Pedro,_Laguna"
-117,Santa Rosa,414812,Laguna,IV-A,CC,RA 09264 ,54.84,21.17,7564.0,19591.0,"('March', '10', '2004')",March,10,2004,"('July', '10', '2004')",July,10,2004,"/wiki/Santa_Rosa,_Laguna"
-118,Santo Tomas,218500,Batangas,IV-A,CC,RA 11086 ,95.41,36.84,2290.0,5931.0,"('October', '5', '2018')",October,5,2018,"('September', '7', '2019')",September,7,2019,"/wiki/Santo_Tomas,_Batangas"
-119,Santiago,148580,Isabela,II,ICC,RA 07720 ,255.5,98.65,582.0,1506.0,"('May', '5', '1994')",May,5,1994,"('July', '3', '1994')",July,3,1994,"/wiki/Santiago,_Isabela"
-120,Silay,130478,Negros Occidental,VI,CC,RA 01621 ,214.8,82.93,607.0,1573.0,"('June', '12', '1957')",June,12,1957,"('June', '12', '1957')",June,12,1957,/wiki/Silay
-121,Sipalay,72448,Negros Occidental,VI,CC,RA 09027 ,379.78,146.63,191.0,494.0,"('March', '5', '2001')",March,5,2001,"('March', '31', '2001')",March,31,2001,/wiki/Sipalay
-122,Sorsogon City,182237,Sorsogon,V,CC,RA 08806 ,276.11,106.61,660.0,1709.0,"('August', '16', '2000')",August,16,2000,"('December', '16', '2000')",December,16,2000,/wiki/Sorsogon_City
-123,Surigao City,171107,Surigao del Norte,XIII,CC,RA 06134 ,245.3,94.71,698.0,1807.0,"('August', '31', '1970')",August,31,1970,"('August', '31', '1970')",August,31,1970,/wiki/Surigao_City
-124,Tabaco,140961,Albay,V,CC,RA 09020 ,117.14,45.23,1203.0,3117.0,"('March', '5', '2001')",March,5,2001,"('March', '24', '2001')",March,24,2001,/wiki/Tabaco
-125,Tabuk,121033,Kalinga,CAR,CC,RA 09404 ,700.25,270.37,173.0,448.0,"('March', '23', '2007')",March,23,2007,"('June', '23', '2007')",June,23,2007,"/wiki/Tabuk,_Kalinga"
-126,Tacloban,251881,Leyte,VIII,HUC,RA 00760 ,201.72,77.88,1249.0,3234.0,"('June', '20', '1952')",June,20,1952,"('June', '12', '1953')",June,12,1953,/wiki/Tacloban
-127,Tacurong,109319,Sultan Kudarat,XII,CC,RA 08805 ,153.4,59.23,713.0,1846.0,"('August', '16', '2000')",August,16,2000,"('September', '18', '2000')",September,18,2000,/wiki/Tacurong
-128,Tagaytay,85330,Cavite,IV-A,CC,CA 338 ,65.0,25.1,1313.0,3400.0,"('June', '21', '1938')",June,21,1938,"('June', '21', '1938')",June,21,1938,/wiki/Tagaytay
-129,Tagbilaran,104976,Bohol,VII,CC,RA 04660 ,36.5,14.09,2876.0,7449.0,"('June', '18', '1966')",June,18,1966,"('July', '1', '1966')",July,1,1966,/wiki/Tagbilaran
-130,Taguig,886722,none ,NCR,HUC,RA 08487 ,45.21,17.46,19613.0,50798.0,"('February', '11', '1998')",February,11,1998,"('December', '8', '2004')",December,8,2004,/wiki/Taguig
-131,Tagum,296202,Davao del Norte,XI,CC,RA 08472 ,195.8,75.6,1513.0,3918.0,"('January', '30', '1998')",January,30,1998,"('March', '7', '1998')",March,7,1998,/wiki/Tagum
-132,Talisay,263048,Cebu,VII,CC,RA 08979 ,39.87,15.39,6598.0,17088.0,"('November', '22', '2000')",November,22,2000,"('December', '30', '2000')",December,30,2000,"/wiki/Talisay,_Cebu"
-133,Talisay,108909,Negros Occidental,VI,CC,RA 08489 ,201.18,77.68,541.0,1402.0,"('February', '11', '1998')",February,11,1998,"('February', '11', '1998')",February,11,1998,"/wiki/Talisay,_Negros_Occidental"
-134,Tanauan,193936,Batangas,IV-A,CC,RA 09005 ,107.16,41.37,1810.0,4687.0,"('February', '2', '2001')",February,2,2001,"('March', '10', '2001')",March,10,2001,"/wiki/Tanauan,_Batangas"
-135,Tandag,62669,Surigao del Sur,XIII,CC,RA 09392 ,291.73,112.64,215.0,556.0,"('March', '15', '2007')",March,15,2007,"('June', '23', '2007')",June,23,2007,/wiki/Tandag
-136,Tangub,68389,Misamis Occidental,X,CC,RA 05131 ,162.78,62.85,420.0,1088.0,"('June', '17', '1967')",June,17,1967,"('February', '28', '1968')",February,28,1968,/wiki/Tangub
-137,Tanjay,82642,Negros Oriental,VII,CC,RA 09026 ,267.05,103.11,309.0,802.0,"('March', '5', '2001')",March,5,2001,"('March', '31', '2001')",March,31,2001,/wiki/Tanjay
-138,Tarlac City,385398,Tarlac,III,CC,RA 08593 ,274.66,106.05,1403.0,3634.0,"('March', '12', '1998')",March,12,1998,"('April', '19', '1998')",April,19,1998,/wiki/Tarlac_City
-139,Tayabas,112658,Quezon,IV-A,CC,RA 09398 ,230.95,89.17,488.0,1263.0,"('March', '18', '2007')",March,18,2007,"('July', '14', '2007')",July,14,2007,/wiki/Tayabas
-140,Toledo,207314,Cebu,VII,CC,RA 02688 ,216.28,83.51,959.0,2483.0,"('June', '18', '1960')",June,18,1960,"('June', '18', '1960')",June,18,1960,"/wiki/Toledo,_Cebu"
-141,Trece Martires,210503,Cavite,IV-A,CC,RA 00981 ,39.1,15.1,5384.0,13944.0,"('May', '24', '1954')",May,24,1954,"('January', '1', '1956')",January,1,1956,/wiki/Trece_Martires
-142,Tuguegarao,166334,Cagayan,II,CC,RA 08755 ,144.8,55.91,1149.0,2975.0,"('November', '4', '1999')",November,4,1999,"('December', '18', '1999')",December,18,1999,/wiki/Tuguegarao
-143,Urdaneta,144577,Pangasinan,I,CC,RA 08480 ,100.26,38.71,1442.0,3735.0,"('February', '10', '1998')",February,10,1998,"('March', '21', '1998')",March,21,1998,"/wiki/Urdaneta,_Pangasinan"
-144,Valencia,216546,Bukidnon,X,CC,RA 08985 ,587.29,226.75,369.0,955.0,"('December', '5', '2000')",December,5,2000,"('December', '30', '2000')",December,30,2000,"/wiki/Valencia,_Bukidnon"
-145,Valenzuela,714978,none ,NCR,HUC,RA 08526 ,47.02,18.15,15206.0,39383.0,"('February', '14', '1998')",February,14,1998,"('December', '30', '1998')",December,30,1998,"/wiki/Valenzuela,_Metro_Manila"
-146,Victorias,90101,Negros Occidental,VI,CC,RA 08488 ,133.92,51.71,673.0,1743.0,"('February', '11', '1998')",February,11,1998,"('March', '21', '1998')",March,21,1998,/wiki/Victorias
-147,Vigan,53935,Ilocos Sur,I,CC,RA 08988 ,25.12,9.7,2147.0,5561.0,"('December', '27', '2000')",December,27,2000,"('January', '22', '2001')",January,22,2001,/wiki/Vigan
-148,Zamboanga City,977234,Zamboanga del Sur,IX,HUC,CA 039 ,1453.27,561.11,659.0,1706.0,"('October', '12', '1936')",October,12,1936,"('February', '26', '1937')",February,26,1937,/wiki/Zamboanga_City
+,City,Population (2020),Province,Region,Legal Class,Charter,Area_km2,Area_mi2,Density_km2,Density_mi2,Chater,Approval_date,Approval_a,Approval_b,Approval_c,Ratification_date,Ratification_a,Ratification_b,Ratification_c,Article Link
+0,Alaminos,99397,Pangasinan,I,CC,RA 09025 [7],164.26,63.42,605.0,1567.0,RA 09025 ,"('March', '5', '2001')",March,5,2001,"('March', '28', '2001')",March,28,2001,"/wiki/Alaminos,_Pangasinan"
+1,Angeles City,462928,Pampanga,III,HUC,RA 03700 [9],60.27,23.27,6985.0,18092.0,RA 03700 ,"('June', '22', '1963')",June,22,1963,"('January', '1', '1964')",January,1,1964,/wiki/Angeles_City
+2,Antipolo,887399,Rizal,IV-A,CC,RA 08508 [10],306.1,118.19,2899.0,7509.0,RA 08508 ,"('February', '13', '1998')",February,13,1998,"('April', '4', '1998')",April,4,1998,/wiki/Antipolo
+3,Bacolod,600783,Negros Occidental,VI,HUC,CA 326 [11],162.67,62.81,3693.0,9566.0,CA 326 ,"('June', '18', '1938')",June,18,1938,"('October', '19', '1938')",October,19,1938,/wiki/Bacolod
+4,Bacoor,664625,Cavite,IV-A,CC,RA 10160 [14],46.17,17.83,14395.0,37283.0,RA 10160 ,"('April', '10', '2012')",April,10,2012,"('June', '23', '2012')",June,23,2012,/wiki/Bacoor
+5,Bago,191210,Negros Occidental,VI,CC,RA 04382 [16],401.2,154.9,477.0,1234.0,RA 04382 ,"('June', '19', '1965')",June,19,1965,"('February', '19', '1966')",February,19,1966,"/wiki/Bago,_Negros_Occidental"
+6,Baguio,366358,Benguet,CAR,HUC,Act 1963,57.51,22.2,6370.0,16499.0,Act 1963,"('September', '1', '1909')",September,1,1909,"('September', '1', '1909')",September,1,1909,/wiki/Baguio
+7,Bais,84317,Negros Oriental,VII,CC,RA 05444 [18],319.64,123.41,264.0,683.0,RA 05444 ,"('September', '9', '1968')",September,9,1968,"('September', '9', '1968')",September,9,1968,"/wiki/Bais,_Negros_Oriental"
+8,Balanga,104173,Bataan,III,CC,RA 08984 [19],111.63,43.1,933.0,2417.0,RA 08984 ,"('December', '5', '2000')",December,5,2000,"('December', '30', '2000')",December,30,2000,"/wiki/Balanga,_Bataan"
+9,Baliwag,168470,Bulacan,III,CC,RA 11929 [20],45.05,17.39,3740.0,9686.0,RA 11929 ,"('July', '30', '2022')",July,30,2022,"('December', '17', '2022')",December,17,2022,/wiki/Baliwag
+10,Batac,55484,Ilocos Norte,I,CC,RA 09407 [21],161.06,62.19,344.0,892.0,RA 09407 ,"('March', '24', '2007')",March,24,2007,"('June', '23', '2007')",June,23,2007,/wiki/Batac
+11,Batangas City,351437,Batangas,IV-A,CC,RA 05495 [23],282.96,109.25,1242.0,3217.0,RA 05495 ,"('June', '21', '1969')",June,21,1969,"('June', '21', '1969')",June,21,1969,/wiki/Batangas_City
+12,Bayawan,122747,Negros Oriental,VII,CC,RA 08983 [24],699.08,269.92,176.0,455.0,RA 08983 ,"('December', '5', '2000')",December,5,2000,"('December', '23', '2000')",December,23,2000,/wiki/Bayawan
+13,Baybay,111848,Leyte,VIII,CC,RA 09389 [25],459.3,177.34,244.0,631.0,RA 09389 ,"('March', '15', '2007')",March,15,2007,"('June', '16', '2007')",June,16,2007,/wiki/Baybay
+14,Bayugan,109499,Agusan del Sur,XIII,CC,RA 09405 [27],688.77,265.94,159.0,412.0,RA 09405 ,"('March', '23', '2007')",March,23,2007,"('June', '20', '2007')",June,20,2007,/wiki/Bayugan
+15,Biñan,407437,Laguna,IV-A,CC,RA 09740 [28],43.5,16.8,9366.0,24259.0,RA 09740 ,"('October', '30', '2009')",October,30,2009,"('February', '2', '2010')",February,2,2010,/wiki/Bi%C3%B1an
+16,Bislig,99290,Surigao del Sur,XIII,CC,RA 08804 [30],331.8,128.11,299.0,775.0,RA 08804 ,"('August', '16', '2000')",August,16,2000,"('September', '18', '2000')",September,18,2000,/wiki/Bislig
+17,Bogo,88867,Cebu,VII,CC,RA 09390 [31],103.52,39.97,858.0,2223.0,RA 09390 ,"('March', '15', '2007')",March,15,2007,"('June', '16', '2007')",June,16,2007,"/wiki/Bogo,_Cebu"
+18,Borongan,71961,Eastern Samar,VIII,CC,RA 09394 [32],475.0,183.4,151.0,392.0,RA 09394 ,"('March', '16', '2007')",March,16,2007,"('June', '20', '2007')",June,20,2007,/wiki/Borongan
+19,Butuan,372910,Agusan del Norte,XIII,HUC,RA 00523 [33],816.62,315.3,457.0,1183.0,RA 00523 ,"('June', '15', '1950')",June,15,1950,"('August', '2', '1950')",August,2,1950,/wiki/Butuan
+20,Cabadbaran,80354,Agusan del Norte,XIII,CC,RA 09434 [35],214.44,82.8,375.0,971.0,RA 09434 ,"('April', '12', '2007')",April,12,2007,"('July', '28', '2007')",July,28,2007,/wiki/Cabadbaran
+21,Cabanatuan,327325,Nueva Ecija,III,CC,RA 00526 [37],192.29,74.24,1702.0,4409.0,RA 00526 ,"('June', '16', '1950')",June,16,1950,"('July', '24', '1950')",July,24,1950,/wiki/Cabanatuan
+22,Cabuyao,355330,Laguna,IV-A,CC,RA 10163 [39],43.4,16.76,8187.0,21205.0,RA 10163 ,"('May', '16', '2012')",May,16,2012,"('August', '4', '2012')",August,4,2012,/wiki/Cabuyao
+23,Cadiz,158544,Negros Occidental,VI,CC,RA 04894 [41],524.57,202.54,302.0,783.0,RA 04894 ,"('June', '17', '1967')",June,17,1967,"('July', '4', '1967')",July,4,1967,"/wiki/Cadiz,_Negros_Occidental"
+24,Cagayan de Oro,728402,Misamis Oriental,X,HUC,RA 00521 [43],412.8,159.38,1765.0,4570.0,RA 00521 ,"('June', '15', '1950')",June,15,1950,"('June', '15', '1950')",June,15,1950,/wiki/Cagayan_de_Oro
+25,Calaca,87361,Batangas,IV-A,CC,RA 11544 [45],114.58,44.24,762.0,1975.0,RA 11544 ,"('May', '26', '2021')",May,26,2021,"('September', '3', '2022')",September,3,2022,"/wiki/Calaca,_Batangas"
+26,Calamba,539671,Laguna,IV-A,CC,RA 09024 [46],149.5,57.72,3610.0,9349.0,RA 09024 ,"('March', '5', '2001')",March,5,2001,"('April', '21', '2001')",April,21,2001,"/wiki/Calamba,_Laguna"
+27,Calapan,145786,Oriental Mindoro,Mimaropa,CC,RA 08475 [47],250.06,96.55,583.0,1510.0,RA 08475 ,"('February', '2', '1998')",February,2,1998,"('March', '21', '1998')",March,21,1998,/wiki/Calapan
+28,Calbayog,186960,Samar,VIII,CC,RA 00328 [48],880.74,340.06,212.0,550.0,RA 00328 ,"('July', '15', '1948')",July,15,1948,"('October', '16', '1948')",October,16,1948,/wiki/Calbayog
+29,Caloocan,1661584,none ,NCR,HUC,RA 03278 [50],55.8,21.54,29777.0,77123.0,RA 03278 ,"('June', '17', '1961')",June,17,1961,"('February', '16', '1962')",February,16,1962,/wiki/Caloocan
+30,Candon,61432,Ilocos Sur,I,CC,RA 09018 [51],103.28,39.88,595.0,1541.0,RA 09018 ,"('March', '5', '2001')",March,5,2001,"('March', '28', '2001')",March,28,2001,/wiki/Candon
+31,Canlaon,58822,Negros Oriental,VII,CC,RA 03445 [52],170.93,66.0,344.0,891.0,RA 03445 ,"('June', '18', '1961')",June,18,1961,"('June', '18', '1961')",June,18,1961,/wiki/Canlaon
+32,Carcar,136453,Cebu,VII,CC,RA 09436 [53],116.78,45.09,1168.0,3026.0,RA 09436 ,"('April', '15', '2007')",April,15,2007,"('July', '1', '2007')",July,1,2007,/wiki/Carcar
+33,Carmona,106256,Cavite,IV-A,CC,RA 11938 [54],29.68,11.46,3580.0,9272.0,RA 11938 ,"('February', '23', '2023')",February,23,2023,"('July', '8', '2023')",July,8,2023,"/wiki/Carmona,_Cavite"
+34,Catbalogan,106440,Samar,VIII,CC,RA 09391 [55],274.22,105.88,388.0,1005.0,RA 09391 ,"('March', '15', '2007')",March,15,2007,"('June', '16', '2007')",June,16,2007,/wiki/Catbalogan
+35,Cauayan,143403,Isabela,II,CC,RA 09017 [56],336.4,129.88,426.0,1104.0,RA 09017 ,"('February', '28', '2001')",February,28,2001,"('March', '28', '2001')",March,28,2001,"/wiki/Cauayan,_Isabela"
+36,Cavite City,100674,Cavite,IV-A,CC,CA 547 [57],10.89,4.2,9245.0,23943.0,CA 547 ,"('May', '26', '1940')",May,26,1940,"('May', '26', '1940')",May,26,1940,/wiki/Cavite_City
+37,Cebu City,964169,Cebu,VII,HUC,CA 058 [58],315.0,121.62,3061.0,7928.0,CA 058 ,"('October', '20', '1936')",October,20,1936,"('February', '4', '1937')",February,4,1937,/wiki/Cebu_City
+38,Cotabato City,325079,Maguindanao del Norte,XII,ICC,RA 02364 [60],176.0,67.95,1847.0,4784.0,RA 02364 ,"('June', '20', '1959')",June,20,1959,"('June', '20', '1959')",June,20,1959,/wiki/Cotabato_City
+39,Dagupan,174302,Pangasinan,I,ICC,RA 00170 [61],37.23,14.37,4682.0,12126.0,RA 00170 ,"('June', '20', '1947')",June,20,1947,"('June', '20', '1947')",June,20,1947,/wiki/Dagupan
+40,Danao,156321,Cebu,VII,CC,RA 03028 [63],107.3,41.43,1457.0,3773.0,RA 03028 ,"('June', '7', '1961')",June,7,1961,"('June', '7', '1961')",June,7,1961,"/wiki/Danao,_Cebu"
+41,Dapitan,85202,Zamboanga del Norte,IX,CC,RA 03811 [64],390.53,150.78,218.0,565.0,RA 03811 ,"('June', '22', '1963')",June,22,1963,"('June', '22', '1963')",June,22,1963,/wiki/Dapitan
+42,Dasmariñas,703141,Cavite,IV-A,CC,RA 09723 [65],90.13,34.8,7801.0,20206.0,RA 09723 ,"('October', '15', '2009')",October,15,2009,"('November', '25', '2009')",November,25,2009,/wiki/Dasmari%C3%B1as
+43,Davao City,1776949,Davao del Sur,XI,HUC,CA 051 [67],2443.61,943.48,727.0,1883.0,CA 051 ,"('October', '16', '1936')",October,16,1936,"('March', '1', '1937')",March,1,1937,/wiki/Davao_City
+44,Digos,188376,Davao del Sur,XI,CC,RA 08798 [69],287.1,110.85,656.0,1699.0,RA 08798 ,"('June', '15', '2000')",June,15,2000,"('September', '8', '2000')",September,8,2000,/wiki/Digos
+45,Dipolog,138141,Zamboanga del Norte,IX,CC,RA 05520 [70],241.13,93.1,573.0,1484.0,RA 05520 ,"('June', '21', '1969')",June,21,1969,"('January', '1', '1970')",January,1,1970,/wiki/Dipolog
+46,Dumaguete,134103,Negros Oriental,VII,CC,RA 00327 [71],33.62,12.98,3989.0,10331.0,RA 00327 ,"('July', '15', '1948')",July,15,1948,"('November', '24', '1948')",November,24,1948,/wiki/Dumaguete
+47,El Salvador,58771,Misamis Oriental,X,CC,RA 09435 [73],106.15,40.98,554.0,1434.0,RA 09435 ,"('April', '12', '2007')",April,12,2007,"('June', '27', '2007')",June,27,2007,"/wiki/El_Salvador,_Misamis_Oriental"
+48,Escalante,96159,Negros Occidental,VI,CC,RA 09014 [74],192.76,74.43,499.0,1292.0,RA 09014 ,"('February', '28', '2001')",February,28,2001,"('March', '31', '2001')",March,31,2001,"/wiki/Escalante,_Negros_Occidental"
+49,Gapan,122968,Nueva Ecija,III,CC,RA 09022 [75],164.44,63.49,748.0,1937.0,RA 09022 ,"('March', '5', '2001')",March,5,2001,"('August', '25', '2001')",August,25,2001,/wiki/Gapan
+50,General Santos,697315,South Cotabato,XII,HUC,RA 05412 [76],492.86,190.29,1415.0,3664.0,RA 05412 ,"('June', '15', '1968')",June,15,1968,"('June', '15', '1968')",June,15,1968,/wiki/General_Santos
+51,General Trias,450583,Cavite,IV-A,CC,RA 10675 [77],90.01,34.75,5006.0,12965.0,RA 10675 ,"('August', '19', '2015')",August,19,2015,"('December', '12', '2015')",December,12,2015,/wiki/General_Trias
+52,Gingoog,136698,Misamis Oriental,X,CC,RA 02668 [79],568.44,219.48,240.0,623.0,RA 02668 ,"('June', '18', '1960')",June,18,1960,"('June', '18', '1960')",June,18,1960,/wiki/Gingoog
+53,Guihulngan,102656,Negros Oriental,VII,CC,RA 09409 [80],388.56,150.02,264.0,684.0,RA 09409 ,"('March', '24', '2007')",March,24,2007,"('July', '14', '2007')",July,14,2007,/wiki/Guihulngan
+54,Himamaylan,116240,Negros Occidental,VI,CC,RA 09028 [81],367.04,141.71,317.0,820.0,RA 09028 ,"('March', '5', '2001')",March,5,2001,"('March', '31', '2001')",March,31,2001,/wiki/Himamaylan
+55,Ilagan,158218,Isabela,II,CC,RA 10169 [82],1166.26,450.3,136.0,351.0,RA 10169 ,"('June', '21', '2012')",June,21,2012,"('August', '11', '2012')",August,11,2012,/wiki/Ilagan
+56,Iligan,363115,Lanao del Norte,X,HUC,RA 00525 [83],813.37,314.04,446.0,1156.0,RA 00525 ,"('June', '16', '1950')",June,16,1950,"('June', '16', '1950')",June,16,1950,/wiki/Iligan
+57,Iloilo City,457626,Iloilo,VI,HUC,CA 057,78.34,30.25,5842.0,15130.0,CA 057,"('October', '20', '1936')",October,20,1936,"('August', '25', '1937')",August,25,1937,/wiki/Iloilo_City
+58,Imus,496794,Cavite,IV-A,CC,RA 10161 [85],53.15,20.52,9347.0,24209.0,RA 10161 ,"('April', '10', '2012')",April,10,2012,"('June', '30', '2012')",June,30,2012,/wiki/Imus
+59,Iriga,114457,Camarines Sur,V,CC,RA 05261 [87],137.35,53.03,833.0,2158.0,RA 05261 ,"('June', '15', '1968')",June,15,1968,"('September', '3', '1968')",September,3,1968,/wiki/Iriga
+60,Isabela,130379,Basilan,IX,CC,RA 09023 [89],223.73,86.38,583.0,1509.0,RA 09023 ,"('March', '5', '2001')",March,5,2001,"('April', '25', '2001')",April,25,2001,"/wiki/Isabela,_Basilan"
+61,Kabankalan,200198,Negros Occidental,VI,CC,RA 08297 [90],697.35,269.25,287.0,744.0,RA 08297 ,"('June', '6', '1997')",June,6,1997,"('August', '2', '1997')",August,2,1997,/wiki/Kabankalan
+62,Kidapawan,160791,Cotabato,XII,CC,RA 08500 [91],358.47,138.41,449.0,1162.0,RA 08500 ,"('February', '12', '1998')",February,12,1998,"('March', '22', '1998')",March,22,1998,/wiki/Kidapawan
+63,Koronadal,195398,South Cotabato,XII,CC,RA 08803 [92],277.0,106.95,705.0,1827.0,RA 08803 ,"('August', '16', '2000')",August,16,2000,"('October', '8', '2000')",October,8,2000,/wiki/Koronadal
+64,La Carlota,66664,Negros Occidental,VI,CC,RA 04585 [93],137.29,53.01,486.0,1258.0,RA 04585 ,"('June', '19', '1965')",June,19,1965,"('January', '22', '1966')",January,22,1966,"/wiki/La_Carlota,_Negros_Occidental"
+65,Lamitan,100150,Basilan,BARMM,CC,RA 09393 [94],354.45,136.85,283.0,732.0,RA 09393 ,"('March', '15', '2007')",March,15,2007,"('June', '18', '2007')",June,18,2007,/wiki/Lamitan
+66,Laoag,111651,Ilocos Norte,I,CC,RA 04584 [95],116.08,44.82,962.0,2491.0,RA 04584 ,"('June', '19', '1965')",June,19,1965,"('January', '1', '1966')",January,1,1966,/wiki/Laoag
+67,Lapu-Lapu City,497604,Cebu,VII,HUC,RA 03134 [96],58.1,22.43,8565.0,22182.0,RA 03134 ,"('June', '17', '1961')",June,17,1961,"('December', '31', '1961')",December,31,1961,/wiki/Lapu-Lapu_City
+68,Las Piñas,606293,none ,NCR,HUC,RA 08251 [98],32.69,12.62,18547.0,48036.0,RA 08251 ,"('February', '12', '1997')",February,12,1997,"('March', '26', '1997')",March,26,1997,/wiki/Las_Pi%C3%B1as
+69,Legazpi,209533,Albay,V,CC,RA 02234 [99],153.7,59.34,1363.0,3531.0,RA 02234 ,"('June', '12', '1959')",June,12,1959,"('June', '12', '1959')",June,12,1959,"/wiki/Legazpi,_Albay"
+70,Ligao,118096,Albay,V,CC,RA 09008 [100],246.75,95.27,479.0,1240.0,RA 09008 ,"('February', '21', '2001')",February,21,2001,"('March', '24', '2001')",March,24,2001,/wiki/Ligao
+71,Lipa,372931,Batangas,IV-A,CC,RA 00162 [101],209.4,80.85,1781.0,4613.0,RA 00162 ,"('June', '20', '1947')",June,20,1947,"('June', '20', '1947')",June,20,1947,"/wiki/Lipa,_Batangas"
+72,Lucena,278924,Quezon,IV-A,HUC,RA 03271 [103],80.21,30.97,3477.0,9006.0,RA 03271 ,"('June', '17', '1961')",June,17,1961,"('August', '19', '1962')",August,19,1962,/wiki/Lucena
+73,Maasin,87446,Southern Leyte,VIII,CC,RA 08796 [105],211.71,81.74,413.0,1070.0,RA 08796 ,"('July', '11', '2000')",July,11,2000,"('August', '10', '2000')",August,10,2000,/wiki/Maasin
+74,Mabalacat,293244,Pampanga,III,CC,RA 10164 [106],83.18,32.12,3525.0,9131.0,RA 10164 ,"('May', '15', '2012')",May,15,2012,"('July', '21', '2012')",July,21,2012,/wiki/Mabalacat
+75,Makati,629616,none ,NCR,HUC,RA 07854 [107],21.57,8.33,29189.0,75600.0,RA 07854 ,"('January', '2', '1995')",January,2,1995,"('February', '4', '1995')",February,4,1995,/wiki/Makati
+76,Malabon,380522,none ,NCR,HUC,RA 09019 [108],15.71,6.07,24222.0,62734.0,RA 09019 ,"('March', '5', '2001')",March,5,2001,"('April', '21', '2001')",April,21,2001,/wiki/Malabon
+77,Malaybalay,190712,Bukidnon,X,CC,RA 08490 [109],969.19,374.21,197.0,510.0,RA 08490 ,"('February', '11', '1998')",February,11,1998,"('March', '22', '1998')",March,22,1998,/wiki/Malaybalay
+78,Malolos,261189,Bulacan,III,CC,RA 08754 [110],67.25,25.97,3884.0,10059.0,RA 08754 ,"('November', '4', '1999')",November,4,1999,"('December', '18', '1999')",December,18,1999,/wiki/Malolos
+79,Mandaluyong,425758,none ,NCR,HUC,RA 07675 [112],11.26,4.35,37812.0,97931.0,RA 07675 ,"('February', '9', '1994')",February,9,1994,"('April', '10', '1994')",April,10,1994,/wiki/Mandaluyong
+80,Mandaue,364116,Cebu,VII,HUC,RA 05519 [113],25.18,9.72,10442.0,27045.0,RA 05519 ,"('June', '21', '1969')",June,21,1969,"('August', '30', '1969')",August,30,1969,/wiki/Mandaue
+81,Manila,1846513,none,NCR,HUC,Act 0183 [115],38.55,14.88,47899.0,124058.0,Act 0183 ,"('July', '31', '1901')",July,31,1901,"('July', '31', '1901')",July,31,1901,/wiki/Manila
+82,Marawi,207010,Lanao del Sur,BARMM,CC,CA 592 [116],87.55,33.8,2364.0,6124.0,CA 592 ,"('August', '19', '1940')",August,19,1940,"('September', '30', '1950')",September,30,1950,/wiki/Marawi
+83,Marikina,456159,none ,NCR,HUC,RA 08223 [118],21.52,8.31,21197.0,54900.0,RA 08223 ,"('November', '6', '1996')",November,6,1996,"('December', '7', '1996')",December,7,1996,/wiki/Marikina
+84,Masbate City,104522,Masbate,V,CC,RA 08807 [119],188.0,72.59,556.0,1440.0,RA 08807 ,"('August', '16', '2000')",August,16,2000,"('September', '30', '2000')",September,30,2000,/wiki/Masbate_City
+85,Mati,147547,Davao Oriental,XI,CC,RA 09408 [120],588.63,227.27,251.0,649.0,RA 09408 ,"('March', '24', '2007')",March,24,2007,"('June', '18', '2007')",June,18,2007,"/wiki/Mati,_Davao_Oriental"
+86,Meycauayan,225673,Bulacan,III,CC,RA 09356 [121],32.1,12.39,7030.0,18208.0,RA 09356 ,"('October', '2', '2006')",October,2,2006,"('December', '10', '2006')",December,10,2006,/wiki/Meycauayan
+87,Muñoz,84308,Nueva Ecija,III,CC,RA 08977 [123],163.05,62.95,162.0,420.0,RA 08977 ,"('November', '7', '2000')",November,7,2000,"('December', '9', '2000')",December,9,2000,"/wiki/Mu%C3%B1oz,_Nueva_Ecija"
+88,Muntinlupa,543445,none ,NCR,HUC,RA 07926 [124],39.75,15.35,13672.0,35409.0,RA 07926 ,"('March', '1', '1995')",March,1,1995,"('May', '8', '1995')",May,8,1995,/wiki/Muntinlupa
+89,Naga,209170,Camarines Sur,V,ICC,RA 00305 [125],84.48,32.62,2476.0,6413.0,RA 00305 ,"('June', '18', '1948')",June,18,1948,"('June', '18', '1948')",June,18,1948,"/wiki/Naga,_Camarines_Sur"
+90,Naga,133184,Cebu,VII,CC,RA 09491 [126],101.97,39.37,1306.0,3383.0,RA 09491 ,"('July', '15', '2007')",July,15,2007,"('September', '2', '2007')",September,2,2007,"/wiki/Naga,_Cebu"
+91,Navotas,247543,none ,NCR,HUC,RA 09387 [127],8.94,3.45,27689.0,71715.0,RA 09387 ,"('March', '10', '2007')",March,10,2007,"('June', '24', '2007')",June,24,2007,/wiki/Navotas
+92,Olongapo,260317,Zambales,III,HUC,RA 04645 [128],103.3,39.9,1407.0,3644.0,RA 04645 ,"('June', '1', '1966')",June,1,1966,"('June', '1', '1966')",June,1,1966,/wiki/Olongapo
+93,Ormoc,230998,Leyte,VIII,ICC,RA 00179 [129],613.6,236.91,376.0,975.0,RA 00179 ,"('June', '21', '1947')",June,21,1947,"('October', '20', '1947')",October,20,1947,/wiki/Ormoc
+94,Oroquieta,72301,Misamis Occidental,X,CC,RA 05518 [131],237.88,91.85,304.0,787.0,RA 05518 ,"('June', '21', '1969')",June,21,1969,"('January', '1', '1970')",January,1,1970,/wiki/Oroquieta
+95,Ozamiz,140334,Misamis Occidental,X,CC,RA 00321 [132],169.95,65.62,826.0,2139.0,RA 00321 ,"('June', '19', '1948')",June,19,1948,"('June', '19', '1948')",June,19,1948,/wiki/Ozamiz
+96,Pagadian,210452,Zamboanga del Sur,IX,CC,RA 05478 [134],378.8,146.26,556.0,1439.0,RA 05478 ,"('June', '21', '1969')",June,21,1969,"('June', '21', '1969')",June,21,1969,/wiki/Pagadian
+97,Palayan,45383,Nueva Ecija,III,CC,RA 04475 [135],101.4,39.15,448.0,1159.0,RA 04475 ,"('June', '19', '1965')",June,19,1965,"('June', '19', '1965')",June,19,1965,/wiki/Palayan
+98,Panabo,209230,Davao del Norte,XI,CC,RA 09015 [136],251.23,97.0,231.0,597.0,RA 09015 ,"('February', '28', '2001')",February,28,2001,"('March', '31', '2001')",March,31,2001,/wiki/Panabo
+99,Parañaque,689992,none ,NCR,HUC,RA 08507 [137],46.57,17.98,14816.0,38374.0,RA 08507 ,"('February', '13', '1998')",February,13,1998,"('March', '22', '1998')",March,22,1998,/wiki/Para%C3%B1aque
+100,Pasay,440656,none ,NCR,HUC,RA 00183 [138],13.97,5.39,31543.0,81696.0,RA 00183 ,"('June', '21', '1947')",June,21,1947,"('August', '16', '1947')",August,16,1947,/wiki/Pasay
+101,Pasig,803159,none ,NCR,HUC,RA 07829 [140],48.46,18.71,16574.0,42926.0,RA 07829 ,"('December', '8', '1994')",December,8,1994,"('January', '21', '1995')",January,21,1995,/wiki/Pasig
+102,Passi,88873,Iloilo,VI,CC,RA 08469 [141],251.39,97.06,354.0,916.0,RA 08469 ,"('January', '30', '1998')",January,30,1998,"('March', '14', '1998')",March,14,1998,"/wiki/Passi,_Iloilo"
+103,Puerto Princesa,307079,Palawan,Mimaropa,HUC,RA 05906 [142],2381.02,919.32,129.0,334.0,RA 05906 ,"('June', '21', '1969')",June,21,1969,"('January', '1', '1970')",January,1,1970,/wiki/Puerto_Princesa
+104,Quezon City,2960048,none ,NCR,HUC,CA 502 [143],171.71,66.3,17239.0,44648.0,CA 502 ,"('October', '12', '1939')",October,12,1939,"('October', '12', '1939')",October,12,1939,/wiki/Quezon_City
+105,Roxas,179292,Capiz,VI,CC,RA 00603 [144],95.07,36.71,1886.0,4884.0,RA 00603 ,"('April', '11', '1951')",April,11,1951,"('May', '12', '1951')",May,12,1951,"/wiki/Roxas,_Capiz"
+106,Sagay,148894,Negros Occidental,VI,CC,RA 08192 [146],330.34,127.54,451.0,1167.0,RA 08192 ,"('June', '11', '1996')",June,11,1996,"('August', '10', '1996')",August,10,1996,"/wiki/Sagay,_Negros_Occidental"
+107,Samal,209230,Davao del Norte,XI,CC,RA 08471 [147],301.3,116.33,694.0,1799.0,RA 08471 ,"('January', '30', '1998')",January,30,1998,"('March', '7', '1998')",March,7,1998,"/wiki/Samal,_Davao_del_Norte"
+108,San Carlos,132650,Negros Occidental,VI,CC,RA 02643 [148],451.5,174.33,294.0,761.0,RA 02643 ,"('June', '18', '1960')",June,18,1960,"('June', '18', '1960')",June,18,1960,"/wiki/San_Carlos,_Negros_Occidental"
+109,San Carlos,205424,Pangasinan,I,CC,RA 04487 [149],169.03,65.26,1215.0,3148.0,RA 04487 ,"('June', '19', '1965')",June,19,1965,"('January', '1', '1966')",January,1,1966,"/wiki/San_Carlos,_Pangasinan"
+110,San Fernando,125640,La Union,I,CC,RA 08509 [150],102.72,39.66,1223.0,3168.0,RA 08509 ,"('February', '13', '1998')",February,13,1998,"('March', '20', '1998')",March,20,1998,"/wiki/San_Fernando,_La_Union"
+111,San Fernando,354666,Pampanga,III,CC,RA 08990 [151],67.74,26.15,5236.0,13560.0,RA 08990 ,"('January', '26', '2001')",January,26,2001,"('February', '3', '2001')",February,3,2001,"/wiki/San_Fernando,_Pampanga"
+112,San Jose,150917,Nueva Ecija,III,CC,RA 06051 [152],185.99,71.81,811.0,2102.0,RA 06051 ,"('August', '4', '1969')",August,4,1969,"('August', '4', '1969')",August,4,1969,"/wiki/San_Jose,_Nueva_Ecija"
+113,San Jose del Monte,651813,Bulacan,III,CC,RA 08797 [153],105.53,40.75,6177.0,15997.0,RA 08797 ,"('July', '15', '2000')",July,15,2000,"('September', '10', '2000')",September,10,2000,/wiki/San_Jose_del_Monte
+114,San Juan,126347,none ,NCR,HUC,RA 09388 [154],5.95,2.3,21235.0,54998.0,RA 09388 ,"('March', '11', '2007')",March,11,2007,"('June', '16', '2007')",June,16,2007,"/wiki/San_Juan,_Metro_Manila"
+115,San Pablo,285348,Laguna,IV-A,CC,CA 520 [155],197.56,76.28,1444.0,3741.0,CA 520 ,"('May', '7', '1940')",May,7,1940,"('March', '30', '1941')",March,30,1941,"/wiki/San_Pablo,_Laguna"
+116,San Pedro,326001,Laguna,IV-A,CC,RA 10420 [157],24.05,9.29,13555.0,35108.0,RA 10420 ,"('March', '27', '2013')",March,27,2013,"('December', '28', '2013')",December,28,2013,"/wiki/San_Pedro,_Laguna"
+117,Santa Rosa,414812,Laguna,IV-A,CC,RA 09264 [159],54.84,21.17,7564.0,19591.0,RA 09264 ,"('March', '10', '2004')",March,10,2004,"('July', '10', '2004')",July,10,2004,"/wiki/Santa_Rosa,_Laguna"
+118,Santo Tomas,218500,Batangas,IV-A,CC,RA 11086 [161],95.41,36.84,2290.0,5931.0,RA 11086 ,"('October', '5', '2018')",October,5,2018,"('September', '7', '2019')",September,7,2019,"/wiki/Santo_Tomas,_Batangas"
+119,Santiago,148580,Isabela,II,ICC,RA 07720 [162],255.5,98.65,582.0,1506.0,RA 07720 ,"('May', '5', '1994')",May,5,1994,"('July', '3', '1994')",July,3,1994,"/wiki/Santiago,_Isabela"
+120,Silay,130478,Negros Occidental,VI,CC,RA 01621 [163],214.8,82.93,607.0,1573.0,RA 01621 ,"('June', '12', '1957')",June,12,1957,"('June', '12', '1957')",June,12,1957,/wiki/Silay
+121,Sipalay,72448,Negros Occidental,VI,CC,RA 09027 [164],379.78,146.63,191.0,494.0,RA 09027 ,"('March', '5', '2001')",March,5,2001,"('March', '31', '2001')",March,31,2001,/wiki/Sipalay
+122,Sorsogon City,182237,Sorsogon,V,CC,RA 08806 [165],276.11,106.61,660.0,1709.0,RA 08806 ,"('August', '16', '2000')",August,16,2000,"('December', '16', '2000')",December,16,2000,/wiki/Sorsogon_City
+123,Surigao City,171107,Surigao del Norte,XIII,CC,RA 06134 [166],245.3,94.71,698.0,1807.0,RA 06134 ,"('August', '31', '1970')",August,31,1970,"('August', '31', '1970')",August,31,1970,/wiki/Surigao_City
+124,Tabaco,140961,Albay,V,CC,RA 09020 [167],117.14,45.23,1203.0,3117.0,RA 09020 ,"('March', '5', '2001')",March,5,2001,"('March', '24', '2001')",March,24,2001,/wiki/Tabaco
+125,Tabuk,121033,Kalinga,CAR,CC,RA 09404 [168],700.25,270.37,173.0,448.0,RA 09404 ,"('March', '23', '2007')",March,23,2007,"('June', '23', '2007')",June,23,2007,"/wiki/Tabuk,_Kalinga"
+126,Tacloban,251881,Leyte,VIII,HUC,RA 00760 [169],201.72,77.88,1249.0,3234.0,RA 00760 ,"('June', '20', '1952')",June,20,1952,"('June', '12', '1953')",June,12,1953,/wiki/Tacloban
+127,Tacurong,109319,Sultan Kudarat,XII,CC,RA 08805 [171],153.4,59.23,713.0,1846.0,RA 08805 ,"('August', '16', '2000')",August,16,2000,"('September', '18', '2000')",September,18,2000,/wiki/Tacurong
+128,Tagaytay,85330,Cavite,IV-A,CC,CA 338 [172],65.0,25.1,1313.0,3400.0,CA 338 ,"('June', '21', '1938')",June,21,1938,"('June', '21', '1938')",June,21,1938,/wiki/Tagaytay
+129,Tagbilaran,104976,Bohol,VII,CC,RA 04660 [173],36.5,14.09,2876.0,7449.0,RA 04660 ,"('June', '18', '1966')",June,18,1966,"('July', '1', '1966')",July,1,1966,/wiki/Tagbilaran
+130,Taguig,886722,none ,NCR,HUC,RA 08487 [174],45.21,17.46,19613.0,50798.0,RA 08487 ,"('February', '11', '1998')",February,11,1998,"('December', '8', '2004')",December,8,2004,/wiki/Taguig
+131,Tagum,296202,Davao del Norte,XI,CC,RA 08472 [176],195.8,75.6,1513.0,3918.0,RA 08472 ,"('January', '30', '1998')",January,30,1998,"('March', '7', '1998')",March,7,1998,/wiki/Tagum
+132,Talisay,263048,Cebu,VII,CC,RA 08979 [177],39.87,15.39,6598.0,17088.0,RA 08979 ,"('November', '22', '2000')",November,22,2000,"('December', '30', '2000')",December,30,2000,"/wiki/Talisay,_Cebu"
+133,Talisay,108909,Negros Occidental,VI,CC,RA 08489 [178],201.18,77.68,541.0,1402.0,RA 08489 ,"('February', '11', '1998')",February,11,1998,"('February', '11', '1998')",February,11,1998,"/wiki/Talisay,_Negros_Occidental"
+134,Tanauan,193936,Batangas,IV-A,CC,RA 09005 [179],107.16,41.37,1810.0,4687.0,RA 09005 ,"('February', '2', '2001')",February,2,2001,"('March', '10', '2001')",March,10,2001,"/wiki/Tanauan,_Batangas"
+135,Tandag,62669,Surigao del Sur,XIII,CC,RA 09392 [180],291.73,112.64,215.0,556.0,RA 09392 ,"('March', '15', '2007')",March,15,2007,"('June', '23', '2007')",June,23,2007,/wiki/Tandag
+136,Tangub,68389,Misamis Occidental,X,CC,RA 05131 [181],162.78,62.85,420.0,1088.0,RA 05131 ,"('June', '17', '1967')",June,17,1967,"('February', '28', '1968')",February,28,1968,/wiki/Tangub
+137,Tanjay,82642,Negros Oriental,VII,CC,RA 09026 [183],267.05,103.11,309.0,802.0,RA 09026 ,"('March', '5', '2001')",March,5,2001,"('March', '31', '2001')",March,31,2001,/wiki/Tanjay
+138,Tarlac City,385398,Tarlac,III,CC,RA 08593 [184],274.66,106.05,1403.0,3634.0,RA 08593 ,"('March', '12', '1998')",March,12,1998,"('April', '19', '1998')",April,19,1998,/wiki/Tarlac_City
+139,Tayabas,112658,Quezon,IV-A,CC,RA 09398 [185],230.95,89.17,488.0,1263.0,RA 09398 ,"('March', '18', '2007')",March,18,2007,"('July', '14', '2007')",July,14,2007,/wiki/Tayabas
+140,Toledo,207314,Cebu,VII,CC,RA 02688 [186],216.28,83.51,959.0,2483.0,RA 02688 ,"('June', '18', '1960')",June,18,1960,"('June', '18', '1960')",June,18,1960,"/wiki/Toledo,_Cebu"
+141,Trece Martires,210503,Cavite,IV-A,CC,RA 00981 [187],39.1,15.1,5384.0,13944.0,RA 00981 ,"('May', '24', '1954')",May,24,1954,"('January', '1', '1956')",January,1,1956,/wiki/Trece_Martires
+142,Tuguegarao,166334,Cagayan,II,CC,RA 08755 [188],144.8,55.91,1149.0,2975.0,RA 08755 ,"('November', '4', '1999')",November,4,1999,"('December', '18', '1999')",December,18,1999,/wiki/Tuguegarao
+143,Urdaneta,144577,Pangasinan,I,CC,RA 08480 [189],100.26,38.71,1442.0,3735.0,RA 08480 ,"('February', '10', '1998')",February,10,1998,"('March', '21', '1998')",March,21,1998,"/wiki/Urdaneta,_Pangasinan"
+144,Valencia,216546,Bukidnon,X,CC,RA 08985 [190],587.29,226.75,369.0,955.0,RA 08985 ,"('December', '5', '2000')",December,5,2000,"('December', '30', '2000')",December,30,2000,"/wiki/Valencia,_Bukidnon"
+145,Valenzuela,714978,none ,NCR,HUC,RA 08526 [191],47.02,18.15,15206.0,39383.0,RA 08526 ,"('February', '14', '1998')",February,14,1998,"('December', '30', '1998')",December,30,1998,"/wiki/Valenzuela,_Metro_Manila"
+146,Victorias,90101,Negros Occidental,VI,CC,RA 08488 [192],133.92,51.71,673.0,1743.0,RA 08488 ,"('February', '11', '1998')",February,11,1998,"('March', '21', '1998')",March,21,1998,/wiki/Victorias
+147,Vigan,53935,Ilocos Sur,I,CC,RA 08988 [193],25.12,9.7,2147.0,5561.0,RA 08988 ,"('December', '27', '2000')",December,27,2000,"('January', '22', '2001')",January,22,2001,/wiki/Vigan
+148,Zamboanga City,977234,Zamboanga del Sur,IX,HUC,CA 039 [196],1453.27,561.11,659.0,1706.0,CA 039 ,"('October', '12', '1936')",October,12,1936,"('February', '26', '1937')",February,26,1937,/wiki/Zamboanga_City

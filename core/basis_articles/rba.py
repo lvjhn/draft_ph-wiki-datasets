@@ -11,15 +11,15 @@ class RegionBasisArticle(BasisArticle):
     def extract_metas(self): 
         # extract main table data
         headers = [
-            "location",
-            "region", 
-            "psgc", 
-            "island_group", 
-            "regional_center",
-            "component_lgus", 
-            "area",
-            "population_2020",
-            "density_2020" 
+            "Location",
+            "Region", 
+            "PSGC", 
+            "Island Group", 
+            "Regional Center",
+            "Component LGUs", 
+            "Area",
+            "Population (2020)",
+            "Density (2020)" 
         ]
 
         table_filters = self.extractor.from_headers([
@@ -43,30 +43,28 @@ class RegionBasisArticle(BasisArticle):
         df = pd.DataFrame(data, columns=headers) 
 
         # drop location field (empty)
-        df = df.drop("location", axis=1)
+        df = df.drop("Location", axis=1)
 
         #
         # Region Data
         # 
 
-        df["region_abbr"] = \
-            df["region"].apply(
+        df["Region (Abbr)"] = \
+            df["Region"].apply(
                 lambda x: self.Extractor.first_or_null(r"\((.*)\)", x)
             )
 
-        df["region"] = \
-            df["region"].apply(
+        df["Region"] = \
+            df["Region"].apply(
                 lambda x: self.Extractor.first_or_null(r"(.*)\(.*\)", x)
             )
 
-        df = df.drop("region", axis=1)
-        
         #
         # Regional Center
         # 
 
-        df["regional_center"] = \
-            df["regional_center"].apply(
+        df["Regional Center"] = \
+            df["Regional Center"].apply(
                 lambda x: 
                     x.replace("(interim/de facto)", "").split(" and ") 
             )
@@ -75,14 +73,14 @@ class RegionBasisArticle(BasisArticle):
         # Component LGUs
         # 
 
-        df["n_lgus"] = \
-            df["component_lgus"].apply(
+        df["No. of LGUs"] = \
+            df["Component LGUs"].apply(
                 lambda x: 
                     self.Extractor.to_int(x.split("\n")[0])
             )
 
-        df["lgus"] = \
-            df["component_lgus"].apply(
+        df["LGUs"] = \
+            df["Component LGUs"].apply(
                 lambda x: (
                     [
                         self.Extractor.normalize(
@@ -95,41 +93,41 @@ class RegionBasisArticle(BasisArticle):
                 ) 
             )
 
-        df = df.drop("component_lgus", axis=1)
+        df = df.drop("Component LGUs", axis=1)
 
         #
         # Area
         # 
-        df = self.Extractor.area_split(df, "area")
+        df = self.Extractor.area_split(df, "Area")
 
         #
         # Population
         # 
-        df["population_count_2020"] = \
-            df["population_2020"].apply(
+        df["Population Count (2020)"] = \
+            df["Population (2020)"].apply(
                 lambda x: 
                     self.Extractor.to_float(x.split(" ")[0].strip())
             )
 
-        df["population_pa_2020"] = \
-            df["population_2020"].apply(
+        df["Population p.a. (2020)"] = \
+            df["Population (2020)"].apply(
                 lambda x: 
                     self.Extractor.to_float(
                         self.Extractor.first_or_null(r"\((.*)%\)", x)
                     )
             )
 
-        df = df.drop("population_2020", axis=1)
+        df = df.drop("Population (2020)", axis=1)
 
         #
         # Density
         # 
-        df = self.Extractor.density_split(df, "density_2020")
+        df = self.Extractor.density_split(df, "Density (2020)")
 
         #
         # Region Links
         #
         links = self.extractor.extract_table_links(table_filters, 1)
-        df["article_link"] = links
+        df["Article Link"] = links
 
         return df

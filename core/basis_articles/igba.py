@@ -11,16 +11,16 @@ class IslandGroupBasisArticle(BasisArticle):
     def extract_metas(self): 
         # extract main table data
         headers = [
-            "island_group", 
-            "largest_city", 
-            "population_2020", 
-            "population_2010", 
-            "pa", 
-            "area_km2",
-            "area_mi2", 
-            "density_km2",
-            "density_mi2",
-            "major_islands"
+            "Island Group", 
+            "Largest City", 
+            "Population (2020)", 
+            "Population (2010)", 
+            "P.A.", 
+            "Area (km2)",
+            "Area (mi2)", 
+            "Density (km2)",
+            "Density (mi2)",
+            "Major Islands"
         ]
 
         table_filters = self.extractor.from_headers([
@@ -61,39 +61,38 @@ class IslandGroupBasisArticle(BasisArticle):
         # normalize data
         df = pd.DataFrame(data, columns=headers)
     
-        df["population_2020"] = \
-            df["population_2020"].apply(
+        df["Population (2020)"] = \
+            df["Population (2020)"].apply(
                 lambda x: self.Extractor.to_int(x)
             )
 
-        df["population_2010"] = \
-            df["population_2010"].apply(
+        df["Population (2020)"] = \
+            df["Population (2010)"].apply(
                 lambda x: self.Extractor.to_int(x)
             )
 
-        df["pa"] = \
-            df["pa"].apply(
-                lambda x: self.Extractor.to_float(x)
-            )
-        pd.set_option('display.max_columns', None)
-
-        df["area_km2"] = \
-            df["area_km2"].apply(
+        df["P.A."] = \
+            df["P.A."].apply(
                 lambda x: self.Extractor.to_float(x)
             )
 
-        df["area_mi2"] = \
-            df["area_mi2"].apply(
+        df["Area (km2)"] = \
+            df["Area (km2)"].apply(
                 lambda x: self.Extractor.to_float(x)
             )
 
-        df["density_km2"] = \
-            df["density_km2"].apply(
+        df["Area (mi2)"] = \
+            df["Area (mi2)"].apply(
                 lambda x: self.Extractor.to_float(x)
             )
 
-        df["density_mi2"] = \
-            df["density_mi2"].apply(
+        df["Density (km2)"] = \
+            df["Density (km2)"].apply(
+                lambda x: self.Extractor.to_float(x)
+            )
+
+        df["Density (mi2)"] = \
+            df["Density (mi2)"].apply(
                 lambda x: self.Extractor.to_float(x)
             )
 
@@ -101,6 +100,6 @@ class IslandGroupBasisArticle(BasisArticle):
         # Island Group Links
         #
         links = self.extractor.extract_table_links(table_filters, 0)
-        df["article_link"] = links  
+        df["Article Link"] = links  
     
         return df

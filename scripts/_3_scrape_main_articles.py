@@ -41,7 +41,7 @@ def scrape_for_context(context):
         )
         scraper.client.download_outdir = f"{OUTPUT_FOLDER}/{context}/" 
         basis = pd.read_csv(f"{INPUT_FOLDER}{context}.csv") 
-        links = basis["article_link"]        
+        links = basis["Article Link"]        
         items = [link.split("/")[2] for link in links]
         scraper.add_multi(items)
         scraper.scrape(verbose=True)

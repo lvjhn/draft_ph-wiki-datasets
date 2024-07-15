@@ -55,20 +55,18 @@ def extract_for_context(context):
         rows = []
         n = len(basis)
         for index, row in basis.iterrows():
-            print(f"\t@ Processing {row['article_link']} ({index + 1} of {n})")
+            print(f"\t@ Processing {row['Article Link']} ({index + 1} of {n})")
             article = Article(
-                row["article_link"].split("/")[2], 
+                row["Article Link"].split("/")[2], 
                 folder=f"{ARTICLES_FOLDER}{context}/"
             )
 
             data = article.extract_all() 
 
             if columns is None:
-                columns = list(data.keys())
+                columns = list(data.keys()) + ["Article Link"]
 
-            rows.append(
-                list(data.values())
-            )
+            rows.append(list(data.values()) + [row["Article Link"]])
 
         df = pd.DataFrame(rows, columns=columns)
         

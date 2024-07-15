@@ -11,17 +11,17 @@ class CityBasisArticle(BasisArticle):
     def extract_metas(self): 
         # extract main table data
         headers = [
-            "coordinates",
-           "city",
-           "population_2020",
-           "area",
-           "density",
-           "province", 
-           "region",
-           "legal_class", 
-           "charter",
-           "approval",
-           "ratification"
+           "Coordinates",
+           "City",
+           "Population (2020)",
+           "Area",
+           "Density",
+           "Province", 
+           "Region",
+           "Legal Class", 
+           "Charter",
+           "Approval",
+           "Ratification"
         ]
 
         table_filters = self.extractor.from_headers(
@@ -51,13 +51,13 @@ class CityBasisArticle(BasisArticle):
         #
         # Coordinates
         #  
-        df = df.drop("coordinates", axis=1)
+        df = df.drop("Coordinates", axis=1)
 
         #
         # Population
         # 
-        df["population_2020"] = \
-            df["population_2020"].apply(
+        df["Population (2020)"] = \
+            df["Population (2020)"].apply(
                 lambda x: 
                     self.Extractor.to_int(
                         self.Extractor.normalize(
@@ -70,18 +70,18 @@ class CityBasisArticle(BasisArticle):
         #
         # Area
         # 
-        df = self.Extractor.area_split(df, "area")
+        df = self.Extractor.area_split(df, "Area")
 
         #
         # Density
         # 
-        df = self.Extractor.density_split(df, "density")
+        df = self.Extractor.density_split(df, "Density")
 
         #
         # Province
         # 
-        df["province"] = \
-            df["province"].apply(
+        df["Province"] = \
+            df["Province"].apply(
                 lambda x: 
                     self.Extractor.normalize(
                         x,
@@ -92,8 +92,8 @@ class CityBasisArticle(BasisArticle):
         #
         # Charter
         # 
-        df["charter"] = \
-            df["charter"].apply(
+        df["Chater"] = \
+            df["Charter"].apply(
                 lambda x: 
                     self.Extractor.normalize(
                         x,
@@ -104,8 +104,8 @@ class CityBasisArticle(BasisArticle):
         #
         # Approval
         # 
-        df["approval"] = \
-            df["approval"].apply(
+        df["Approval"] = \
+            df["Approval"].apply(
                 lambda x: 
                     self.Extractor.normalize(
                         x,
@@ -116,8 +116,8 @@ class CityBasisArticle(BasisArticle):
         #
         # Ratification
         # 
-        df["ratification"] = \
-            df["ratification"].apply(
+        df["Ratification"] = \
+            df["Ratification"].apply(
                 lambda x: 
                     self.Extractor.normalize(
                         x,
@@ -128,13 +128,13 @@ class CityBasisArticle(BasisArticle):
         #
         # Convert to dates
         # 
-        df = self.Extractor.date_split(df, "approval")
-        df = self.Extractor.date_split(df, "ratification")
+        df = self.Extractor.date_split(df, "Approval")
+        df = self.Extractor.date_split(df, "Ratification")
 
         #
         # District Links
         #
         links = self.extractor.extract_table_links(table_filters, 1)
-        df["article_link"] = links    
+        df["Article Link"] = links    
 
         return df
