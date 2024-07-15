@@ -5,14 +5,13 @@ DEBUG = helpers.DEBUG
 
 class DistrictArticle(MainArticle): 
     def __init__(self, article, *args, **kwargs): 
-        MainArticle.__init__(self, article, *args, **kwargs)
+        MainArticle.__init__(self,article, *args, **kwargs)
 
     def extract_all(self): 
         return {
-            "Coordinates" : self.extract_coordinates(),
             "Province" : self.extract_province(),
             "Region" : self.extract_region(),
-            "Population" : self.extract_population(),
+            "Population (2020)" : self.extract_population(),
             "Electorate" : self.extract_electorate(),
             "Major Settlements" : self.extract_major_settlements(),
             "Area" : self.extract_area(),
@@ -23,51 +22,134 @@ class DistrictArticle(MainArticle):
             "Constituent LGUs History" : self.extract_clgus_history()
         }
 
-    def extract_coordinates(self):
-        DEBUG and print("@ Extracting coordinates.")
-        pass
-
     def extract_province(self):
         DEBUG and print("@ Extracting province.")
-        pass
+
+        return self.extractor.extract_pair(
+            "Province"
+        )
 
     def extract_region(self):
         DEBUG and print("@ Extracting region.")
-        pass
+        
+        return self.extractor.extract_pair(
+            "Region"
+        )
 
     def extract_population(self):
         DEBUG and print("@ Extracting population.")
-        pass
+        
+        def extract(y): 
+            y = y.get_text() 
+            y = self.Extractor.all_or_null("(.*) \((.*)\)", y)[0]
+            
+            no = self.Extractor.to_int(y[0])
+            year = self.Extractor.to_int(y[1])
+            
+            y = {
+                "No." : no, 
+                "Year" : year
+            }
+
+            return y
+
+        return self.extractor.extract_pair(
+            "Population", 
+            select=extract
+        )
 
     def extract_electorate(self):
         DEBUG and print("@ Extracting electorate.")
-        pass
+        
+        def extract(y): 
+            y = y.get_text() 
+            y = self.Extractor.all_or_null("(.*) \((.*)\)", y)[0]
+            
+            no = self.Extractor.to_int(y[0])
+            year = self.Extractor.to_int(y[1])
+            
+            y = {
+                "No." : no, 
+                "Year" : year
+            }
+
+            return y
+
+        return self.extractor.extract_pair(
+            "Electorate", 
+            select=extract
+        )
     
     def extract_major_settlements(self):
         DEBUG and print("@ Extracting major settlements.")
-        pass
-    
+        
+        return self.extractor.extract_pair(
+            "Major settlements", 
+            select=
+                lambda y: 
+                    self.Extractor.to_int(
+                            y.get_text().split(" ")[0].strip()
+                    )
+                
+        )
+
     def extract_area(self):
         DEBUG and print("@ Extracting area.")
-        pass
+        return self.extractor.extract_pair(
+            "Area", 
+            select=
+                lambda y:
+                    self.Extractor.to_float(
+                        y.get_text().split("\xa0km2")[0]
+                    )
+        )
     
     def extract_created(self):
         DEBUG and print("@ Extracting created.")
-        pass
+        return self.extractor.extract_pair(
+            "Created", 
+            select=
+                lambda y:
+                    self.Extractor.to_int(y.get_text())
+        )
     
     def extract_representative(self):
         DEBUG and print("@ Extracting representative.")
-        pass
+        return self.extractor.extract_pair(
+            "Representative"
+        )
     
     def extract_political_party(self):
         DEBUG and print("@ Extracting political party.")
-        pass
+        return self.extractor.extract_pair(
+            "Political party"
+        )
     
     def extract_congressional_bloc(self):
-        DEBUG and print("@ Extracting congressional block.")
-        pass
+        DEBUG and print("@ Extracting congressional bloc.")
+        return self.extractor.extract_pair(
+            "Congressional bloc"
+        )
 
     def extract_clgus_history(self):
         DEBUG and print("@ Extracting CLGUs history.")
-        pass
-    
+        
+        items = self.extractor.extract_column(
+            "table",
+            9,
+            filter_=self.extractor.from_headers([
+                "Image",
+                "Member",
+                "Term of office",
+                "Congress",
+                "Party",
+                "Constituent LGU"
+            ])
+        )
+
+        items = [item.split(" ") for item in items]
+        items = [tuple([item[0], item[1:]]) for item in items]
+        items = dict(items)
+        
+        return items
+        
