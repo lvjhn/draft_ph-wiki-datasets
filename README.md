@@ -214,142 +214,93 @@ or access locations and relevant links.
 ```python
 from ph_wiki_datasets import Locations
 
+# Reference ID Formats
+# --------------------------------------------
+# Island Group - ig:Luzon, ig:Visayas, ig:Mindanao 
+# Region - r:[PSGC-CODE]
+# Province - p:[PSGC-CODE] 
+# District - d:[District Key] 
+# Municity - m:[PSGC-CODE] 
+
 # Accessors (Multi-Results)
-Locations.island_groups()           
-[
-    { "ref_id" : 1, "island_group" : "Luzon"    , "article_uri" : "Luzon"    }, 
-    { "ref_id" : 2, "island_group" : "Visayas"  , "article_uri" : "Visayas"  }, 
-    { "ref_id" : 3, "island_group" : "Mindanao" , "article_uri" : "Mindanao" }
-]
-
-Locations.regions()  
-{ 
-    { 
-        "ref_id"        : "[REF-ID]"
-        "id"            : "[PSGC-CODE]", 
-        "island_group"  : "Luzon", 
-        "region_name"   : "Bicol Region" , 
-        "article_uri"   : "Bicol_Region"
-    },
-    ...
-}
-
-Locations.provinces()
-{ 
-    { 
-        "ref_id"        : "[REF-ID]",
-        "id"            : "[PSGC-CODE]", 
-        "island_group"  : "Luzon", 
-        "region_name"   : "Bicol Region" ,
-        "province_name" : "Camarines Sur"
-        "article_uri"   : "Camarines_Sur"
-    },
-    ...
-}
-
-Locations.districts()
-{ 
-    { 
-        "ref_id"        : "[REF-ID]",
-        "id"            : "[PSGC-CODE]", 
-        "island_group"  : "Luzon", 
-        "region_name"   : "Bicol Region" ,
-        "province_name" : "Camarines Sur", 
-        "district_no"   : "3"
-        "article_uri"   : "Camarines_Sur"
-    },
-    ...
-}
-
-Locations.municities()
-{ 
-    { 
-        "ref_id"        : "[REF-ID]",
-        "id"            : "[PSGC-CODE]", 
-        "island_group"  : "Luzon", 
-        "region_name"   : "Bicol Region" ,
-        "province_name" : "Camarines Sur", 
-        "district_no"   : "3"
-        "city_name"     : "Naga City",
-        "article_uri"   : "Naga_City"
-    },
-    ...
-}
+Locations.island_groups(CONTEXT)           
+Locations.regions(CONTEXT)  
+Locations.provinces(CONTEXT)
+Locations.districts(CONTEXT)
+Locations.municities(CONTEXT)
+Locations.barangays(CONTEXT)
 
 ### With Filter
-Location.regions(island_group="Luzon")
-Location.regions(island_group="Visayas")
-Location.regions(island_group="Mindanao")
+Location.regions(CONTEXT, island_group="Luzon")
+Location.regions(CONTEXT, island_group="Visayas")
+Location.regions(CONTEXT, island_group="Mindanao")
 
-Location.provinces(island_group="Luzon")
-Location.provinces(region_name="Bicol Region")
-Location.provinces(region_code="[REGION-PSGC-CODE]")
+Location.provinces(CONTEXT, island_group="Luzon")
+Location.provinces(CONTEXT, region_name="Bicol Region")
+Location.provinces(CONTEXT, region_code="[REGION-PSGC-CODE]")
 
-Location.districts(island_group="Luzon")
-Location.districts(region_name="Bicol Region")
-Location.districts(region_code="[REGION-PSGC-CODE]")
-Location.districts(province_name="Camarines Sur")
-Location.districts(province_code="[PROVINCE-PSGC-CODE]")
+Location.districts(CONTEXT, island_group="Luzon")
+Location.districts(CONTEXT, region_name="Bicol Region")
+Location.districts(CONTEXT, region_code="[REGION-PSGC-CODE]")
+Location.districts(CONTEXT, province_name="Camarines Sur")
+Location.districts(CONTEXT, province_code="[PROVINCE-PSGC-CODE]")
 
-Location.municities(island_group="Luzon")
-Location.municities(region_name="Bicol Region")
-Location.municities(region_code="[REGION-PSGC-CODE]")
-Location.municities(province_name="Camarines Sur")
-Location.municities(province_code="[PROVINCE-PSGC-CODE]")
-Location.municities(district_slug="Camarines_Sur|3")
-Location.municities(district_code_slug="[PROVINCE-PSGC-CODE]|3")
+Location.municities(CONTEXT, island_group="Luzon")
+Location.municities(CONTEXT, region_name="Bicol Region")
+Location.municities(CONTEXT, region_code="[REGION-PSGC-CODE]")
+Location.municities(CONTEXT, province_name="Camarines Sur")
+Location.municities(CONTEXT, province_code="[PROVINCE-PSGC-CODE]")
+Location.municities(CONTEXT, district_slug="Camarines Sur|3")
+Location.municities(CONTEXT, district_code_slug="[PROVINCE-PSGC-CODE]|3")
 
-Location.barangays(island_group="Luzon")
-Location.barangays(region_name="Bicol Region")
-Location.barangays(region_code="[REGION-PSGC-CODE]")
-Location.barangays(province_name="Camarines Sur")
-Location.barangays(province_code="[PROVINCE-PSGC-CODE]")
-Location.barangays(district_slug="Camarines_Sur|3") 
-Location.barangays(district_code_slug="[PROVINCE-PSGC-CODE]|3")
-Location.barangays(municity_slug="Camarines_Sur|Naga_City")
-Location.barangays(municity_code="[MUNICITY-PSGC-CODE]")
+Location.barangays(CONTEXT, island_group="Luzon")
+Location.barangays(CONTEXT, region_name="Bicol Region")
+Location.barangays(CONTEXT, region_code="[REGION-PSGC-CODE]")
+Location.barangays(CONTEXT, province_name="Camarines Sur")
+Location.barangays(CONTEXT, province_code="[PROVINCE-PSGC-CODE]")
+Location.barangays(CONTEXT, district_slug="Camarines_Sur|3") 
+Location.barangays(CONTEXT, district_code_slug="[PROVINCE-PSGC-CODE]|3")
+Location.barangays(CONTEXT, municity_slug="Camarines_Sur|Naga_City")
+Location.barangays(CONTEXT, municity_code="[MUNICITY-PSGC-CODE]")
 
 ### Single-Item Accessor 
-Locator.island_group(island_group="Luzon")
+Locator.island_group(CONTEXT, island_group="Luzon")
 
-Locator.region(code="[PSGC-CODE]")
-Locator.region(name="Bicol Region")
+Locator.region(CONTEXT, code="[PSGC-CODE]")
+Locator.region(CONTEXT, name="Bicol Region")
 
-Locator.province(code="[PSGC-CODE]")
-Locator.province(name="Camarines Sur")
+Locator.province(CONTEXT, code="[PSGC-CODE]")
+Locator.province(CONTEXT, name="Camarines Sur")
 
-Locator.district(code_slug="[PSGC-CODE]|3")
-Locator.district(slug="Camarines_Sur|3")
+Locator.district(CONTEXT, code_slug="[PSGC-CODE]|3")
+Locator.district(CONTEXT, slug="Camarines_Sur|3")
 
-Locator.municity(code="[PSGC-CODE]")
-Locator.municity(slug="Camarines_Sur|Naga")
+Locator.municity(CONTEXT, code="[PSGC-CODE]")
+Locator.municity(CONTEXT, slug="Camarines_Sur|Naga")
 
-Locator.barangay(code="[PSGC-CODE]")
-Locator.barangay(slug="Camarines_Naga|Naga|Sabang")
+Locator.barangay(CONTEXT, code="[PSGC-CODE]")
+Locator.barangay(CONTEXT, slug="Camarines_Naga|Naga|Sabang")
 
 ### Info Item 
-Locator.general_info(ref_id="REF-REF-ID")
+Locator.general_info(ref_id="[REF-ID]")
 """
 {
-    "ref_id" : [REF-REF-ID],
+    "ref_id" : [REF-ID],
+    "psgc" : [CODE]
+    "coordinates" : "...", 
+    ...
+}
+"""
+
+Locator.locate(ref_id="[REF-ID]") 
+{
+    "ref_id" : [REF-ID],
     "psgc" : [CODE]
     "coordinates" : "", 
     ...
 }
-"""
 
-Locator.locate(code="[CODE]") 
-{
-    ... location related data ...
-}
 
-Locator.locate(ref_id="[REF-ID]") 
-{
-    ... location related data ...
-}
-
-Locator.get_slug(code="[PSGC-CODE]")
-Locator.get_code(slug="Camarines_Sur|Naga|Sabang", type="barangay")
 
 # get tree of map data 
 Locator.tree() 
@@ -357,8 +308,8 @@ Locator.tree()
     [   
         // island groups //
         { 
-            "island_group" : "Luzon", 
-            "article_uri" : "Luzon", 
+            "island_group" : "ig:Luzon", 
+            "article_uri" : "ig:Luzon", 
 
             // regions //
             "children" : [
@@ -375,7 +326,7 @@ Locator.tree()
             ] 
         }, 
         {
-            "ref_id" : "2",
+            "ref_id" : "ig:Visayas",
             "island_group" : "Visayas",
             "article_uri" : "Visayas",
             "children" : [

@@ -56,7 +56,7 @@ class RegionBasisArticle(BasisArticle):
 
         df["Region"] = \
             df["Region"].apply(
-                lambda x: self.Extractor.first_or_null(r"(.*)\(.*\)", x)
+                lambda x: self.Extractor.first_or_null(r"(.*)\(.*\)", x).strip()
             )
 
         #

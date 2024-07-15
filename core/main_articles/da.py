@@ -66,8 +66,8 @@ class DistrictArticle(MainArticle):
             )
         except:
             return {
-                "No." : no, 
-                "Year" : year
+                "No." : None, 
+                "Year" : None
             }
 
     def extract_electorate(self):
@@ -135,61 +135,79 @@ class DistrictArticle(MainArticle):
        
     def extract_area(self):
         DEBUG and print("@ Extracting area.")
-        return self.extractor.extract_pair(
-            "Area", 
-            select=
-                lambda y:
-                    self.Extractor.to_float(
-                        y.get_text().split("\xa0km2")[0]
-                    )
-        )
-    
+        try:
+            return self.extractor.extract_pair(
+                "Area", 
+                select=
+                    lambda y:
+                        self.Extractor.to_float(
+                            y.get_text().split("\xa0km2")[0]
+                        )
+            )
+        except: 
+            return None
+        
     def extract_created(self):
         DEBUG and print("@ Extracting created.")
-        return self.extractor.extract_pair(
-            "Created", 
-            select=
-                lambda y:
-                    self.Extractor.to_int(y.get_text())
-        )
+        try:
+            return self.extractor.extract_pair(
+                "Created", 
+                select=
+                    lambda y:
+                        self.Extractor.to_int(y.get_text())
+            )
+        except:
+            return None
     
     def extract_representative(self):
         DEBUG and print("@ Extracting representative.")
-        return self.extractor.extract_pair(
-            "Representative"
-        )
+        try:
+            return self.extractor.extract_pair(
+                "Representative"
+            )
+        except:
+            return None
     
     def extract_political_party(self):
         DEBUG and print("@ Extracting political party.")
-        return self.extractor.extract_pair(
-            "Political party"
-        )
+        try: 
+            return self.extractor.extract_pair(
+                "Political party"
+            )
+        except: 
+            return None
     
     def extract_congressional_bloc(self):
         DEBUG and print("@ Extracting congressional bloc.")
-        return self.extractor.extract_pair(
-            "Congressional bloc"
-        )
+        try:
+            return self.extractor.extract_pair(
+                "Congressional bloc"
+            )
+        except:
+            return None
 
     def extract_clgus_history(self):
         DEBUG and print("@ Extracting CLGUs history.")
         
-        items = self.extractor.extract_column(
-            "table",
-            9,
-            filter_=self.extractor.from_headers([
-                "Image",
-                "Member",
-                "Term of office",
-                "Congress",
-                "Party",
-                "Constituent LGU"
-            ])
-        )
+        try:
+            items = self.extractor.extract_column(
+                "table",
+                9,
+                filter_=self.extractor.from_headers([
+                    "Image",
+                    "Member",
+                    "Term of office",
+                    "Congress",
+                    "Party",
+                    "Constituent LGU"
+                ])
+            )
 
-        items = [item.split(" ") for item in items]
-        items = [tuple([item[0], item[1:]]) for item in items]
-        items = dict(items)
-        
-        return items
-        
+            items = [item.split(" ") for item in items]
+            items = [tuple([item[0], item[1:]]) for item in items]
+            items = dict(items)
+            
+            return items
+        except: 
+            return None
+            

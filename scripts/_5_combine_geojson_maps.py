@@ -1,10 +1,11 @@
 import json
 import os
+import scripts._0_config as config
 
 #
 # CONFIGURATION
 # 
-CONTEXT       = "2024-JULY"
+CONTEXT       = config.CONTEXT
 DATA_FOLDER   = "./data/" + CONTEXT + "/maps/raw/geojson"
 OUTPUT_FOLDER = "./data/" + CONTEXT + "/maps/raw/geojson/combined"
 
@@ -23,7 +24,7 @@ def combine_maps(subcontext, output_name):
     n = len(folder_items)
 
     for folder_item in folder_items: 
-        print(f"\t@ Processing {i} of {n}", end="\r")
+        print(f"\t@ Processing {i + 1} of {n}", end="\r")
         infile = open(subfolder + "/" + folder_item).read()
         data = json.loads(infile)
         

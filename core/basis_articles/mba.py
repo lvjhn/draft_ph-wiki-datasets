@@ -88,7 +88,7 @@ class MunicityBasisArticle(BasisArticle):
         #
         # Create key
         # 
-        df["Distry Key"] = [ 
+        df["Municity Key"] = [ 
             df["Province"][i] + "|" + df["Municity"][i]
             for i in range(len(df))
         ]

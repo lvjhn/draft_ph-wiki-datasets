@@ -77,6 +77,7 @@ extract_for_context("nation")
 extract_for_context("island-groups")
 extract_for_context("regions")
 extract_for_context("provinces")
+extract_for_context("districts")
 extract_for_context("municities")
 
 print("@ Done.")

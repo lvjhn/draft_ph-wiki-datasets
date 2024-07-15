@@ -5,7 +5,11 @@ from core.article import Article
 class MainArticle(Article):
     def __init__(self, article, *args, **kwargs):
         Article.__init__(self, article, *args, **kwargs) 
-        self.infobox = self.extractor._.select(".infobox")[0]
+        infoboxes = self.extractor._.select(".infobox")
+        if len(infoboxes) > 0:
+            self.infobox = self.extractor._.select(".infobox")[0]
+        else:
+            self.infofbox = self.extractor._
 
     def extract_all(self):
         methods = dir(self) 

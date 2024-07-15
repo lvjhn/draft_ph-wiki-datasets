@@ -320,65 +320,7 @@ class MunicityArticle(MainArticle):
 
             return pair
 
-        try:
-            return dict(
-                self.extractor.extract_pairs_from_partition(
-                    "Economy",
-                    select=extract
-                )
-            )
-        except: 
-            return None
-
-    def extract_service_provider(self):
-        DEBUG and print("@ Extracting service provider.")
-        
-        def extract(x, y, i): 
-            x = self.Extractor.remove_dot(x.get_text())
-            y = y.get_text()
-
-            pair = (x, y)
-
-            return pair
-
-        try:
-            return dict(
-                self.extractor.extract_pairs_from_partition( 
-                    "Service provider",
-                    select=extract
-                )
-            )
-        except: 
-            return None
-
-    def extract_time_zone(self):
-        DEBUG and print("@ Extracting time zone.")
-
-        try:
-            return self.extractor.extract_pair( 
-                "Time zone"
-            )
-        except: 
-            return None
-
-    def extract_zip_code(self):
-        DEBUG and print("@ Extracting zip code.")
-        
-        try:
-            return self.extractor.extract_pair( 
-                "ZIP code"
-            )
-        except: 
-            return None
-
-    def extract_psgc(self):
-        DEBUG and print("@ Extracting PSGC.")
-        
-        try: 
-            return self.extractor.extract_pair( 
-                "PSGC"
-            )
-        except: 
+municity.
             return None
 
     def extract_idd_area_code(self):
