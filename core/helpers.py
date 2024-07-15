@@ -51,3 +51,6 @@ def flatten(tree, mode="bfs", as_tuple=False):
     else: 
         raise Exception(f"Unknown traversal mode {mode}")
     
+
+def fix_mun_psgc(code):
+    return "0".join([code[0:-9], code[-9:]])

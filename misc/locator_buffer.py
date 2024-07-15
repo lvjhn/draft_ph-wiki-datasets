@@ -1,5 +1,7 @@
 from core.locator import Locator 
 
-locations = Locator.municities("2024-JULY", district_code_slug="501700000|3")
+for i in range(1000):
+    locations = Locator.locate("2024-JULY", ref_id="b:501708050")
+    print(i)
 
 print(locations)

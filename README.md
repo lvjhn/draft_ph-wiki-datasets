@@ -272,7 +272,6 @@ Locator.region(CONTEXT, name="Bicol Region")
 Locator.province(CONTEXT, code="[PSGC-CODE]")
 Locator.province(CONTEXT, name="Camarines Sur")
 
-Locator.district(CONTEXT, code_slug="[PSGC-CODE]|3")
 Locator.district(CONTEXT, slug="Camarines_Sur|3")
 
 Locator.municity(CONTEXT, code="[PSGC-CODE]")
@@ -281,16 +280,6 @@ Locator.municity(CONTEXT, slug="Camarines_Sur|Naga")
 Locator.barangay(CONTEXT, code="[PSGC-CODE]")
 Locator.barangay(CONTEXT, slug="Camarines_Naga|Naga|Sabang")
 
-### Info Item 
-Locator.general_info(ref_id="[REF-ID]")
-"""
-{
-    "ref_id" : [REF-ID],
-    "psgc" : [CODE]
-    "coordinates" : "...", 
-    ...
-}
-"""
 
 Locator.locate(ref_id="[REF-ID]") 
 {
@@ -301,50 +290,6 @@ Locator.locate(ref_id="[REF-ID]")
 }
 
 
-
-# get tree of map data 
-Locator.tree() 
-"""
-    [   
-        // island groups //
-        { 
-            "island_group" : "ig:Luzon", 
-            "article_uri" : "ig:Luzon", 
-
-            // regions //
-            "children" : [
-                {
-                    "ref_id" : "1.1", 
-                    "region_name" : "Ilocos Region", 
-                    "article_uri" : "Ilocos_Region", 
-
-                    // provinces // 
-                    children : [
-                        ...
-                    ] 
-                }
-            ] 
-        }, 
-        {
-            "ref_id" : "ig:Visayas",
-            "island_group" : "Visayas",
-            "article_uri" : "Visayas",
-            "children" : [
-                ...
-            ]
-        },
-        ...
-    ]
-"""
-
-# normalize names of islands, region, province, district, and municity name
-# into ref-id codes (manually done)
-Locator.normalize_island_group_name(name)
-Locator.normalize_region_name(region)
-Locator.normalize_province_name(province)
-Locator.normalize_district(province, district_no)
-Locator.normalize_municity(province, municity) 
-Locator.normalize_barangay_name(province, municity, barangay)  
 
 ```
 
