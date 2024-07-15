@@ -741,166 +741,44 @@ space.
 
 1. `NationalArticle`
     - `extract_all()`
-    - `extract_capital()`
-    - `extract_largest_city()`
-    - `extract_official_languages()` 
-    - `extract_regional_languages()`
-    - `extract_sign_language()`
-    - `extract_other_languages()`
-    - `extract_ethnic_groups()`
-    - `extract_religions()`
-    - `extract_demonyms()`
-    - `extract_government_type()`
-    - `extract_president()`
-    - `extract_vice_president()`
-    - `extract_senate_president()`
-    - `extract_house_speaker()`
-    - `extract_chief_justice()`
-    - `extract_legislature()`
-    - `extract_upper_house()`
-    - `extract_lower_house()`
-    - `extract_independence()`
-    - `extract_area()`
-    - `extract_population()`
-    - `extract_gdp()`
-    - `extract_gini()`
-    - `extract_hdi()`
-    - `extract_currency()`
-    - `extract_time_zone()` 
-    - `extract_time_format()`
-    - `extract_date_format()`
-    - `extract_driving_side()`
-    - `extract_calling_code()`
-    - `extract_iso_3166_code()`
-
+    
 1. `IslandGroupArticle`
     - `extract_all()`
-    - `extract_coordinates()`
-    - `extract_adjacent_to()`
-    - `extract_major_islands()`
-    - `extract_area()`
-    - `extract_area_rank()`
-    - `extract_coastline()`
-    - `extract_highest_elevation()`
-    - `extract_highest_point()`
-    - `extract_regions()`
-    - `extract_provinces()`
-    - `extract_largest_settlement()`
-    - `extract_demonyms()`
-    - `extract_population()`
-    - `extract_ethnic_groups()`
 
 1. `RegionArticle`
     - `extract_all()`
-    - `extract_country()`
-    - `extract_island_group()`
-    - `extract_regional_center()`
-    - `extract_area()`
-    - `extract_highest_elevation()`
-    - `extract_population()`
-    - `extract_time_zone()`
-    - `extract_3166_code()`
-    - `extract_provinces()`
-    - `extract_independent_cities()`
-    - `extract_component_cities()`
-    - `extract_municipalities()`
-    - `extract_barangays()`,
-    - `extract_congressional_districts()`
-    - `extract_languages()`
-    - `extract_gdp()`
-    - `extract_growth_rate()`
-    - `extract_hdi()`
-    - `extract_hdi_rank()`
-    - `extract_website()`
 
 1. `ProvinceArticle`
     - `extract_all()`
-    - `extract_coordinates()`
-    - `extract_region()`
-    - `extract_founded()`
-    - `extract_capital()`
-    - `extract_largest_city()`
-    - `extract_government()`
-    - `extract_area()`
-    - `extract_elevation()`
-    - `extract_population()`
-    - `extract_divisions()`
-    - `extract_time_zone()`
-    - `extract_idd_area_code()`
-    - `extract_spoken_languages()`
-    - `extract_website()`
 
 1. `ProvinceArticle`
     - `extract_all()`
-    - `extract_coordinates()`
-    - `extract_region()`
-    - `extract_founded()`
-    - `extract_capital()`
-    - `extract_largest_city()`
-    - `extract_government()`
-    - `extract_area()`
-    - `extract_elevation()`
-    - `extract_population()`
-    - `extract_divisions()`
-    - `extract_time_zone()`
-    - `extract_idd_area_code()`
-    - `extract_spoken_languages()`
-    - `extract_website()`
 
 1. `DistrictArticle`
     - `extract_all()`
-    - `extract_province()`
-    - `extract_region()`
-    - `extract_population()`
-    - `extract_electorate()`
-    - `extract_major_settlements()`
-    - `extract_area()`
-    - `extract_created()`
-    - `extract_representative()`
-    - `extract_political_party()`
-    - `extract_congressional_bloc()`
 
 1. `MunicityArticle`
     - `extract_all()`
-    - `extract_country()`
-    - `extract_region()`
-    - `extract_district()`
-    - `extract_founded()`
-    - `extract_barangays()`
-    - `extract_government()`
-    - `extract_area()`
-    - `extract_elevation()`
-    - `extract_highest_elevation()`
-    - `extract_lowest_elevation()`
-    - `extract_population()`
-    - `extract_economy()`
-    - `extract_service_provider()`
-    - `extract_time_zone()`
-    - `extract_zip_code()`
-    - `extract_psgc()`
-    - `extract_idd_area_code()`
-    - `extract_native_languages()`
-    - `extract_website()`
 
 ### `Map`
 The map class represents a map entity in the project. 
-
-It has 6 similar subclasses for different administrative sublevels.
-
-1. `NationalMap`
-2. `RegionMap`
-3. `ProvinceMap`
-4. `DistrictMap`
-5. `MunicityMap`
-6. `BarangayMap`
 
 ```python
 from ph_wiki_datasets import NationalMap
 
 svg_map = 
-    RegionMap(driver="svg", name="region-svg-map", cache=True)
+    SVGMap(
+        admin_level="regions",
+        folder="./data/2024-JULY/maps/svg",
+        cache=True
+    )
 geojson_map = 
-    RegionMap(driver="geojson", name="geojson-svg-map", cache=True)
+    GeoJSONMap(
+        admin_level="regions",
+        resolution="hires",
+        folder="./data/2024-JULY/maps/combined",
+        cache=True
+    )
 
 svg_map.polygons() 
 geojson_map.polygons()
@@ -917,16 +795,17 @@ geojson_map.adjacency_matrix()
     - Properties
         - cache
     - Methods 
-        - `union_by_attribute(attr_field, attr_value)` 
-            - apply union on SVG features by attribute
-        - `union_by_attributes(attr_field, attr_values)` 
-            - apply union on SVG features by attribute values
-        - `polygons()`
-            - get list of polygons in the map
-        - `exterior_polygons()`
-            - get exterior polygons in the map (polygons that is not inside)
-        - `interior_polygons()`
-            - get interior polygons in the map (polygons that is inside)
+        - `components()`
+            - get components in the map
+        - `union_by_property(property)` 
+            - union by similar `"property"` (if geojson) or `"attribute"` (if SVG) 
+        - `union_by_properties(property, values) `
+            - select by similar `"property"` (if geojson) or `"attribute"` (if SVG) 
+              and apply union to selected features
+        - `exterior_components()`
+            - get exterior polygons in the map (polygons that is by the outline)
+        - `interior_components()`
+            - get interior polygons in the map (polygons that not by the outline)
         - `adjacency_matrix()`
             - get adjacency matrix of the polygons in the map
         - `uncache()`
@@ -940,6 +819,8 @@ geojson_map.adjacency_matrix()
             - get the mapping of location ref-ids to polygon indices and vice
               versa using Reference IDs
 
-### `DatasetGenerator`
-The dataset generator is used to generate datasets from available information. 
-`[TO-DO]`
+
+#### Subclasses 
+
+1. `GeoJSONMap`- from GeoJSON-based map data
+2. `SVGMap` - from SVG-based map data

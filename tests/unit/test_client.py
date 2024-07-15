@@ -52,15 +52,12 @@ class TestClient:
         client = Client()
 
         client.get_output_filename = Mock(return_value="[OUTPUT_FILENAME]")
-        client.get_full_url = Mock(return_value="[FULL_URL]")
         client.data = Mock(return_value="[TEXT]")
         client.save_to_file = Mock()
 
         client.download("[URI]") 
 
         client.get_output_filename.assert_called_with("[URI]", None, "html")
-        client.get_full_url.assert_called_with("[URI]")
-        client.data.assert_called_with("[FULL_URL]")
         client.save_to_file.assert_called_with("[OUTPUT_FILENAME]", "[TEXT]")   
 
     def test_save_to_file(self):

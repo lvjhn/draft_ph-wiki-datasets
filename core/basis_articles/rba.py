@@ -37,7 +37,7 @@ class RegionBasisArticle(BasisArticle):
         data = self.extractor.extract_table_body(
             "table", 
             filter_=table_filters
-        )[:-1]
+        )[1:-1]
 
         # create dataframe 
         df = pd.DataFrame(data, columns=headers) 
@@ -78,7 +78,7 @@ class RegionBasisArticle(BasisArticle):
         df["n_lgus"] = \
             df["component_lgus"].apply(
                 lambda x: 
-                    self.Extractor.to_int(x.split("\n")[1])
+                    self.Extractor.to_int(x.split("\n")[0])
             )
 
         df["lgus"] = \
@@ -90,7 +90,7 @@ class RegionBasisArticle(BasisArticle):
                             remove_brackets=True,
                             remove_parentheses=True
                         )
-                        for x in x.split("\n")[2].split("|")
+                        for x in x.split("\n")[1].split("|")
                     ]
                 ) 
             )

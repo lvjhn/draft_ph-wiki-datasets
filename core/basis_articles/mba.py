@@ -33,7 +33,7 @@ class MunicityBasisArticle(BasisArticle):
         data = self.extractor.extract_table_body(
             "table", 
             filter_=table_filters
-        )[:-1]
+        )[1:-1]
 
         # convert to dataframe 
         df = pd.DataFrame(data, columns=headers)

@@ -42,11 +42,13 @@ class ProvinceBasisArticle(BasisArticle):
         data = self.extractor.extract_table_body(
             "table", 
             filter_=table_filters
-        )[:-2]
+        )[2:-2]
 
 
         # create dataframe 
+
         df = pd.DataFrame(data, columns=headers) 
+
 
         #
         # Province

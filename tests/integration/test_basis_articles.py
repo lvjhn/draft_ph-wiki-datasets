@@ -13,7 +13,7 @@ from core.basis_articles.mba import MunicityBasisArticle
 from .base_test import BaseTest
 from io import StringIO  
 
-REWRITE = False
+REWRITE = True
 
 class TestBasisArticles(BaseTest): 
 

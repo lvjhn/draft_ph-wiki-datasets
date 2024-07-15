@@ -35,7 +35,7 @@ class IslandGroupBasisArticle(BasisArticle):
         data = self.extractor.extract_table_body(
             "table", 
             filter_=table_filters
-        )[:-1]
+        )[2:-1]
 
         # extract major islands 
         mi_section = self.subsection(("Islands",)) 

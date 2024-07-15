@@ -22,7 +22,8 @@ class Client:
             return uri + "." + extension 
 
     def get_full_url(self, uri): 
-        return self.base_url + "/" + self.prefix + "/" + uri
+        url = self.base_url + "/" + self.prefix + "/" + uri
+        return url
 
     def data(self, uri): 
         url  = self.get_full_url(uri) 
@@ -32,8 +33,7 @@ class Client:
 
     def download(self, uri, outfile = None, extension="html"): 
         outfile = self.get_output_filename(uri, outfile, extension) 
-        url = self.get_full_url(uri)
-        text = self.data(url)
+        text = self.data(uri)
         self.save_to_file(outfile, text)
 
     def save_to_file(self, outfile, text): 
