@@ -76,18 +76,18 @@ class MunicipalityArticle(MainArticle):
         DEBUG and print("@ Extracting founded.")
         
         def extract(y):
-            y = self.Extractor.all_or_null(
+            yd = self.Extractor.all_or_null(
                 "([0-9]+) \(([a-zA-Z]*)\)",
                 y.get_text()
             )
 
-            if y is None: 
-                y = self.Extractor.normalize( 
+            if yd is None: 
+                yd = self.Extractor.normalize( 
                     y.get_text(),
                     remove_brackets=True
                 )
             else:    
-                y = dict(y)
+                yd = dict(yd)
 
             return y
 
@@ -154,17 +154,22 @@ class MunicipalityArticle(MainArticle):
                 ) 
                 return (x, y)
 
+            elif x == "Independent component city":
+                y = self.Extractor.to_float(
+                    y.get_text().split(" ")[0]  
+                ) 
+                return (x, y)
+
             y = y.get_text()
 
-            return pair
+            return (x, y)
 
-        return dict(
+        return (
             self.extractor.extract_pairs_from_partition(
                 "Area",
                 select=extract
             )
         )
-            
 
     def extract_elevation(self):
         DEBUG and print("@ Extracting elevation.")
@@ -238,7 +243,12 @@ class MunicipalityArticle(MainArticle):
                 return (x, y)
 
             elif x == "Revenue":
-                y = " ".join(y.get_text().split(" ")[1:3])
+                y = " ".join([
+                    y 
+                    for y in y.get_text().split(" ")[0:2]
+                    if y != ""
+                ])[2:]
+                print(y)
                 y = self.Extractor.scale_item(y)
                 return (x, y)
 

@@ -245,7 +245,7 @@ class Extractor:
             scale = 1e3 
         
         y = re.sub(" (trillion|billion|million|thousand)", "", y)
-        y = float(y)
+        y = Extractor.to_float(y)
         y = y * scale
 
         return y

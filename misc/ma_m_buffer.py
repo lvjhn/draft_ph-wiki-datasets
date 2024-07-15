@@ -5,7 +5,7 @@ helpers.DEBUG = True
 from core.main_articles.ma import MunicipalityArticle
 
 ma = MunicipalityArticle(
-    "Calabanga", 
+    "Naga", 
     folder="./misc/data/main-articles/municities/"
 ) 
 
