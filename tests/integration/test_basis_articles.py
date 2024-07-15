@@ -31,7 +31,7 @@ class TestBasisArticles(BaseTest):
             ).read()
         assert checker == str_.getvalue()
 
-    def test_island_group_basis_articles(self):
+    def test_island_group_basis(self):
         article = \
             IslandGroupBasisArticle(folder="./tests/data/basis-articles") 
         metas = \
@@ -42,7 +42,7 @@ class TestBasisArticles(BaseTest):
         self.check_match(metas, "island-groups")
  
 
-    def test_region_basis_articles(self):
+    def test_region_basis_article(self):
         article = \
             RegionBasisArticle(folder="./tests/data/basis-articles") 
         metas = \
@@ -52,7 +52,7 @@ class TestBasisArticles(BaseTest):
 
         self.check_match(metas, "regions")
 
-    def test_province_basis_articles(self):
+    def test_province_basis_article(self):
         article = \
             ProvinceBasisArticle(folder="./tests/data/basis-articles") 
         metas = \
@@ -62,7 +62,7 @@ class TestBasisArticles(BaseTest):
 
         self.check_match(metas, "provinces")
 
-    def test_district_basis_articles(self):
+    def test_district_basis_article(self):
         article = \
             DistrictBasisArticle(folder="./tests/data/basis-articles") 
         metas = \
@@ -72,7 +72,7 @@ class TestBasisArticles(BaseTest):
 
         self.check_match(metas, "districts")
 
-    def test_municity_basis_articles(self):
+    def test_municity_basis_article(self):
         article = \
             MunicityBasisArticle(folder="./tests/data/basis-articles") 
         metas = \

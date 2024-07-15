@@ -1,0 +1,83 @@
+{
+    "Coordinates": {
+        "Latitude": "13\u00b030\u2032N",
+        "Longitude": "123\u00b020\u2032E"
+    },
+    "Country": "Philippines",
+    "Island Group": "Luzon",
+    "Regional Center": "Legazpi",
+    "Area": {
+        "Total": 18155.82
+    },
+    "Highest Elevation": {
+        "Body": "Mayon Volcano",
+        "Peak": "2,463\u00a0m"
+    },
+    "Population": {
+        "Total": 6082165,
+        "Density": 330.0
+    },
+    "Time Zone": "UTC+8 (PST)",
+    "ISO 3166 Code": "PH-05",
+    "Provinces": {
+        "Provinces (Count)": 6,
+        "Provinces": [
+            " Albay",
+            " Camarines Norte",
+            " Camarines Sur",
+            " Catanduanes",
+            " Masbate",
+            " Sorsogon"
+        ]
+    },
+    "Independent Cities": {
+        "Independent Cities (Count)": 1,
+        "Independent Cities": [
+            " Naga"
+        ]
+    },
+    "Component Cities": {
+        "Component Cities (Count)": 6,
+        "Component Cities": [
+            " Iriga",
+            " Legazpi",
+            " Ligao",
+            " Masbate City",
+            " Sorsogon City",
+            " Tabaco"
+        ]
+    },
+    "Muncipalities": "107",
+    "Barangays": 3471,
+    "Congressional Districts": 3471,
+    "Extract Languages": {
+        "Bikol languages": [
+            "Central Bikol",
+            "Albayanon",
+            "Rinconada",
+            "Northern Catanduanes",
+            "Southern Catanduanes"
+        ],
+        "Visayan languages": [
+            "Masbate\u00f1o",
+            "Northern Sorsogon",
+            "Waray Sorsogon"
+        ],
+        "Tagalog": {},
+        "English": {}
+    },
+    "GDP": 701720000000.0,
+    "Growth Rate": {
+        "Trend": 1,
+        "Percentage": "4.58"
+    },
+    "HDI": {
+        "Trend": 1,
+        "Percentage": " 0.687"
+    },
+    "HDI Rank": {
+        "Rank": "13",
+        "Year": "2019"
+    },
+    "Website": "dilgbicol.org"
+}

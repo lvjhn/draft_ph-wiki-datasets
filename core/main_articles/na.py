@@ -4,7 +4,7 @@ import re
 
 DEBUG = helpers.DEBUG
 
-class NationalArticle(MainArticle): 
+class NationArticle(MainArticle): 
     def __init__(self, article, *args, **kwargs): 
         MainArticle.__init__(self, article, *args, **kwargs)
 

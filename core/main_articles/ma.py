@@ -3,7 +3,7 @@ from core.main_article import MainArticle
 
 DEBUG = helpers.DEBUG
 
-class MunicipalityArticle(MainArticle): 
+class MunicityArticle(MainArticle): 
     def __init__(self, article, *args, **kwargs): 
         MainArticle.__init__(self, article, *args, **kwargs)
 
@@ -89,7 +89,7 @@ class MunicipalityArticle(MainArticle):
             else:    
                 yd = dict(yd)
 
-            return y
+            return yd
 
         return self.extractor.extract_pair(
             "Founded",
@@ -248,7 +248,6 @@ class MunicipalityArticle(MainArticle):
                     for y in y.get_text().split(" ")[0:2]
                     if y != ""
                 ])[2:]
-                print(y)
                 y = self.Extractor.scale_item(y)
                 return (x, y)
 

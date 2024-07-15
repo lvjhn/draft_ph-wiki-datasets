@@ -2,10 +2,10 @@ import core.helpers as helpers
 
 helpers.DEBUG = True
 
-from core.main_articles.ma import MunicipalityArticle
+from core.main_articles.ma import MunicityArticle
 
-ma = MunicipalityArticle(
-    "Naga", 
+ma = MunicityArticle(
+    "Calabanga", 
     folder="./misc/data/main-articles/municities/"
 ) 
 

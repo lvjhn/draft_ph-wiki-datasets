@@ -1,0 +1,43 @@
+{
+    "Province": "Camarines Sur",
+    "Region": "Bicol Region",
+    "Population (2020)": {
+        "No.": 554323,
+        "Year": 2020
+    },
+    "Electorate": {
+        "No.": 336042,
+        "Year": 2022
+    },
+    "Major Settlements": 8,
+    "Area": 614.51,
+    "Created": 1987,
+    "Extract Representative": "Gabriel Bordado",
+    "Political Party": "\u00a0 Liberal",
+    "Congressional Bloc": "Minority",
+    "Constituent LGUs History": {
+        "1987\u20132010": [
+            "Caramoan,",
+            "Garchitorena,",
+            "Goa,",
+            "Lagonoy,",
+            "Presentacion,",
+            "Sag\u00f1ay,",
+            "San",
+            "Jose,",
+            "Siruma,",
+            "Tigaon,",
+            "Tinambac"
+        ],
+        "2010\u2013present": [
+            "Bombon,",
+            "Calabanga,",
+            "Camaligan,",
+            "Canaman,",
+            "Magarao,",
+            "Naga,",
+            "Ocampo,",
+            "Pili"
+        ]
+    }
+}

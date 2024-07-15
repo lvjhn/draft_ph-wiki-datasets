@@ -1,0 +1,68 @@
+{
+    "Coordinates": {
+        "Latitude": "13\u00b037\u203228\u2033N",
+        "Longitude": "123\u00b011\u203211\u2033E"
+    },
+    "Region": "Bicol Region",
+    "Province": "Camarines Sur (geographically only)",
+    "District": "3",
+    "Founded": "1575",
+    "Barangays": 27,
+    "Government": {
+        "Type": "Sangguniang Panlungsod",
+        "Mayor": "Nelson S. Legacion[1]",
+        "Vice Mayor": "Cecilia V. de Asis[1]",
+        "Representative": "Gabriel H. Bordado Jr.",
+        "City Council": "\nMembers\nJessie R. AlbeusJoselito S. del RosarioGhiel G. RosalesMelvin Ramon G. BuenafeGilda Gayle A. GomezVidal P. CastilloJose C. Ra\u00f1olaJose B. PerezSalvador M. del CastilloAntonio B. Beltran\n",
+        "Electorate": {
+            "Name": "117,481 voters ",
+            "Party": "2022"
+        }
+    },
+    "Area": [
+        [
+            "Independent component city",
+            84.482
+        ],
+        [
+            "Urban",
+            "225.79\u00a0km2 (87.18\u00a0sq\u00a0mi)"
+        ],
+        [
+            "Metro",
+            "1,342\u00a0km2 (518\u00a0sq\u00a0mi)"
+        ]
+    ],
+    "Elevation": 66,
+    "Highest Elevation": 1864,
+    "Lowest Elevation": -1,
+    "Population": {
+        "Independent component city": "209,170",
+        "Density": 2500.0,
+        "Urban": "342,769",
+        "Urbandensity": "1,500/km2 (3,900/sq\u00a0mi)",
+        "Metro": "858,414",
+        "Metrodensity": "640/km2 (1,700/sq\u00a0mi)",
+        "Households": 45984
+    },
+    "Economy": {
+        "Income class": "1st city income class",
+        "Poverty incidence": 21.37,
+        "Revenue": 1362000000.0,
+        "Assets": 5536000000.0,
+        "Expenditure": 1294000000.0,
+        "Liabilities": 718800000.0
+    },
+    "Service Provider": {
+        "Electricity": "Camarines Sur 2 Electric Cooperative  (CASURECO 2)"
+    },
+    "Time Zone": "UTC+8 (PST)",
+    "Zip Code": "4400",
+    "PSGC": "051724000",
+    "IDD Area Code": "+63\u2009(0)54",
+    "Native Languages": [
+        "Central Bikol",
+        "Tagalog"
+    ],
+    "Website": "naga.gov.ph"
+}

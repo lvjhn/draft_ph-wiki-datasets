@@ -62,7 +62,7 @@ class RegionArticle(MainArticle):
         DEBUG and print("@ Extracting island group.")
         
         island_group = self.extractor.extract_pair(
-            "Island group",
+            "Island",
             base=self.infobox
         )
         

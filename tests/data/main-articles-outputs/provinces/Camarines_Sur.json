@@ -1,0 +1,44 @@
+{
+    "Coordinates": {
+        "Latitude": "13\u00b040\u2032N",
+        "Longitude": "123\u00b020\u2032E"
+    },
+    "Region": "Bicol Region",
+    "Founded": "March 19, 1919",
+    "Capital": "Pili",
+    "Largest City": "Naga City",
+    "Government": {
+        "Governor": {
+            "Name": "Vincenzo Renato Luigi Villafuerte ",
+            "Party": "PDP\u2013Laban"
+        },
+        "Vice Governor": {
+            "Name": "Salvio Patrick Fortuno ",
+            "Party": "PDP\u2013Laban"
+        },
+        "Legislature": "Camarines Sur Provincial Board"
+    },
+    "Area": {
+        "Total": 5497.032,
+        "Rank": 16
+    },
+    "Elevation": {
+        "Body": "Mount Isarog",
+        "Peak": 2011.7
+    },
+    "Population": {
+        "Total": 2068244,
+        "Density": 380970.0
+    },
+    "Divisions": {
+        "Independent cities": 1,
+        "Component cities": 1,
+        "Municipalities": 35,
+        "Barangays": 10361063,
+        "Districts": "Legislative districts of Camarines Sur"
+    },
+    "Time Zone": "UTC+8",
+    "IDD Area Code": "+63\u2009(0)54",
+    "Spoken Languages": "PH-CAS",
+    "Website": "camarinessur.gov.ph"
+}

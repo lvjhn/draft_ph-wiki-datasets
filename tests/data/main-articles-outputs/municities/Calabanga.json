@@ -1,0 +1,69 @@
+{
+    "Coordinates": {
+        "Latitude": "13\u00b042\u203232\u2033N",
+        "Longitude": "123\u00b012\u203258\u2033E"
+    },
+    "Region": "Bicol Region",
+    "Province": "Camarines Sur",
+    "District": "3",
+    "Founded": {
+        "1578": "Quipayo",
+        "1756": "Calabanga"
+    },
+    "Barangays": 48,
+    "Government": {
+        "Type": "Sangguniang Bayan",
+        "Mayor": "Eugene Severo",
+        "Vice Mayor": "Victor B. de Villa",
+        "Representative": "Gabriel H. Bordado Jr.",
+        "Municipal Council": [
+            "",
+            "Sherwin Francis O. Mendoza",
+            "Philip B. Dumalasa",
+            "Cielito G. Hilado",
+            "Levi S. Sta. Ana Jr.",
+            "Ricardo A. Calisura",
+            "Jan Oliver I. Tabinas",
+            "Danilo N. Gonzales",
+            "Sonia H. Medroso"
+        ],
+        "Electorate": {
+            "Name": "56,664 voters ",
+            "Party": "2022"
+        }
+    },
+    "Area": [
+        [
+            "Total",
+            163.802
+        ]
+    ],
+    "Elevation": 13,
+    "Highest Elevation": 94,
+    "Lowest Elevation": -2,
+    "Population": {
+        "Total": 88906,
+        "Density": 540.0,
+        "Households": 19444
+    },
+    "Economy": {
+        "Income class": "1st municipal income class",
+        "Poverty incidence": 38.07,
+        "Revenue": 0.0,
+        "Assets": 553500000.0,
+        "Expenditure": 202500000.0,
+        "Liabilities": 221300000.0
+    },
+    "Service Provider": {
+        "Electricity": "Camarines Sur 2 Electric Cooperative  (CASURECO 2)"
+    },
+    "Time Zone": "UTC+8 (PST)",
+    "Zip Code": "4405",
+    "PSGC": "051708000",
+    "IDD Area Code": "+63\u2009(0)54",
+    "Native Languages": [
+        "Central Bikol",
+        "Tagalog"
+    ],
+    "Website": "www.calabanga.gov.ph"
+}

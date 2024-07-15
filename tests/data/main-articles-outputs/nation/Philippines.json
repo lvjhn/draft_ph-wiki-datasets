@@ -1,0 +1,80 @@
+{
+    "Capital": [
+        "Manila",
+        "Metro Manila"
+    ],
+    "Regional Languages": 19,
+    "Sign Languages": "Filipino Sign Language",
+    "Other Languages": [
+        "Spanish",
+        "Arabic"
+    ],
+    "Ethnic Groups": {
+        "Tagalog": 26.0,
+        "Bisaya": 14.3,
+        "Ilocano": 8.0,
+        "Cebuano": 8.0,
+        "Ilonggo": 7.9,
+        "Bicolano": 6.5,
+        "other": 20.3
+    },
+    "Religions": {
+        "Christianity": 85.3,
+        "Islam": 6.4,
+        "other": 8.2
+    },
+    "Demonyms": {
+        "Filipino": "neutral",
+        "Filipina": "feminine",
+        "Pinoy": "colloquial neutral",
+        "Pinay": "colloquial feminine",
+        "Philippine": "adjective for certain common nouns"
+    },
+    "Government": "Unitary presidential republic",
+    "President": "Bongbong Marcos",
+    "Vice President": "Sara Duterte",
+    "Senate President": "Francis Escudero",
+    "House Speaker": "Martin Romualdez",
+    "Chief Justice": "Alexander Gesmundo",
+    "Legislature": "Congress",
+    "Lower House": "House of Representatives",
+    "Upper House": "Senate",
+    "Independence": {
+        "Declaration": "June 12, 1898",
+        "Cession": "December 10, 1898",
+        "Self-government": "November 15, 1935",
+        "Recognized": "July 4, 1946",
+        "Constitution": "February 2, 1987"
+    },
+    "Area": {
+        "Total": 300000.0,
+        "Water(%)": 0.61
+    },
+    "Population": {
+        "2024 estimate": 114163719,
+        "2020_census": 109035343,
+        "Density": 363.45
+    },
+    "GDP PPP": {
+        "Total": "1.392 T",
+        "Per capita": "12192"
+    },
+    "GDP Nominal": {
+        "Total": "471.516 B",
+        "Per capita": "4130"
+    },
+    "Gini": {
+        "Value": "41.2",
+        "Level": "medium"
+    },
+    "HDI": {
+        "Value": "0.710",
+        "Level": "high"
+    },
+    "Currency": "Philippine Peso",
+    "Time Zone": "UTC+08:00 (PhST)",
+    "Date Format": "DD/MM/YYYY",
+    "Driving Side": "right",
+    "Calling Code": "+63",
+    "ISO 3166 Code": "PH"
+}
