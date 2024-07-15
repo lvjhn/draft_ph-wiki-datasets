@@ -112,18 +112,21 @@ class Extractor:
     def to_float(text, filter_="", **kwargs): 
         if text is None or text == "—" or text == "":
             return None
-        return float(Extractor.filter(text, filter_="1234567890."))
+        text = text.replace("−", "-")
+        return float(Extractor.filter(text, filter_="-1234567890."))
 
     def to_int(text, filter_="", **kwargs): 
         if text is None or text == "—":
             return None
-        return int(Extractor.filter(text, filter_="1234567890"))
+        text = text.replace("−", "-")
+        return int(Extractor.filter(text, filter_="-1234567890"))
 
     
     def deperc(text, filter_="", **kwargs): 
         if text is None:
             return None
-        return float(Extractor.filter(text, filter_="1234567890."))
+        text = text.replace("−", "-")
+        return float(Extractor.filter(text, filter_="-1234567890."))
 
     def first_or_null(pattern, text):
         res = re.findall(pattern, text)

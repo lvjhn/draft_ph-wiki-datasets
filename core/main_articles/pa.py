@@ -76,13 +76,13 @@ class ProvinceArticle(MainArticle):
         
         def extract(x, y, i): 
             x = self.Extractor.remove_dot(x.get_text())
-            
+
             y_n = self.Extractor.all_or_null(
                 "(.*)\((.*)\)", y.get_text()
             )
 
             if y_n is None: 
-                return (x, y.get_text)
+                return (x, y.get_text())
          
             if len(y) > 0:
                 y = {
