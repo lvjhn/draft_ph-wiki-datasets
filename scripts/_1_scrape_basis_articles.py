@@ -47,3 +47,5 @@ for item in items:
     scraper.add(item[0])
 
 scraper.scrape(verbose=True)
+
+print("@ Done.")

@@ -34,43 +34,58 @@ class MunicityArticle(MainArticle):
     def extract_coordinates(self):
         DEBUG and print("@ Extracting coordinates.")
         
-        latitude = \
-            self.infobox.select(".latitude")[0].get_text() 
-        longitude = \
-            self.infobox.select(".longitude")[0].get_text()
+        try:
+            latitude = \
+                self.infobox.select(".latitude")[0].get_text() 
+            longitude = \
+                self.infobox.select(".longitude")[0].get_text()
+            
+            coords = {
+                "Latitude" : latitude.strip(), 
+                "Longitude" : longitude.strip()
+            }
+            
+            return coords
         
-        coords = {
-            "Latitude" : latitude.strip(), 
-            "Longitude" : longitude.strip()
-        }
-        
-        return coords
+        except: 
+            return  {
+                "Latitude" : None, 
+                "Longitude" : None
+            }
+
 
     def extract_region(self):
         DEBUG and print("@ Extracting region.")
         
-        return self.extractor.extract_pair(
-            "Region"
-        )
+        try:
+            return self.extractor.extract_pair(
+                "Region"
+            )
+        except:
+            return None
 
     def extract_province(self):
         DEBUG and print("@ Extracting coordinates.")
         
-        return self.extractor.extract_pair(
-            "Province"
-        )
+        try:
+            return self.extractor.extract_pair(
+                "Province"
+            )
+        except: 
+            return None
 
     def extract_district(self):
         DEBUG and print("@ Extracting district.")
         
-        return self.extractor.extract_pair(
-            "District",
-            select=
-                lambda y: 
-                    y.get_text().split(" ")[1].strip()[:-2]
-        )
-
-
+        try:
+            return self.extractor.extract_pair(
+                "District",
+                select=
+                    lambda y: 
+                        y.get_text().split(" ")[1].strip()[:-2]
+            )
+        except: 
+            return None
 
     def extract_founded(self):
         DEBUG and print("@ Extracting founded.")
@@ -91,22 +106,28 @@ class MunicityArticle(MainArticle):
 
             return yd
 
-        return self.extractor.extract_pair(
-            "Founded",
-            select=extract
-        )
+        try:
+            return self.extractor.extract_pair(
+                "Founded",
+                select=extract
+            )
+        except: 
+            return {}
 
     def extract_barangays(self):
         DEBUG and print("@ Extracting barangays.")
         
-        return self.extractor.extract_pair(
-            "Barangays",
-            select=
-                lambda y: 
-                    self.Extractor.to_int(
-                        y.get_text()
-                    )
-        )
+        try:
+            return self.extractor.extract_pair(
+                "Barangays",
+                select=
+                    lambda y: 
+                        self.Extractor.to_int(
+                            y.get_text()
+                        )
+            )
+        except: 
+            return None
 
     def extract_government(self):
         DEBUG and print("@ Extracting government.")
@@ -135,12 +156,15 @@ class MunicityArticle(MainArticle):
 
             return pair
 
-        return dict(
-            self.extractor.extract_pairs_from_partition(
-                "Government",
-                select=extract
+        try:
+            return dict(
+                self.extractor.extract_pairs_from_partition(
+                    "Government",
+                    select=extract
+                )
             )
-        )
+        except: 
+            return None
 
     def extract_area(self):
         DEBUG and print("@ Extracting area.")
@@ -164,36 +188,48 @@ class MunicityArticle(MainArticle):
 
             return (x, y)
 
-        return (
-            self.extractor.extract_pairs_from_partition(
-                "Area",
-                select=extract
+        try:
+            return (
+                self.extractor.extract_pairs_from_partition(
+                    "Area",
+                    select=extract
+                )
             )
-        )
+        except:
+            return {}
 
     def extract_elevation(self):
         DEBUG and print("@ Extracting elevation.")
-        
-        return self.Extractor.to_int(
-            self.extractor.extract_pair("Elevation")\
-                .split(" ")[0]
-        )
+
+        try:
+            return self.Extractor.to_int(
+                self.extractor.extract_pair("Elevation")\
+                    .split(" ")[0]
+            )
+        except: 
+            return None
 
     def extract_highest_elevation(self): 
         DEBUG and print("@ Extracting highest elevation.")
 
-        return self.Extractor.to_int(
-            self.extractor.extract_pair("Highest\xa0elevation")\
-                .split(" ")[0]
-        )
+        try:
+            return self.Extractor.to_int(
+                self.extractor.extract_pair("Highest\xa0elevation")\
+                    .split(" ")[0]
+            )
+        except: 
+            return None
 
     def extract_lowest_elevation(self): 
         DEBUG and print("@ Extracting lowest elevation.")
 
-        return self.Extractor.to_int(
-            self.extractor.extract_pair("Lowest\xa0elevation")\
-                .split(" ")[0]
-        )
+        try:
+            return self.Extractor.to_int(
+                self.extractor.extract_pair("Lowest\xa0elevation")\
+                    .split(" ")[0]
+            )
+        except: 
+            return None
 
     def extract_population(self):
         DEBUG and print("@ Extracting population.")
@@ -219,12 +255,15 @@ class MunicityArticle(MainArticle):
 
             return pair
 
-        return dict(
-            self.extractor.extract_pairs_from_partition(
-                "Population",
-                select=extract
+        try:
+            return dict(
+                self.extractor.extract_pairs_from_partition(
+                    "Population",
+                    select=extract
+                )
             )
-        )
+        except: 
+            return {}
 
     def extract_economy(self):
         DEBUG and print("@ Extracting economy.")
@@ -281,12 +320,15 @@ class MunicityArticle(MainArticle):
 
             return pair
 
-        return dict(
-            self.extractor.extract_pairs_from_partition(
-                "Economy",
-                select=extract
+        try:
+            return dict(
+                self.extractor.extract_pairs_from_partition(
+                    "Economy",
+                    select=extract
+                )
             )
-        )
+        except: 
+            return None
 
     def extract_service_provider(self):
         DEBUG and print("@ Extracting service provider.")
@@ -299,40 +341,55 @@ class MunicityArticle(MainArticle):
 
             return pair
 
-        return dict(
-            self.extractor.extract_pairs_from_partition( 
-                "Service provider",
-                select=extract
+        try:
+            return dict(
+                self.extractor.extract_pairs_from_partition( 
+                    "Service provider",
+                    select=extract
+                )
             )
-        )
+        except: 
+            return None
 
     def extract_time_zone(self):
         DEBUG and print("@ Extracting time zone.")
-        
-        return self.extractor.extract_pair( 
-            "Time zone"
-        )
+
+        try:
+            return self.extractor.extract_pair( 
+                "Time zone"
+            )
+        except: 
+            return None
 
     def extract_zip_code(self):
         DEBUG and print("@ Extracting zip code.")
         
-        return self.extractor.extract_pair( 
-            "ZIP code"
-        )
+        try:
+            return self.extractor.extract_pair( 
+                "ZIP code"
+            )
+        except: 
+            return None
 
     def extract_psgc(self):
         DEBUG and print("@ Extracting PSGC.")
         
-        return self.extractor.extract_pair( 
-            "PSGC"
-        )
+        try: 
+            return self.extractor.extract_pair( 
+                "PSGC"
+            )
+        except: 
+            return None
 
     def extract_idd_area_code(self):
         DEBUG and print("@ Extracting IDD area code.")
         
-        return self.extractor.extract_pair( 
-            "IDD"
-        )
+        try:
+            return self.extractor.extract_pair( 
+                "IDD"
+            )
+        except: 
+            return None
 
     def extract_native_languages(self):
         DEBUG and print("@ Extracting native languages.")
@@ -344,14 +401,20 @@ class MunicityArticle(MainArticle):
             y[1] = y[1].split("<")[0]
             return y
 
-        return self.extractor.extract_pair( 
-            "Native languages",
-            select=extract
-        )
+        try:
+            return self.extractor.extract_pair( 
+                "Native languages",
+                select=extract
+            )
+        except: 
+            return None
 
     def extract_website(self):
         DEBUG and print("@ Extracting website.")
         
-        return self.extractor.extract_pair( 
-            "Website"
-        )
+        try:
+            return self.extractor.extract_pair( 
+                "Website"
+            )
+        except: 
+            return None

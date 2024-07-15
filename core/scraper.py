@@ -20,12 +20,14 @@ class Scraper:
         self.items.append(tail)
 
     def add_multi(self, tails): 
-        self.items += tails
+        for tail in tails:
+            self.items.append(tail)
 
     def scrape(self, verbose=False):
         client = self.client
         i = 0 
         n = len(self.items)
+
         for item in self.items: 
             verbose and print(f"@ Downloading [{item}] ({i + 1} of {n})")
             prefix = client.prefix 

@@ -36,10 +36,13 @@ dba.extract_metas().to_csv(OUTPUT_FOLDER + "/districts.csv")
 print("@ Processing cities.")
 cba = CityBasisArticle(folder=INPUT_FOLDER) 
 cba.extract_metas().to_csv(OUTPUT_FOLDER + "/cities.csv")
+cba.extract_metas().to_csv(OUTPUT_FOLDER + "/cities.csv")
 
 # municities
 print("@ Processing municities.")
 mba = MunicityBasisArticle(folder=INPUT_FOLDER) 
 mba.extract_metas().to_csv(OUTPUT_FOLDER + "/municities.csv")
+
+print("@ Done.")
 
 

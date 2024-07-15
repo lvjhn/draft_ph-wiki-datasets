@@ -49,7 +49,6 @@ class ProvinceBasisArticle(BasisArticle):
 
         df = pd.DataFrame(data, columns=headers) 
 
-
         #
         # Province
         # 
@@ -131,6 +130,6 @@ class ProvinceBasisArticle(BasisArticle):
         # Region Links
         #
         links = self.extractor.extract_table_links(table_filters, 1)
-        df["province_links"] = links     
+        df["article_link"] = links     
 
         return df 

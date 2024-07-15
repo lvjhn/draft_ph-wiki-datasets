@@ -101,6 +101,6 @@ class IslandGroupBasisArticle(BasisArticle):
         # Island Group Links
         #
         links = self.extractor.extract_table_links(table_filters, 0)
-        df["island_group_links"] = links  
+        df["article_link"] = links  
     
         return df

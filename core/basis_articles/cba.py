@@ -131,4 +131,10 @@ class CityBasisArticle(BasisArticle):
         df = self.Extractor.date_split(df, "approval")
         df = self.Extractor.date_split(df, "ratification")
 
+        #
+        # District Links
+        #
+        links = self.extractor.extract_table_links(table_filters, 1)
+        df["article_link"] = links    
+
         return df

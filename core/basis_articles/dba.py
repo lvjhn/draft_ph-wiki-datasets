@@ -56,7 +56,7 @@ class DistrictBasisArticle(BasisArticle):
             x = self.Extractor.to_int(x)
             return x 
 
-        df["province_name"] = \
+        df["province"] = \
             df["district"].apply(get_province_name)
 
         df["district_no"] = \
@@ -95,6 +95,16 @@ class DistrictBasisArticle(BasisArticle):
         # District Links
         #
         links = self.extractor.extract_table_links(table_filters, 0)
-        df["district_link"] = links     
+        df["article_link"] = links
+
+        
+        #
+        # Create key
+        # 
+        df["district_key"] = [ 
+            df["province"][i] + "|" + str(df["district_no"][i])
+            for i in range(len(df))
+        ]
+                  
 
         return df 

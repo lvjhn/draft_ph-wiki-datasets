@@ -1,4 +1,4 @@
-,iso,province,capital,population_pa_2020,population_count_2020,island_group,region,municipalities,cities,barangays,area_km2,area_mi2,density_2020_km2,density_2020_mi2,founded_date,founded_a,founded_b,founded_c,province_links
+,iso,province,capital,population_pa_2020,population_count_2020,island_group,region,municipalities,cities,barangays,area_km2,area_mi2,density_2020_km2,density_2020_mi2,founded_date,founded_a,founded_b,founded_c,article_link
 0,PH-ABR,Abra,Bangued,0.23,250985,Luzon,CAR,27,,303,4165.25,1608.21,60.0,156.0,"(None, None, '1846')",,,1846,/wiki/Abra_(province)
 1,PH-AGN,Agusan del Norte,Cabadbaran,0.7,760413,Mindanao,XIII,10,2.0,253,3546.86,1369.45,214.0,555.0,"('20', 'Sep', '1907')",20,Sep,1907,/wiki/Agusan_del_Norte
 2,PH-AGS,Agusan del Sur,Prosperidad,0.68,739367,Mindanao,XIII,13,1.0,314,9989.52,3856.98,74.0,192.0,"('1', 'Jan', '1970')",1,Jan,1970,/wiki/Agusan_del_Sur

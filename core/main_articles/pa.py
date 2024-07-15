@@ -29,32 +29,45 @@ class ProvinceArticle(MainArticle):
     def extract_coordinates(self):
         DEBUG and print("@ Extracting coordinates.")
         
-        latitude = \
-            self.infobox.select(".latitude")[0].get_text() 
-        longitude = \
-            self.infobox.select(".longitude")[0].get_text()
-        
-        coords = {
-            "Latitude" : latitude.strip(), 
-            "Longitude" : longitude.strip()
-        }
-        
-        return coords
+        try:
+            latitude = \
+                self.infobox.select(".latitude")[0].get_text() 
+            longitude = \
+                self.infobox.select(".longitude")[0].get_text()
+            
+            coords = {
+                "Latitude" : latitude.strip(), 
+                "Longitude" : longitude.strip()
+            }
+            
+            return coords
+        except: 
+            return {
+                "Latitude" : None, 
+                "Longitude" : None
+            }
+            
 
     def extract_region(self):
         DEBUG and print("@ Extracting region.")
         
-        return self.extractor.extract_pair(
-            "Region"
-        )
+        try:
+            return self.extractor.extract_pair(
+                "Region"
+            )
+        except: 
+            return None
     
     def extract_founded(self):
         DEBUG and print("@ Extracting founded.")
         
-        return self.extractor.extract_pair(
-            "Founded"
-        )
-    
+        try:
+            return self.extractor.extract_pair(
+                "Founded"
+            )
+        except: 
+            return None
+        
     def extract_capital(self):
         DEBUG and print("@ Extracting capital.")
         
@@ -65,11 +78,14 @@ class ProvinceArticle(MainArticle):
     
     def extract_largest_city(self):
         DEBUG and print("@ Extracting largest city.")
-        
-        return self.extractor.extract_pair(
-            "Largest city",
-            select=lambda y: y.select("a")[0].get_text()
-        )
+
+        try:
+            return self.extractor.extract_pair(
+                "Largest city",
+                select=lambda y: y.select("a")[0].get_text()
+            )
+        except:
+            return None
     
     def extract_government(self):
         DEBUG and print("@ Extracting government.")
@@ -94,12 +110,15 @@ class ProvinceArticle(MainArticle):
 
             return pair
 
-        return dict(
-            self.extractor.extract_pairs_from_partition(
-                "Government",
-                select=extract
+        try:
+            return dict(
+                self.extractor.extract_pairs_from_partition(
+                    "Government",
+                    select=extract
+                )
             )
-        )
+        except: 
+            return None
     
     def extract_area(self):
         DEBUG and print("@ Extracting area.")
@@ -124,44 +143,54 @@ class ProvinceArticle(MainArticle):
 
             return pair
 
-        return dict(
-            self.extractor.extract_pairs_from_partition(
-                "Area",
-                select=extract
+        try: 
+            return dict(
+                self.extractor.extract_pairs_from_partition(
+                    "Area",
+                    select=extract
+                )
             )
-        )
+        except: 
+            return None
     
     def extract_elevation(self):
         DEBUG and print("@ Extracting elevation.")
         
-        # get name of body
-        body = self.extractor.select_filtered(
-            "th",
-            filter_=
-                lambda x, h, t: 
-                    "Highest\xa0elevation" in t
-        )
-        body = self.Extractor.first_or_null(
-            "\((.*)\)", 
-            body.get_text()
-        )
+        try:
+            # get name of body
+            body = self.extractor.select_filtered(
+                "th",
+                filter_=
+                    lambda x, h, t: 
+                        "Highest\xa0elevation" in t
+            )
+            body = self.Extractor.first_or_null(
+                "\((.*)\)", 
+                body.get_text()
+            )
 
-        # get highest elevation
-        peak = self.extractor.extract_pair(
-            "Highest\xa0elevation",
-            select=
-                lambda y: 
-                    self.Extractor.to_float(
-                        y.get_text().split(" ")[0].replace("\xa0m", "")
-                    )
-        )        
+            # get highest elevation
+            peak = self.extractor.extract_pair(
+                "Highest\xa0elevation",
+                select=
+                    lambda y: 
+                        self.Extractor.to_float(
+                            y.get_text().split(" ")[0].replace("\xa0m", "")
+                        )
+            )        
 
-        highest_elevation = {
-            "Body" : body, 
-            "Peak" : peak
-        }
+            highest_elevation = {
+                "Body" : body, 
+                "Peak" : peak
+            }
 
-        return highest_elevation
+            return highest_elevation
+
+        except: 
+            return {
+                "Body" : None, 
+                "Peak" : None
+            }
     
     def extract_population(self):
         DEBUG and print("@ Extracting population.")
@@ -184,17 +213,20 @@ class ProvinceArticle(MainArticle):
 
             return pair
 
-        population = dict(
-            self.extractor.extract_pairs_from_partition(
-                "Population",
-                select=extract
+        try:
+            population = dict(
+                self.extractor.extract_pairs_from_partition(
+                    "Population",
+                    select=extract
+                )
             )
-        )
 
-        del population["Rank"]
-        del population[""]
+            del population["Rank"]
+            del population[""]
 
-        return population
+            return population
+        except: 
+            return {}
     
     def extract_divisions(self):
         DEBUG and print("@ Extracting divisions.")
@@ -222,42 +254,57 @@ class ProvinceArticle(MainArticle):
 
             return pair
 
-        return dict(
-            self.extractor.extract_pairs_from_partition(
-                "Divisions",
-                select=extract
+        try:
+            return dict(
+                self.extractor.extract_pairs_from_partition(
+                    "Divisions",
+                    select=extract
+                )
             )
-        )
+        except: 
+            return {}
     
     def extract_time_zone(self):
         DEBUG and print("@ Extracting time zone.")
         
-        return self.extractor.extract_pair(
-            "Time zone",
-            select=lambda y: y.select("a")[0].get_text()
-        )
+        try:
+            return self.extractor.extract_pair(
+                "Time zone",
+                select=lambda y: y.select("a")[0].get_text()
+            )
+        except: 
+            return None
     
     def extract_idd_area_code(self):
         DEBUG and print("@ Extracting IDD area code.")
         
-        return self.extractor.extract_pair(
-            "IDD",
-            select=lambda y: y.get_text()
-        )
+        try:
+            return self.extractor.extract_pair(
+                "IDD",
+                select=lambda y: y.get_text()
+            )
+        except:
+            return None
     
     def extract_spoken_languages(self):
         DEBUG and print("@ Extracting spoken languages.")
         
-        return self.extractor.extract_pair(
-            "ISO 3166 code",
-            select=lambda y: y.get_text()
-        )
-    
+        try:
+            return self.extractor.extract_pair(
+                "ISO 3166 code",
+                select=lambda y: y.get_text()
+            )
+        except:
+            return None
+        
     def extract_website(self):
         DEBUG and print("@ Extracting website.")
-        
-        return self.extractor.extract_pair(
-            "Website",
-            select=lambda y: y.get_text()
-        )
+
+        try:
+            return self.extractor.extract_pair(
+                "Website",
+                select=lambda y: y.get_text()
+            )
+        except:
+            return None
     

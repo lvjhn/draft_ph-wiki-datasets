@@ -13,7 +13,6 @@ class RegionArticle(MainArticle):
             "Coordinates" : self.extract_coordinates(),
             "Country" : self.extract_country(),
             "Island Group" : self.extract_island_group(),
-            "Regional Center" : self.extract_regional_center(),
             "Area" : self.extract_area(),
             "Highest Elevation" : self.extract_highest_elevation(),
             "Population" : self.extract_population(),
@@ -34,19 +33,25 @@ class RegionArticle(MainArticle):
         } 
 
     def extract_coordinates(self):
-        DEBUG and print("@ Extracting coordinates.")
-        
-        latitude = \
-            self.infobox.select(".latitude")[0].get_text() 
-        longitude = \
-            self.infobox.select(".longitude")[0].get_text()
-        
-        coords = {
-            "Latitude" : latitude.strip(), 
-            "Longitude" : longitude.strip()
-        }
-        
-        return coords
+        try:
+            DEBUG and print("@ Extracting coordinates.")
+            
+            latitude = \
+                self.infobox.select(".latitude")[0].get_text() 
+            longitude = \
+                self.infobox.select(".longitude")[0].get_text()
+            
+            coords = {
+                "Latitude" : latitude.strip(), 
+                "Longitude" : longitude.strip()
+            }
+            
+            return coords
+        except: 
+            return {
+                "Latitude" : None, 
+                "Longitude" : None
+            }
 
     def extract_country(self):
         DEBUG and print("@ Extracting country.")
@@ -60,23 +65,15 @@ class RegionArticle(MainArticle):
 
     def extract_island_group(self):
         DEBUG and print("@ Extracting island group.")
-        
-        island_group = self.extractor.extract_pair(
-            "Island",
-            base=self.infobox
-        )
-        
-        return island_group.strip()
-
-    def extract_regional_center(self):
-        DEBUG and print("@ Extracting regional center.")
-        
-        regional_center = self.extractor.extract_pair(
-            "Regional center",
-            base=self.infobox
-        )
-
-        return regional_center.strip()
+            
+        try: 
+            island_group = self.extractor.extract_pair(
+                "Island",
+                base=self.infobox
+            )
+            return island_group.strip()
+        except: 
+            return None
     
     def extract_area(self):
         DEBUG and print("@ Extracting area.")
@@ -102,33 +99,45 @@ class RegionArticle(MainArticle):
     
     def extract_highest_elevation(self):
         DEBUG and print("@ Extracting highest elevation.")
-        
-        # get name of body
-        body = self.extractor.select_filtered(
-            "th",
-            filter_=
-                lambda x, h, t: 
-                    "Highest\xa0elevation" in t
-        )
-        body = self.Extractor.first_or_null(
-            "\((.*)\)", 
-            body.get_text()
-        )
 
-        # get highest elevation
-        peak = self.extractor.extract_pair(
-            "Highest\xa0elevation",
-            select=
-                lambda y: 
-                    y.get_text().split(" ")[0]
-        )        
+        try:
+            # get name of body
+            body = self.extractor.select_filtered(
+                "th",
+                filter_=
+                    lambda x, h, t: 
+                        "Highest\xa0elevation" in t
+            )
 
-        highest_elevation = {
-            "Body" : body, 
-            "Peak" : peak
-        }
+            if body is not None:
+                body = self.Extractor.first_or_null(
+                    "\((.*)\)", 
+                    body.get_text()
+                )
 
-        return highest_elevation
+            # get highest elevation
+            peak = self.extractor.extract_pair(
+                "Highest\xa0elevation",
+                select=
+                    lambda y: 
+                        y.get_text().split(" ")[0]
+            )        
+
+            highest_elevation = {
+                "Body" : body, 
+                "Peak" : peak
+            }
+
+            return highest_elevation
+
+        except: 
+            highest_elevation = {
+                "Body" : None, 
+                "Peak" : None
+            }
+
+            return highest_elevation
+
     
     def extract_population(self):
         DEBUG and print("@ Extracting population.")
@@ -165,9 +174,12 @@ class RegionArticle(MainArticle):
     
     def extract_iso_3166_code(self):
         DEBUG and print("@ Extracting 3166 code.")
-        return self.extractor.extract_pair(
-            "ISO 3166 code"
-        )
+        try:
+            return self.extractor.extract_pair(
+                "ISO 3166 code"
+            )
+        except:
+            return None
     
     def extract_provinces(self):
         DEBUG and print("@ Extracting provinces.")
@@ -185,12 +197,19 @@ class RegionArticle(MainArticle):
             }
 
             return pair
+        
+        try: 
+            return self.extractor.extract_pair(
+                "Provinces",
+                select=extract,
+                base=self.infobox
+            )
+        except: 
+            pair = {
+                "Provinces (Count)" :  None, 
+                "Provinces" : None
+            }
 
-        return self.extractor.extract_pair(
-            "Provinces",
-            select=extract,
-            base=self.infobox
-        )
          
 
     def extract_independent_cities(self):
@@ -210,11 +229,20 @@ class RegionArticle(MainArticle):
 
             return pair
 
-        return self.extractor.extract_pair(
-            "Independent cities",
-            select=extract,
-            base=self.infobox
-        )
+        try:
+            return self.extractor.extract_pair(
+                "Independent cities",
+                select=extract,
+                base=self.infobox
+            )
+        except: 
+            pair = {
+                "Independent Cities (Count)" :  None, 
+                "Independent Cities" : None
+            }
+
+            return pair
+
 
     def extract_component_cities(self):
         DEBUG and print("@ Extracting component cities.")
@@ -233,38 +261,57 @@ class RegionArticle(MainArticle):
 
             return pair
 
-        return self.extractor.extract_pair(
-            "Component cities",
-            select=extract,
-            base=self.infobox
-        )   
+        try: 
+            return self.extractor.extract_pair(
+                "Component cities",
+                select=extract,
+                base=self.infobox
+            )
+        except: 
+            pair = {
+                "Component Cities (Count)" :  None, 
+                "Component Cities" : None
+            }
+
+            return pair
     
     def extract_municipalities(self):
         DEBUG and print("@ Extracting municipalities.")
-        return self.extractor.extract_pair(
-            "Municipalities",
-            base=self.infobox
-        )   
-    
+
+        try:
+            return self.extractor.extract_pair(
+                "Municipalities",
+                base=self.infobox
+            )
+        except: 
+            return None   
+        
     def extract_barangays(self):
         DEBUG and print("@ Extracting barangays.")
-        return self.extractor.extract_pair(
-            "Barangays",
-            select=
-                lambda y:   
-                    self.Extractor.to_int(y.get_text()),
-            base=self.infobox
-        )   
-    
+
+        try:
+            return self.extractor.extract_pair(
+                "Barangays",
+                select=
+                    lambda y:   
+                        self.Extractor.to_int(y.get_text()),
+                base=self.infobox
+            )   
+        except:
+            return None
+        
     def extract_congressional_districts(self):
         DEBUG and print("@ Extracting congressional districts.")
-        return self.extractor.extract_pair(
-            "Barangays",
-            select=
-                lambda y:   
-                    self.Extractor.to_int(y.get_text()),
-            base=self.infobox
-        )   
+        try:
+            return self.extractor.extract_pair(
+                "Barangays",
+                select=
+                    lambda y:   
+                        self.Extractor.to_int(y.get_text()),
+                base=self.infobox
+            )   
+        except: 
+            return None
     
     def extract_languages(self):
         DEBUG and print("@ Extracting languages.")
@@ -296,11 +343,14 @@ class RegionArticle(MainArticle):
 
             return languages
 
-        return self.extractor.extract_pair(
-            "Languages",
-            select=extract,
-            base=self.infobox
-        )    
+        try:
+            return self.extractor.extract_pair(
+                "Languages",
+                select=extract,
+                base=self.infobox
+            )    
+        except: 
+            return None
     
     
     def extract_gdp(self):
@@ -313,11 +363,14 @@ class RegionArticle(MainArticle):
 
             return peso
 
-        return self.extractor.extract_pair(
-            "GDP",
-            select=extract,
-            base=self.infobox
-        )
+        try:
+            return self.extractor.extract_pair(
+                "GDP",
+                select=extract,
+                base=self.infobox
+            )
+        except:
+            return None
     
     def extract_growth_rate(self):
         DEBUG and print("@ Extracting growth rate.")
@@ -345,12 +398,18 @@ class RegionArticle(MainArticle):
 
             return y
 
-        return self.extractor.extract_pair(
-            "Growth rate", 
-            select=extract,
-            base=self.infobox
-        )
-        
+        try:
+            return self.extractor.extract_pair(
+                "Growth rate", 
+                select=extract,
+                base=self.infobox
+            )
+        except:
+            return {
+                "Trend" : None, 
+                "Percentage" : None
+            }
+            
     
     def extract_hdi(self):
         DEBUG and print("@ Extracting HDI.")
@@ -378,12 +437,15 @@ class RegionArticle(MainArticle):
 
             return y
 
-        return self.extractor.extract_pair(
-            "HDI", 
-            select=extract,
-            base=self.infobox
-        )
-        
+        try:
+            return self.extractor.extract_pair(
+                "HDI", 
+                select=extract,
+                base=self.infobox
+            )
+        except: 
+            return None
+            
     
     def extract_hdi_rank(self):
         DEBUG and print("@ Extracting HDI rank.")
@@ -407,19 +469,28 @@ class RegionArticle(MainArticle):
 
             return y 
 
-        return self.extractor.extract_pair(
-            "HDI rank",
-            select=extract,
-            base=self.infobox
-        )
+        try:
+            return self.extractor.extract_pair(
+                "HDI rank",
+                select=extract,
+                base=self.infobox
+            )
+        except: 
+            return {
+                "Rank" : None, 
+                "Year" : None
+            }
     
     def extract_website(self):
         DEBUG and print("@ Extracting website.")
+
+        try:
+            return self.extractor.extract_pair(
+                "Website",
+                base=self.infobox
+            )
+        except:
+            return None
         
-        return self.extractor.extract_pair(
-            "Website",
-            base=self.infobox
-        )
-      
 
     

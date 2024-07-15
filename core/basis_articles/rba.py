@@ -54,7 +54,7 @@ class RegionBasisArticle(BasisArticle):
                 lambda x: self.Extractor.first_or_null(r"\((.*)\)", x)
             )
 
-        df["region_name"] = \
+        df["region"] = \
             df["region"].apply(
                 lambda x: self.Extractor.first_or_null(r"(.*)\(.*\)", x)
             )
@@ -130,6 +130,6 @@ class RegionBasisArticle(BasisArticle):
         # Region Links
         #
         links = self.extractor.extract_table_links(table_filters, 1)
-        df["region_links"] = links
+        df["article_link"] = links
 
         return df

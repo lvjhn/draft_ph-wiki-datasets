@@ -78,5 +78,20 @@ class MunicityBasisArticle(BasisArticle):
             df["barangays"].apply(
                 lambda x: self.Extractor.to_int(x)
             )   
-        
+
+        #
+        # Island Group Links
+        #
+        links = self.extractor.extract_table_links(table_filters, 0)
+        df["article_link"] = links[:-1]
+      
+        #
+        # Create key
+        # 
+        df["district_key"] = [ 
+            df["province"][i] + "|" + df["municity"][i]
+            for i in range(len(df))
+        ]
+                  
+
         return df

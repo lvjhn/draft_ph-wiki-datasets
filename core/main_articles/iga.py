@@ -9,37 +9,17 @@ class IslandGroupArticle(MainArticle):
 
     def extract_all(self):
         return {
-            "Coordinates" : self.extract_coordinates(),
-            "Adjacent To" : self.extract_adjacent_to(),
             "Major Islands" : self.extract_major_islands(),
             "Area" : self.extract_area(),
-            "Rank" : self.extract_area_rank(),
-            "Coastline" : self.extract_coastline(),
             "Highest Elevation" : self.extract_highest_elevation(),
             "Highest Point" : self.extract_highest_point(),
             "Regions" : self.extract_regions(),
-            "Provinces" : self.extract_provinces(),
             "Largest Settlement" : self.extract_largest_settlement(),
             "Demonyms" : self.extract_demonyms(),
             "Population" : self.extract_population(),
             "Ethnic Groups" : self.extract_ethnic_groups(),
         }
 
-    def extract_coordinates(self):
-        DEBUG and print("@ Extracting coordinates.")
-        return self.extractor.extract_pair(
-            "Coordinates",
-            lambda y: y.get_text().split("/")[0],
-            base=self.infobox
-        )
-
-    def extract_adjacent_to(self):
-        DEBUG and print("@ Extracting adjacent to.")
-        return self.extractor.extract_pair(
-            "Adjacent to",
-            lambda y: [y.get_text() for y in y.select("li")],
-            base=self.infobox
-        )
 
     def extract_major_islands(self):
         DEBUG and print("@ Extracting major islands.")
@@ -112,25 +92,6 @@ class IslandGroupArticle(MainArticle):
 
         return self.extractor.extract_pair(
             "Regions",
-            select=extract,
-            base=self.infobox
-        )
-
-    def extract_provinces(self):
-        DEBUG and print("@ Extracting provinces.")
-        
-        def extract(y): 
-            y = y.select("li")
-            for i in range(len(y)): 
-                items = y[i].get_text().split(" – ")
-                if len(items) > 1: 
-                    y[i] = items[1]
-                else:
-                    y[i] = y[i].get_text()
-            return y
-
-        return self.extractor.extract_pair(
-            "Provinces",
             select=extract,
             base=self.infobox
         )

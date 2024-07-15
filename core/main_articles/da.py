@@ -25,16 +25,22 @@ class DistrictArticle(MainArticle):
     def extract_province(self):
         DEBUG and print("@ Extracting province.")
 
-        return self.extractor.extract_pair(
-            "Province"
-        )
+        try:
+            return self.extractor.extract_pair(
+                "Province"
+            )
+        except: 
+            return None
 
     def extract_region(self):
         DEBUG and print("@ Extracting region.")
         
-        return self.extractor.extract_pair(
-            "Region"
-        )
+        try:
+            return self.extractor.extract_pair(
+                "Region"
+            )
+        except: 
+            return None
 
     def extract_population(self):
         DEBUG and print("@ Extracting population.")
@@ -53,10 +59,16 @@ class DistrictArticle(MainArticle):
 
             return y
 
-        return self.extractor.extract_pair(
-            "Population", 
-            select=extract
-        )
+        try:
+            return self.extractor.extract_pair(
+                "Population", 
+                select=extract
+            )
+        except:
+            return {
+                "No." : no, 
+                "Year" : year
+            }
 
     def extract_electorate(self):
         DEBUG and print("@ Extracting electorate.")
@@ -75,24 +87,52 @@ class DistrictArticle(MainArticle):
 
             return y
 
-        return self.extractor.extract_pair(
-            "Electorate", 
-            select=extract
-        )
+        try:
+            return self.extractor.extract_pair(
+                "Electorate", 
+                select=extract
+            )
+        except: 
+            return {
+                "No." : None, 
+                "Year" : None
+            }
     
     def extract_major_settlements(self):
         DEBUG and print("@ Extracting major settlements.")
         
-        return self.extractor.extract_pair(
-            "Major settlements", 
-            select=
-                lambda y: 
-                    self.Extractor.to_int(
-                            y.get_text().split(" ")[0].strip()
-                    )
-                
-        )
+        try: 
+            quantity = self.extractor.extract_pair(
+                "settlements", 
+                select=
+                    lambda y: 
+                        self.Extractor.to_int(
+                            self.Extractor.first_or_null(
+                                "([0-9]+) LGUs",
+                                y.get_text()
+                            )
+                        )
+                    
+            ) 
 
+            lgus = self.extractor.extract_pair(
+                "settlements", 
+                select=
+                    lambda y: 
+                        [x.get_text() for x in y.select("a")[1:]]
+            ) 
+
+            y = {
+                "Quantity" : quantity,
+                "LGUs" : lgus
+            }
+        except: 
+            return {
+                "Quantity" : None,
+                "LGUs" : None
+            }
+
+       
     def extract_area(self):
         DEBUG and print("@ Extracting area.")
         return self.extractor.extract_pair(
