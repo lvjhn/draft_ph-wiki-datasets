@@ -12,52 +12,31 @@ import json
 # CONFIGURATION
 # 
 CONTEXT = config.CONTEXT
-OUTPUT_FOLDER = f"./data/{CONTEXT}/maps/adjacencies/"
+OUTPUT_FOLDER = f"./data/{CONTEXT}/maps/adjacencies"
 
 #
 # MAIN SCRIPT 
 # 
 flow = {
-    "svg" : [
-        "regions", 
-        "provinces", 
-        "municities"
-    ], 
-    "geojson" : [
-        "regions.lowres",
-        "regions.medres",
-        "regions.hires",
+    "regions.lowres",
+    "regions.medres",
+    "regions.hires",
 
-        "provinces.lowres",
-        "provinces.medres",
-        "provinces.hires",
+    "provinces.lowres",
+    "provinces.medres",
+    "provinces.hires",
 
-        "municities.lowres",
-        "municities.medres",
-        "municities.hires",
-        
-        "barangays.lowres",
-        "barangays.medres",
-        "barangays.hires"
-    ]
+    "municities.lowres",
+    "municities.medres",
+    "municities.hires",
+    
+    "barangays.lowres",
+    "barangays.medres",
+    "barangays.hires"
 }
 
-# for item in flow["svg"]: 
-#     print(f"@ ========== Processing SVG Map [{item}] ==========")
-#     map_ = SVGMap(
-#         admin_level=item,
-#         cache=True,
-#         preload=True
-#     )
-#     adjacencies = map_.adjacency_list()
-#     json.dump(
-#         adjacencies, 
-#         open(f"{OUTPUT_FOLDER}/svg/{item}.json", "w"),
-#         indent=4
-#     )
 
-
-for item in flow["geojson"]: 
+for item in flow: 
     print(f"@ ========== Processing GeoJSON Map [{item}] ==========")
     map_ = GeoJSONMap(
         admin_level=item,
@@ -67,7 +46,7 @@ for item in flow["geojson"]:
     adjacencies = map_.adjacency_list()
     json.dump(
         adjacencies, 
-        open(f"{OUTPUT_FOLDER}/geojson/{item}.json", "w"),
+        open(f"{OUTPUT_FOLDER}/lists/{item}.json", "w"),
         indent=4
     )
     

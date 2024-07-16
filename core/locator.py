@@ -418,3 +418,24 @@ class Locator:
             q = Locator.barangays(context)
         q = q.query(f"`Ref. Id` == '{ref_id}'")
         return q
+
+    def name(context, ref_id="q"):
+        tokens = ref_id.split(":")
+        q = Locator.locate(context, ref_id)
+        if tokens[0] == "ig": 
+            q = list(q["Island Group"])
+        elif tokens[0] == "r": 
+            q = list(q["Region"])
+        elif tokens[0] == "p": 
+            q = list(q["Province"])
+        elif tokens[0] == "d": 
+            q = list(q["District Key"])
+        elif tokens[0] == "m": 
+            q = list(q["Municity"])
+        elif tokens[0] == "b": 
+            q = list(q["adm4_en"])
+        
+        if len(q) == 0: 
+            return None 
+        else: 
+            return q

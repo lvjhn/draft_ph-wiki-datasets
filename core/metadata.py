@@ -10,14 +10,14 @@ class Metadata:
 
         if admin_level != "barangays":
             main_df = pd.read_csv(main)
-            merged_df = pd.concat([basis_df, main_df], axis=1)
+            merged_df = pd.merge(basis_df, main_df, on="Unnamed: 0")
 
         if admin_level == "provinces":
             province_psgcs = \
                 f"./data/{context}/metadata/refs/provinces.psgc.csv"
             province_psgcs_df = \
                 pd.read_csv(province_psgcs) 
-            merged_df = pd.concat([merged_df, province_psgcs_df], axis=1)
+            merged_df = pd.merge(merged_df, province_psgcs_df, on="Province")
 
         return merged_df
         

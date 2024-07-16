@@ -1,9 +1,30 @@
 import core.helpers as helpers
 from shapely \
     import MultiPolygon, GeometryCollection, LineString, Polygon, \
-           union_all, make_valid, STRtree, envelope
+           union_all, make_valid, STRtree, envelope, Point, box
 import svgwrite       
 import numpy as np
+from collections import defaultdict
+from shapely.ops import nearest_points
+from core.locator import Locator
+from shapely.affinity import scale
+
+def tolerant_hash(val, tolerance=3):
+    """
+    Hashes a Point object with tolerance for coordinates.
+
+    Args:
+        point: Shapely Point object.
+        tolerance: Rounding tolerance for coordinates (default: 0.001).
+
+    Returns:
+        A hashable tuple containing rounded coordinates.
+    """
+    rounded_coords = tuple([
+        round(val[0], tolerance), 
+        round(val[1], tolerance)
+    ])
+    return rounded_coords
 
 class Map:
     def __init__(self, *args, **kwargs):
@@ -103,15 +124,16 @@ class Map:
             for key_b in candidate_neighbors: 
                 bbox_a = bboxes[key_a]
                 bbox_b = bboxes[key_b]
-                if self.envelope_intersects(bbox_a, bbox_b):
-                    intersections += 1
-                    if key_a == key_b:
-                        continue
-                    if locations[key_a].intersects(locations[key_b]):
-                        adjacencies[key_a][key_b] = 0
-                        intersection = \
-                            locations[key_a].intersection(locations[key_b])
-                        adjacencies[key_a][key_b] = intersection.length
+                intersections += 1
+                if key_a == key_b:
+                    continue
+
+
+                if scale(locations[key_a], xfact=1.01, yfact=1.01).intersects(locations[key_b]):
+                    adjacencies[key_a][key_b] = 0
+                    intersection = \
+                        locations[key_a].intersection(locations[key_b])
+                    adjacencies[key_a][key_b] = intersection.length
 
 
                 else: 
@@ -120,24 +142,32 @@ class Map:
             i += 1
 
         return adjacencies
-                
+
     def preload(self): 
         self.components = self.get_components() 
     
-    def draw_svg(self, outfile, id_field="id", **kwargs): 
+    def draw_svg(self, outfile, id_field="id", highlights=[([], "black")], **kwargs): 
         dw = \
             svgwrite.Drawing(outfile, **kwargs)
 
         components = self.components 
-
+         
         for component in components.values():
             polygons = component["polygons"]
             id_ = str(component[id_field]).replace(" ", "_")
+            
             for polygon in polygons:
+                fill_color = "black"
+                
+                for highlight in highlights:
+                    if id_ in highlight[0]:
+                        fill_color = highlight[1]
+
                 dw.add(
                     dw.polygon(
                         polygon, 
-                        id=id_
+                        id=id_,
+                        fill=fill_color
                     )
                 )
 

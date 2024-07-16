@@ -54,3 +54,6 @@ def flatten(tree, mode="bfs", as_tuple=False):
 
 def fix_mun_psgc(code):
     return "0".join([code[0:-9], code[-9:]])
+
+def unfix_mun_psgc(code):
+    return "".join([code[0:-8], code[-7:]])
