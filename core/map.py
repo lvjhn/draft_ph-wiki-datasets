@@ -128,8 +128,8 @@ class Map:
                 if key_a == key_b:
                     continue
 
-
-                if scale(locations[key_a], xfact=1.01, yfact=1.01).intersects(locations[key_b]):
+                if scale(locations[key_a], xfact=1.01, yfact=1.01)\
+                    .intersects(locations[key_b]):
                     adjacencies[key_a][key_b] = 0
                     intersection = \
                         locations[key_a].intersection(locations[key_b])
